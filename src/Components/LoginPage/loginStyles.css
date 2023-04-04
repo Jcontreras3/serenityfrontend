@@ -1,0 +1,21 @@
+
+
+.loginCont{
+    background-image: url("../../Assets/BgExport.png");
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+}
+
+.whiteBx{
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    margin: 5rem;
+    border-radius: 5px;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+}
