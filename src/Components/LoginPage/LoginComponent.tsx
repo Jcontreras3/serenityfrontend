@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col,Button } from "react-bootstrap";
 import "./loginStyles.css";
 // import BgImage from "../Assets/BgExport.png"
 
@@ -15,7 +15,7 @@ export default function LoginComponent() {
     <Container fluid className="loginCont">
         <Row className="whiteBx">
             <Col className="test" md={12}>
-              <p className="loginTitle">Serenity</p>
+              <h1 className="loginTitle">Serenity</h1>
               <div className="loginEmailInputgroup">
                 <label className="emailLabel">Email:</label>
                 <input className="loginInputStyle" placeholder="Email"/>
@@ -24,7 +24,11 @@ export default function LoginComponent() {
                 <label className="passwordLabel">Password:</label>
                 <input className="passwordInputStyle" placeholder="Password"/>
               </div>
-              
+              <div className="loginBtnGroup">
+                  <button className="loginBtn">Log in</button>
+                  <Button className="createAccountBtn" variant="link">Create Account</Button>
+              </div>
+             
             </Col>
         </Row>
     </Container>

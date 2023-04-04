@@ -37,10 +37,11 @@
 
 .loginInputStyle {
   width: 450px;
-  height: 50px;
+  height: 55px;
   background-color: #d9d9d9;
   border-radius: 10px;
   border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .emailLabel {
@@ -54,12 +55,33 @@
 
 .passwordInputStyle {
   width: 450px;
-  height: 50px;
+  height: 55px;
   background-color: #d9d9d9;
   border-radius: 10px;
   border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .passwordLabel {
   font-size: 20px;
+}
+
+.loginBtnGroup {
+  margin-left: 170px;
+  margin-top: 4rem;
+}
+
+.loginBtn {
+  height: 60px;
+  width: 250px;
+  background: #caffaa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  font-size: 36px;
+}
+.createAccountBtn {
+  width: 250px;
+  color: #000000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
