@@ -14,8 +14,17 @@ export default function LoginComponent() {
   return (
     <Container fluid className="loginCont">
         <Row className="whiteBx">
-            <Col>
+            <Col className="test" md={12}>
               <p className="loginTitle">Serenity</p>
+              <div className="loginEmailInputgroup">
+                <label className="emailLabel">Email:</label>
+                <input className="loginInputStyle" placeholder="Email"/>
+              </div>
+              <div className="passwordEmailInputgroup">
+                <label className="passwordLabel">Password:</label>
+                <input className="passwordInputStyle" placeholder="Password"/>
+              </div>
+              
             </Col>
         </Row>
     </Container>
