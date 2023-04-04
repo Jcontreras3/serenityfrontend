@@ -19,3 +19,8 @@
     border-radius: 5px;
     filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
+.loginTitle{
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 64px;
+}

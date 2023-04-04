@@ -15,7 +15,7 @@ export default function LoginComponent() {
     <Container fluid className="loginCont">
         <Row className="whiteBx">
             <Col>
-            
+              <p className="loginTitle">Serenity</p>
             </Col>
         </Row>
     </Container>
