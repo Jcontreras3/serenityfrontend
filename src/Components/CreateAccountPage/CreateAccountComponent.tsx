@@ -14,9 +14,9 @@ export default function CreateAccountComponent() {
           </IconButton>
 
           <h1 className="createAccountTitle">Create Account</h1>
-          <div className="loginEmailInputgroup">
-            <label className="emailLabel">Email:</label>
-            <input className="loginInputStyle" placeholder="Email" />
+          <div className="nameInputgroup">
+            <label className="nameLabel">Full Name:</label>
+            <input className="nameInputStyle" placeholder="Name" />
           </div>
           <div className="passwordEmailInputgroup">
             <label className="passwordLabel">Password:</label>
