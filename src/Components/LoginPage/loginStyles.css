@@ -33,6 +33,7 @@
 .loginEmailInputgroup {
   margin-left: 65px;
   margin-right: 110px;
+  margin-top: 3rem;
 }
 
 .loginInputStyle {
@@ -42,6 +43,10 @@
   border-radius: 10px;
   border: none;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.loginInputStyle::placeholder{
+  font-size: 20px;
 }
 
 .emailLabel {
@@ -60,6 +65,9 @@
   border-radius: 10px;
   border: none;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.passwordInputStyle::placeholder{
+  font-size: 20px;
 }
 
 .passwordLabel {
@@ -84,4 +92,6 @@
   width: 250px;
   color: #000000;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 10px;
+  font-size: 20px;
 }
