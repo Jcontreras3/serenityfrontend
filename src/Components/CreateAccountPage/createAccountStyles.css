@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+
+.createAccountCont{
+    background-image: url("../../Assets/BgExport.png");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+}
+
+.whiteBx2{
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    margin: 3.5rem;
+    border-radius: 5px;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+}
