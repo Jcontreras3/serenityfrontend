@@ -1,0 +1,55 @@
+a.nav-link{
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+span.navbar-brand{
+    margin: 0;
+}
+
+div.nav-item.dropdown{
+    display: flex;
+}
+
+.NavbarBg{
+    background-color: #CAFFAA;
+}
+
+.me-auto{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto !important;
+    margin-right: 0px !important;
+}
+
+@media screen and (min-width: 992px) {
+    a.Music{
+        display: none;
+    }
+
+    a.Hotlines{
+        display: none;
+    }
+
+    a.Memes{
+        display: none;
+    }
+
+    a.Favorites{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .Bookmark{
+        display: none;
+    }
+    .Butterfly{
+        display: none;
+    }
+
+    #basic-nav-dropdown{
+        display: none;
+    }
+}
