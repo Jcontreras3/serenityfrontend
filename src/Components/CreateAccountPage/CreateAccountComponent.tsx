@@ -1,34 +1,32 @@
-
-import { Container, Row, Col,Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "./createAccountStyles.css";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { IconButton } from "@mui/material";
 // import BgImage from "../Assets/BgExport.png"
 
-
 export default function CreateAccountComponent() {
-   
   return (
     <Container fluid className="createAccountCont">
-        <Row className="whiteBx2">
-            <Col className="" md={12}>
+      <Row className="whiteBx2">
+        <Col className="" md={12}>
+          <IconButton className="btn">
+            <ArrowBackIcon className="icon" sx={{fontSize: 60}} />
+          </IconButton>
 
-              <h1 className="loginTitle">Create Account</h1>
-              <div className="loginEmailInputgroup">
-                <label className="emailLabel">Email:</label>
-                <input className="loginInputStyle" placeholder="Email"/>
-              </div>
-              <div className="passwordEmailInputgroup">
-                <label className="passwordLabel">Password:</label>
-                <input className="passwordInputStyle" placeholder="Password"/>
-              </div>
-              <div className="loginBtnGroup">
-                  <button className="loginBtn">Log in</button>
-                  <Button className="createAccountBtn" variant="link">Create Account</Button>
-              </div>
-             
-            </Col>
-        </Row>
+          <h1 className="createAccountTitle">Create Account</h1>
+          <div className="loginEmailInputgroup">
+            <label className="emailLabel">Email:</label>
+            <input className="loginInputStyle" placeholder="Email" />
+          </div>
+          <div className="passwordEmailInputgroup">
+            <label className="passwordLabel">Password:</label>
+            <input className="passwordInputStyle" placeholder="Password" />
+          </div>
+          <div className="createBtnGroup">
+            <button className="createBtn">Create Account</button>
+          </div>
+        </Col>
+      </Row>
     </Container>
-  )
+  );
 }
-
