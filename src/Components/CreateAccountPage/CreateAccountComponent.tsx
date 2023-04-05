@@ -9,7 +9,7 @@ export default function CreateAccountComponent() {
     <Container fluid className="createAccountCont">
       <Row className="whiteBx2">
         <Col className="" md={12}>
-          <IconButton className="btn">
+          <IconButton className="backBtn">
             <ArrowBackIcon className="icon" sx={{fontSize: 60}} />
           </IconButton>
 
@@ -18,9 +18,13 @@ export default function CreateAccountComponent() {
             <label className="nameLabel">Full Name:</label>
             <input className="nameInputStyle" placeholder="Name" />
           </div>
-          <div className="passwordEmailInputgroup">
-            <label className="passwordLabel">Password:</label>
-            <input className="passwordInputStyle" placeholder="Password" />
+          <div className="phoneNumInputgroup">
+            <label className="phoneNumLabel">Phone Number:</label>
+            <input className="phoneNumInputStyle"  placeholder="xxx-xxx-xxxx"/>
+          </div>
+          <div className="emailInputgroup">
+            <label className="emailLabel">Email:</label>
+            <input className="emailInputStyle"  placeholder="Email"/>
           </div>
           <div className="createBtnGroup">
             <button className="createBtn">Create Account</button>

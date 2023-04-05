@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 .loginCont {
   background-image: url("../../Assets/BgExport.png");
   background-repeat: no-repeat;
@@ -51,6 +51,7 @@
 
 .emailLabel {
   font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
 }
 .passwordEmailInputgroup {
   margin-left: 65px;
@@ -72,6 +73,7 @@
 
 .passwordLabel {
   font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .loginBtnGroup {
@@ -87,6 +89,7 @@
   border-radius: 10px;
   border: none;
   font-size: 36px;
+  font-family: 'Quicksand', sans-serif;
 }
 .createAccountBtn {
   width: 250px;
