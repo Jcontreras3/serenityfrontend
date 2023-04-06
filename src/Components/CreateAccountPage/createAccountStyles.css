@@ -45,8 +45,9 @@
 }
 
 .createBtnGroup {
-  margin-left: 170px;
-  margin-top: 4rem;
+  justify-content: center;
+  display: flex;
+  margin-top: 2rem;
 }
 
 .backBtn {
@@ -129,4 +130,54 @@
     font-size: 20px;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
+  }
+
+  .passBirthInputgroup {
+    margin-top: 1rem;
+  }
+  
+  .passInputStyle {
+    
+    width: 400px;
+    height: 55px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    border: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  .passInputStyle::placeholder{
+    font-size: 20px;
+  }
+  
+  .passLabel {
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    
+  }
+  .passGroup{
+    margin-left: 40px;
+  }
+  .birthInputStyle {
+    
+    width: 400px;
+    height: 55px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    border: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  .birthInputStyle::placeholder{
+    font-size: 20px;
+  }
+  
+  .birthLabel {
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    
+  }
+  .birthGroup{
+    margin-left: 165px;
+    
   }
