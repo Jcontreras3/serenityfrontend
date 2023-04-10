@@ -1,0 +1,29 @@
+.resCont{
+    background-color: #B5AAFF;
+    background-size: cover;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+}
+
+.mapBx{
+    background-color: white;
+    width: 1350px;
+    height: 600px;
+    margin-top: 4rem;
+    border-radius: 5px;
+    
+}
+.topTxt{
+    /* text-align: center; */
+    font-size: 24px;
+}
+
+.innerText{
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+.bulletTxt{
+    font-size: 24px;
+    text-decoration: underline;
+}

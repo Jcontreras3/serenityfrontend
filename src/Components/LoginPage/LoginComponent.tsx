@@ -1,15 +1,11 @@
 import { Container, Row, Col,Button } from "react-bootstrap";
 import "./loginStyles.css";
+import { useNavigate } from "react-router-dom";
 // import BgImage from "../Assets/BgExport.png"
 
 
 export default function LoginComponent() {
-    // const containerStyle = {
-    //     backgroundImage: ‘url(path/to/image.jpg)’,
-    //     backgroundRepeat: ‘no-repeat’,
-    //     backgroundPosition: ‘center center’,
-    //     backgroundSize: ‘cover’,
-    //   };
+  let navigate = useNavigate();
 
   return (
     <Container fluid className="loginCont">
@@ -26,7 +22,7 @@ export default function LoginComponent() {
               </div>
               <div className="loginBtnGroup">
                   <button className="loginBtn">Log in</button>
-                  <Button className="createAccountBtn" variant="link">Create Account</Button>
+                  <Button className="createAccountBtn" onClick={() => navigate("/CreateAccountComponent")} variant="link">Create Account</Button>
               </div>
              
             </Col>
