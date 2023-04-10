@@ -1,15 +1,19 @@
 import React from "react";
+import { BrowserRouter, Route,  } from "react-router-dom";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import Butterfly from "../../Assets/Butterfly.png";
 import Pfp from "../../Assets/Pfp.png";
 import Bm from "../../Assets/Bookmark.png";
 import "../Navbar/Navbar.css";
+import HomeComponent from "../HomePage/HomeComponent";
 
 type Props = {};
 
 export default function NavbarComponent({}: Props) {
   return (
+    <BrowserRouter>
     <Navbar className="NavbarBg" expand="lg">
+      
       <Container className="Navbar container">
         <div>
           <Navbar.Brand>
@@ -22,7 +26,9 @@ export default function NavbarComponent({}: Props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
+            
             <Nav.Link href="#home">Home</Nav.Link>
+            
             <Nav.Link href="#affirmations">Affirmations</Nav.Link>
             
             <NavDropdown title="Resources" id="basic-nav-dropdown">
@@ -43,6 +49,8 @@ export default function NavbarComponent({}: Props) {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      
     </Navbar>
+    </BrowserRouter>
   );
 }

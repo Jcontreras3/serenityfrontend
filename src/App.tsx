@@ -5,6 +5,7 @@ import LoginComponent from './Components/LoginPage/LoginComponent';
 import CreateAccountComponent from './Components/CreateAccountPage/CreateAccountComponent';
 import NavbarComponent from './Components/Navbar/NavbarComponent';
 import HomeComponent from './Components/HomePage/HomeComponent';
+import AffirmationsComponent from './Components/AffirmationsPage/AffirmationsComponent';
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
     {/* <LoginComponent/> */}
     {/* <CreateAccountComponent/> */}
     <HomeComponent/>
+    {/* <AffirmationsComponent/> */}
+    
     </>
   );
 }
