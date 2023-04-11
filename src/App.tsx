@@ -6,6 +6,7 @@ import NavbarComponent from "./Components/Navbar/NavbarComponent";
 import HomeComponent from "./Components/HomePage/HomeComponent";
 import ResourcesComponent from "./Components/ResourcesPage/ResourcesComponent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AffirmationsComponent from "./Components/AffirmationsPage/AffirmationsComponent";
 
 function App() {
   return (
@@ -17,8 +18,12 @@ function App() {
         {/* <HomeComponent/> */}
 
         <Routes>
-          <Route path="/" element={<LoginComponent />} />
-          <Route path="/CreateAccountComponent" element={<CreateAccountComponent />} />
+          <Route index element={<LoginComponent />} />
+          <Route path="/CreateAccount" element={<CreateAccountComponent />} />
+          <Route path="/" element={<NavbarComponent/>}>
+            <Route path="Home" element={<HomeComponent />} />
+            <Route path="Affirmations" element={<HomeComponent/>}/>
+          </Route>
         </Routes>
       </>
     </BrowserRouter>

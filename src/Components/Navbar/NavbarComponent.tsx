@@ -15,7 +15,7 @@ type Props = {};
 export default function NavbarComponent({}: Props) {
   return (
     <>
-    <BrowserRouter>
+  
    
     <Navbar className="NavbarBg" expand="lg">
       
@@ -32,11 +32,11 @@ export default function NavbarComponent({}: Props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             
-            <Nav.Link as={Link} to="/HomeComponent">Home</Nav.Link>
+            <Nav.Link as={Link} to="/Home">Home</Nav.Link>
             {/* <Route path="/" element={<HomeComponent />} /> */}
            
             
-            <Nav.Link as={Link} to="/AffirmationsComponent">Affirmations</Nav.Link>
+            <Nav.Link as={Link} to="/Affirmations">Affirmations</Nav.Link>
             
             <NavDropdown title="Resources" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Music Playlist</NavDropdown.Item>
@@ -58,13 +58,9 @@ export default function NavbarComponent({}: Props) {
       </Container>
       
     </Navbar>
-    <Routes>
-      <Route path="/HomeComponent" element={<HomeComponent/>} />
-      <Route path="/AffirmationsComponent" element={<AffirmationsComponent/>} />
+   
 
-    </Routes>
-
-    </BrowserRouter>
+    
     </>
   );
 }
