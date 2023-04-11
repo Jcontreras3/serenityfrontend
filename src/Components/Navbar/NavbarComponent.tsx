@@ -15,11 +15,7 @@ export default function NavbarComponent({}: Props) {
   let navigate = useNavigate();
   return (
     <>
-<<<<<<< HEAD
-  
-=======
     
->>>>>>> f47bd4b286bb55be4b580ce8ba8ce248ef10ef20
    
     <Navbar className="NavbarBg" expand="lg">
       
@@ -36,19 +32,11 @@ export default function NavbarComponent({}: Props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             
-<<<<<<< HEAD
-            <Nav.Link as={Link} to="/Home">Home</Nav.Link>
-            {/* <Route path="/" element={<HomeComponent />} /> */}
-           
-            
-            <Nav.Link as={Link} to="/Affirmations">Affirmations</Nav.Link>
-=======
             <Nav.Link onClick={() => navigate("/HomeComponent")}>Home</Nav.Link>
            
            
             
             <Nav.Link onClick={() => navigate("/AffirmationsComponent")}>Affirmations</Nav.Link>
->>>>>>> f47bd4b286bb55be4b580ce8ba8ce248ef10ef20
             
             <NavDropdown title="Resources" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Music Playlist</NavDropdown.Item>
@@ -70,12 +58,6 @@ export default function NavbarComponent({}: Props) {
       </Container>
       
     </Navbar>
-<<<<<<< HEAD
-   
-
-    
-=======
->>>>>>> f47bd4b286bb55be4b580ce8ba8ce248ef10ef20
     </>
   );
 }

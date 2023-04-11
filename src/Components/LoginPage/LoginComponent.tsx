@@ -1,11 +1,31 @@
+import React, { useState } from "react";
 import { Container, Row, Col,Button } from "react-bootstrap";
 import "./loginStyles.css";
 import { useNavigate } from "react-router-dom";
+import { loginFetch } from "../../Service/DataService";
 // import BgImage from "../Assets/BgExport.png"
 
 
 export default function LoginComponent() {
   let navigate = useNavigate();
+  const [email, setUserEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async () => {
+    let userLoginData = {
+      email,
+      password,
+    }; 
+    console.log(userLoginData);
+    let token = await loginFetch(userLoginData);
+    if(token.token != null){
+      localStorage.setItem("Token", token.token);
+      
+    }
+  }
+  
+  // let token = await 
+
 
   return (
     <Container fluid className="loginCont">
