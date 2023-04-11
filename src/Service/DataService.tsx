@@ -13,7 +13,7 @@ async function FetchQuotes() {
 
   async function loginFetch(loginUser: any){
     const res = await fetch(
-      "https://jovannblogfrontend.azurewebsites.net/User/Login",
+      "https://serenitybackendsite.azurewebsites.net/User/Login",
       {
         method: "POST",
         headers: {
@@ -33,7 +33,7 @@ async function FetchQuotes() {
   }
 
   async function GetLoggedInUserData(email:any){
-    let res = await fetch(`https://serenitybackendsite.azurewebsites.net/user/userbyusername${email}`);
+    let res = await fetch(`https://serenitybackendsite.azurewebsites.net/user/userbyusername/${email}`);
     let data = await res.json();
     userLoginData = data;
     console.log(userLoginData);
@@ -42,4 +42,4 @@ async function FetchQuotes() {
 
   
   
-export {FetchQuotes, FetchALLQuotes, loginFetch} 
+export {FetchQuotes, FetchALLQuotes, loginFetch, GetLoggedInUserData} 

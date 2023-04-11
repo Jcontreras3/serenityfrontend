@@ -74,6 +74,7 @@
 .passwordLabel {
   font-size: 20px;
   font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
 }
 
 .loginBtnGroup {
