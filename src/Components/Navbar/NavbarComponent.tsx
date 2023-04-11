@@ -27,8 +27,8 @@ export default function NavbarComponent({ }: Props) {
                 <img src={Butterfly} className="Butterfly" />
               </Navbar.Brand>
 
-              <div className="mob-home">
-              <Nav.Link  onClick={() => navigate("/HomeComponent")}>Home</Nav.Link>
+              
+              <Nav.Link className="mob-home" onClick={() => navigate("/HomeComponent")}>Home</Nav.Link>
 
 
 
@@ -46,7 +46,7 @@ export default function NavbarComponent({ }: Props) {
               <Nav.Link href="#hotlines" className="Hotlines">Hotlines</Nav.Link>
               <Nav.Link href="#memes" className="Memes">Funny Memes</Nav.Link>
               <Nav.Link href="#favorites" className="Favorites">Favorites</Nav.Link>
-              </div>
+              
               <Nav className="me-auto">
             </Nav>
           </Navbar.Collapse>
