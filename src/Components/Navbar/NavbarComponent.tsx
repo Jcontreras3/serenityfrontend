@@ -1,17 +1,22 @@
 import React from "react";
-import { BrowserRouter, Route,  } from "react-router-dom";
+import {  BrowserRouter, Route, Link, Routes } from 'react-router-dom'
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import Butterfly from "../../Assets/Butterfly.png";
 import Pfp from "../../Assets/Pfp.png";
 import Bm from "../../Assets/Bookmark.png";
 import "../Navbar/Navbar.css";
 import HomeComponent from "../HomePage/HomeComponent";
+import AffirmationsComponent from "../AffirmationsPage/AffirmationsComponent";
 
 type Props = {};
 
+
+
 export default function NavbarComponent({}: Props) {
   return (
+    <>
     <BrowserRouter>
+   
     <Navbar className="NavbarBg" expand="lg">
       
       <Container className="Navbar container">
@@ -27,9 +32,11 @@ export default function NavbarComponent({}: Props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link as={Link} to="/HomeComponent">Home</Nav.Link>
+            {/* <Route path="/" element={<HomeComponent />} /> */}
+           
             
-            <Nav.Link href="#affirmations">Affirmations</Nav.Link>
+            <Nav.Link as={Link} to="/AffirmationsComponent">Affirmations</Nav.Link>
             
             <NavDropdown title="Resources" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Music Playlist</NavDropdown.Item>
@@ -51,6 +58,13 @@ export default function NavbarComponent({}: Props) {
       </Container>
       
     </Navbar>
+    <Routes>
+      <Route path="/HomeComponent" element={<HomeComponent/>} />
+      <Route path="/AffirmationsComponent" element={<AffirmationsComponent/>} />
+
+    </Routes>
+
     </BrowserRouter>
+    </>
   );
 }
