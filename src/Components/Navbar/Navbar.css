@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 a.nav-link{
     display: flex;
     align-items: center;
     font-size: 24px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    color: black;
+    padding: 10px;
 }
 
 span.navbar-brand{
@@ -10,6 +16,20 @@ span.navbar-brand{
 
 div.nav-item.dropdown{
     display: flex;
+    
+}
+
+.dropdown-item{
+    font-weight: 500;
+    color: black;
+}
+
+.dropdown-menu{
+    --bs-dropdown-bg: rgb(202 255 170 / 44%) ; 
+    --bs-dropdown-border-width: 0px;
+    font-family: 'Quicksand', sans-serif;
+    
+
 }
 
 .NavbarBg{
@@ -21,6 +41,15 @@ div.nav-item.dropdown{
     justify-content: flex-end;
     margin-left: auto !important;
     margin-right: 0px !important;
+}
+
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
 @media screen and (min-width: 992px) {
@@ -51,5 +80,11 @@ div.nav-item.dropdown{
 
     #basic-nav-dropdown{
         display: none;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .mob-home{
+        padding-top: 10px !important;
     }
 }
