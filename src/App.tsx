@@ -10,18 +10,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     // <ResourcesComponent/>
-    <BrowserRouter>
-      <>
-        {/* <LoginComponent/> */}
-        {/* <CreateAccountComponent /> */}
-        {/* <HomeComponent/> */}
+    // <BrowserRouter>
+    //   <>
+    //     {/* <LoginComponent/> */}
+    //     {/* <CreateAccountComponent /> */}
+        <HomeComponent/> 
 
-        <Routes>
-          <Route path="/" element={<LoginComponent />} />
-          <Route path="/CreateAccountComponent" element={<CreateAccountComponent />} />
-        </Routes>
-      </>
-    </BrowserRouter>
+    //     <Routes>
+    //       <Route path="/" element={<LoginComponent />} />
+    //       <Route path="/CreateAccountComponent" element={<CreateAccountComponent />} />
+    //     </Routes>
+    //   </>
+    
+    // </BrowserRouter>
   );
 }
 
