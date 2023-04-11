@@ -1,21 +1,21 @@
 import React from "react";
-import {  BrowserRouter, Route, Link, Routes } from 'react-router-dom'
+import {  BrowserRouter, Route, Link, Routes, useNavigate } from 'react-router-dom'
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import Butterfly from "../../Assets/Butterfly.png";
 import Pfp from "../../Assets/Pfp.png";
 import Bm from "../../Assets/Bookmark.png";
 import "../Navbar/Navbar.css";
-import HomeComponent from "../HomePage/HomeComponent";
-import AffirmationsComponent from "../AffirmationsPage/AffirmationsComponent";
+
 
 type Props = {};
 
 
 
 export default function NavbarComponent({}: Props) {
+  let navigate = useNavigate();
   return (
     <>
-    <BrowserRouter>
+    
    
     <Navbar className="NavbarBg" expand="lg">
       
@@ -32,15 +32,15 @@ export default function NavbarComponent({}: Props) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             
-            <Nav.Link as={Link} to="/HomeComponent">Home</Nav.Link>
-            {/* <Route path="/" element={<HomeComponent />} /> */}
+            <Nav.Link onClick={() => navigate("/HomeComponent")}>Home</Nav.Link>
+           
            
             
-            <Nav.Link as={Link} to="/AffirmationsComponent">Affirmations</Nav.Link>
+            <Nav.Link onClick={() => navigate("/AffirmationsComponent")}>Affirmations</Nav.Link>
             
             <NavDropdown title="Resources" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Music Playlist</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item onClick={() => navigate("/ResourcesComponent")}>
                 Hotlines
               </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Funny Memes</NavDropdown.Item>
@@ -58,13 +58,6 @@ export default function NavbarComponent({}: Props) {
       </Container>
       
     </Navbar>
-    <Routes>
-      <Route path="/HomeComponent" element={<HomeComponent/>} />
-      <Route path="/AffirmationsComponent" element={<AffirmationsComponent/>} />
-
-    </Routes>
-
-    </BrowserRouter>
     </>
   );
 }

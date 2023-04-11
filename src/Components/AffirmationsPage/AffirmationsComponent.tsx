@@ -1,7 +1,7 @@
-import React from 'react'
-import { FetchQuotes, FetchALLQuotes } from '../../Service/DataService';
-import NavbarComponent from '../Navbar/NavbarComponent';
-import { useState } from 'react';
+
+import { FetchQuotes, FetchALLQuotes } from "../../Service/DataService";
+import NavbarComponent from "../Navbar/NavbarComponent";
+import { useState } from "react";
 
 function quotes() {
   // const [categorys, setCategories] = useState('');
@@ -20,13 +20,14 @@ function quotes() {
   quotesData();
 }
 
-
 function AffirmationsComponent() {
   return (
     <div>
+      <NavbarComponent />
 
+      <p>Affirmations</p>
     </div>
-  )
+  );
 }
 
-export default AffirmationsComponent
+export default AffirmationsComponent;
