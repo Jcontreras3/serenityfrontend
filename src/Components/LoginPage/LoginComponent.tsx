@@ -39,7 +39,7 @@ export default function LoginComponent() {
               </div>
               <div className="passwordEmailInputgroup">
                 <label className="passwordLabel">Password:</label>
-                <input className="passwordInputStyle" placeholder="Password" onChange={({target: {value} }) => setPassword(value)}/>
+                <input className="passwordInputStyle" type="password" placeholder="Password" onChange={({target: {value} }) => setPassword(value)}/>
               </div>
               <div className="loginBtnGroup">
                   <button className="loginBtn" onClick={handleSubmit}>Log in</button>

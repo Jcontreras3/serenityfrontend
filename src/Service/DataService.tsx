@@ -40,6 +40,26 @@ async function FetchQuotes() {
     
   }
 
+  async function createAccount(CreatedUser:any) {
+    const res = await fetch(
+      "https://serenitybackendsite.azurewebsites.net/User/AddUser",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body:JSON.stringify(CreatedUser)
+      }
+    );
+  
+    if(!res.ok){
+      const message = `An Error occured ${res.status}`;
+      throw new Error(message);
+    }
+    let data = await  res.json();
+    console.log(data);
+  }
+
   
   
-export {FetchQuotes, FetchALLQuotes, loginFetch, GetLoggedInUserData} 
+export {FetchQuotes, FetchALLQuotes, loginFetch, GetLoggedInUserData, createAccount} 

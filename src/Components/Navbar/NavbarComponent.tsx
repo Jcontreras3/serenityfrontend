@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Link, Routes, useNavigate } from 'react-router-dom'
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Container, Nav, NavDropdown, Col } from "react-bootstrap";
 import Butterfly from "../../Assets/Butterfly.png";
 import Pfp from "../../Assets/Pfp.png";
 import Bm from "../../Assets/Bookmark.png";
@@ -20,18 +20,16 @@ export default function NavbarComponent({ }: Props) {
       <Navbar className="NavbarBg" expand="lg">
 
         <Container className="Navbar container">
-          
+          <div>
+          <Col>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
+         
           <Navbar.Collapse id="basic-navbar-nav">
             <Navbar.Brand>
                 <img src={Butterfly} className="Butterfly" />
               </Navbar.Brand>
 
-              
               <Nav.Link className="mob-home" onClick={() => navigate("/HomeComponent")}>Home</Nav.Link>
-
-
-
               <Nav.Link onClick={() => navigate("/AffirmationsComponent")}>Affirmations</Nav.Link>
 
               <NavDropdown title="Resources" id="basic-nav-dropdown">
@@ -50,6 +48,8 @@ export default function NavbarComponent({ }: Props) {
               <Nav className="me-auto">
             </Nav>
           </Navbar.Collapse>
+          </Col>
+          </div>
           <div>
             <Navbar.Brand>
               <img src={Pfp} className="Pfp" />

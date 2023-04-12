@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
+
 a.nav-link{
     display: flex;
     align-items: center;
@@ -86,5 +87,18 @@ div.nav-item.dropdown{
 @media screen and (max-width: 991px){
     .mob-home{
         padding-top: 10px !important;
+    }
+
+    .Pfp{
+        width: 47px;
+        height: 43px;
+    }
+
+    .navbar-toggler {
+        /* border: var(--bs-border-width) solid rgb(0 0 0); */
+    }
+
+    .navbar{
+        /* --bs-navbar-toggler-icon-bg: url(''); */
     }
 }

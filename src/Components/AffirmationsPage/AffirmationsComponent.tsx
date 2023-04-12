@@ -19,12 +19,12 @@ function quotes() {
 
   quotesData();
 }
-
+quotes();
 function AffirmationsComponent() {
   return (
     <div>
       <NavbarComponent />
-
+      
       <p>Affirmations</p>
     </div>
   );
