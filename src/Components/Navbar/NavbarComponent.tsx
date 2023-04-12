@@ -39,7 +39,7 @@ export default function NavbarComponent({ }: Props) {
                 <NavDropdown.Item onClick={() => navigate("/ResourcesComponent")}>
                   Hotlines
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Funny Memes</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => navigate("/MemesComponent")}>Funny Memes</NavDropdown.Item>
               </NavDropdown>
 
               <Nav.Link href="#music" className="Music">Music Playlists</Nav.Link>
