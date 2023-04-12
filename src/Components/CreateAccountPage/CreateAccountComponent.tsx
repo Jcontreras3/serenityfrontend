@@ -4,12 +4,15 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { createAccount } from "../../Service/DataService";
 
 // Create a function that takes in the first password 
 // Create if statement comparing the password and the verify password input
 
 
 export default function CreateAccountComponent() {
+
+
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNum, setPhoneNum] = useState(0);
@@ -17,19 +20,21 @@ export default function CreateAccountComponent() {
   const [zipCode, setZipCode] = useState(0);
   const[dateOfBirth, setDateOfBirth] = useState(0);
   const[verifyPass, setVerifyPass] = useState("");
+  
 
+  let createAccountNavigate = useNavigate();
   const handleVerification = () => {
-    let test = false;
+      
     if(verifyPass === passWord){
-      test = true
-    }
-    else{
+      handleCreateSubmit();
+      createAccountNavigate("/HomeComponent")
+    } else{
       alert("Enter in the correct password")
     }
   }
 
   const handleCreateSubmit = () => {
-    let userCreateData = {
+    let userCreatedData = {
       Id:0,
       fullName,
       email,
@@ -39,7 +44,9 @@ export default function CreateAccountComponent() {
       dateOfBirth,
       zipCode
 
-    }
+    };
+    console.log(userCreatedData);
+    createAccount(userCreatedData);
   }
 
 
@@ -95,7 +102,7 @@ export default function CreateAccountComponent() {
             </Col>
           </Row>
           <div className="createBtnGroup">
-            <button className="createBtn">Create Account</button>
+            <button onClick={handleVerification}  className="createBtn">Create Account</button>
           </div>
         </Col>
       </Row>

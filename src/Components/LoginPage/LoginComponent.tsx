@@ -23,6 +23,8 @@ export default function LoginComponent() {
       await GetLoggedInUserData(email);
       navigate("/HomeComponent");
     }
+
+    
   }
   
   // let token = await 
@@ -35,7 +37,7 @@ export default function LoginComponent() {
               <h1 className="loginTitle">Serenity</h1>
               <div className="loginEmailInputgroup">
                 <label className="emailLabel">Email:</label>
-                <input className="loginInputStyle" placeholder="Email" onChange={({target: {value}}) => setUserEmail(value)}/>
+                <input type="email" className="loginInputStyle" placeholder="Email" onChange={({target: {value}}) => setUserEmail(value)}/>
               </div>
               <div className="passwordEmailInputgroup">
                 <label className="passwordLabel">Password:</label>
