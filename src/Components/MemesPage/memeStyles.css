@@ -1,0 +1,99 @@
+.memeContainer.container{
+    background-color: #B5AAFF;
+    max-width: 100%;
+    height: calc(100vh - 153px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.memeRow.row{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.memePicCol.col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.memeJokeCol.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.memePic{
+    height: 500px;
+    width: 500px;
+    border-style: solid;
+    border-color: white;
+    border-width: 3px;
+}
+
+.joke{
+    width: 500px;
+    height: 425px;
+    margin: 0;
+    font-size: 40px;
+}
+
+.memeBtn{
+    width: 200px;
+    height: 75px;
+    font-size: 24px;
+    background-color: #CAFFAA;
+    color: black;
+    border: none;
+}
+
+.memeBtn:hover{
+    background-color: #CAFFAA;
+}
+
+@media screen and (max-width: 1074px) {
+    .memePic{
+        margin-top: 17px;
+        height: auto;
+        width: 300px;
+    }
+
+    .joke{
+        margin-top: 17px;
+        text-align: center;
+        width: auto;
+        height: 300px;
+    }
+
+    .memeBtn{
+        margin-bottom: 41px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .memeContainer.container{
+        height: calc(100vh - 108px);
+    }
+}
+
+@media screen and (max-width: 571px){
+    .memeContainer.container{
+        height: 100%;
+    }
+
+    .memePic{
+        margin-top: 75px;
+    }
+
+    .joke{
+        height: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .memeBtn{
+        margin-bottom: 75px;
+    }
+}
