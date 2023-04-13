@@ -17,11 +17,11 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<LoginComponent />} />
-          <Route path="/CreateAccountComponent" element={<CreateAccountComponent />} />
-          <Route path="/HomeComponent" element={<HomeComponent />} />
-          <Route path="/ResourcesComponent" element={<ResourcesComponent />} />
-          <Route path="/AffirmationsComponent" element={<AffirmationsComponent />} />
-          <Route path="/MemesComponent" element={<MemesComponent />} />
+          <Route path="/CreateAccount" element={<CreateAccountComponent />} />
+          <Route path="/Home" element={<HomeComponent />} />
+          <Route path="/Resources" element={<ResourcesComponent />} />
+          <Route path="/Affirmations" element={<AffirmationsComponent />} />
+          <Route path="/Memes" element={<MemesComponent />} />
         </Routes>
       </>
     </BrowserRouter>

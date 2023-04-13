@@ -21,7 +21,7 @@ export default function LoginComponent() {
     if(token.token != null){
       localStorage.setItem("Token", token.token);
       await GetLoggedInUserData(email);
-      navigate("/HomeComponent");
+      navigate("/Home");
     }
 
     
@@ -45,7 +45,7 @@ export default function LoginComponent() {
               </div>
               <div className="loginBtnGroup">
                   <button className="loginBtn" onClick={handleSubmit}>Log in</button>
-                  <Button className="createAccountBtn" onClick={() => navigate("/CreateAccountComponent")} variant="link">Create Account</Button>
+                  <Button className="createAccountBtn" onClick={() => navigate("/CreateAccount")} variant="link">Create Account</Button>
               </div>
              
             </Col>
