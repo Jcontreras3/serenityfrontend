@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link, Routes, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import { Navbar, Container, Nav, NavDropdown, Col } from "react-bootstrap";
 import Butterfly from "../../Assets/Butterfly.png";
 import Pfp from "../../Assets/Pfp.png";
@@ -29,15 +29,15 @@ export default function NavbarComponent({ }: Props) {
                 <img src={Butterfly} className="Butterfly" />
               </Navbar.Brand>
 
-              <Nav.Link className="mob-home" onClick={() => navigate("/HomeComponent")}>Home</Nav.Link>
-              <Nav.Link onClick={() => navigate("/AffirmationsComponent")}>Affirmations</Nav.Link>
+              <Nav.Link className="mob-home" onClick={() => navigate("/Home")}>Home</Nav.Link>
+              <Nav.Link onClick={() => navigate("/Affirmations")}>Affirmations</Nav.Link>
 
               <NavDropdown title="Resources" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Music Playlist</NavDropdown.Item>
-                <NavDropdown.Item onClick={() => navigate("/ResourcesComponent")}>
+                <NavDropdown.Item onClick={() => navigate("/Resources")}>
                   Hotlines
                 </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => navigate("/MemesComponent")}>Funny Memes</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => navigate("/Memes")}>Funny Memes</NavDropdown.Item>
               </NavDropdown>
 
               <Nav.Link href="#music" className="Music">Music Playlists</Nav.Link>

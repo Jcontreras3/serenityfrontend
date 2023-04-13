@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-
+/* @import url('../../Assets/hamburger.png'); */
 
 a.nav-link{
     display: flex;
@@ -95,10 +95,15 @@ div.nav-item.dropdown{
     }
 
     .navbar-toggler {
-        /* border: var(--bs-border-width) solid rgb(0 0 0); */
+        border: var(--bs-border-width) solid rgb(0 0 0);
+        --bs-border-width: 3px;
     }
 
     .navbar{
-        /* --bs-navbar-toggler-icon-bg: url(''); */
+        --bs-navbar-toggler-icon-bg: url('../../Assets/Menu_Burder-512.webp');
+    }
+
+    .navbar-toggler-icon{
+        width: 1.2em;
     }
 }

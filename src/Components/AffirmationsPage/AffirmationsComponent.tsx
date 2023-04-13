@@ -11,7 +11,7 @@ function quotes() {
     let quotesFetch = await FetchALLQuotes();
     let categoriesFetch = await FetchQuotes();
     // console.log(quotesFetch);
-    // console.log(categoriesFetch.motivational);
+    console.log(categoriesFetch);
 
     // setAllQuotes(quotesFetch);
     // setAdviceNum(adviceFetch.slip.id)
