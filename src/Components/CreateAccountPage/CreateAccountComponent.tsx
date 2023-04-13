@@ -27,7 +27,7 @@ export default function CreateAccountComponent() {
       
     if(verifyPass === passWord){
       handleCreateSubmit();
-      createAccountNavigate("/HomeComponent")
+      createAccountNavigate("/Home")
     } else{
       alert("Enter in the correct password")
     }
