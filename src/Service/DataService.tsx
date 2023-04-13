@@ -2,13 +2,15 @@ let userLoginData = {};
 
 
 async function FetchQuotes() {
-    const response = await fetch("https://backendquotesapi.azurewebsites.net/allaffirmations/getquote/")
-      return await response.json();
+    const response = await fetch("https://backendquotesapi.azurewebsites.net/allaffirmations/getquote/motivational")
+      let data = await response.json();
+      console.log(data);
   }
 
   async function FetchALLQuotes() {
     const response = await fetch("https://backendquotesapi.azurewebsites.net/allaffirmations/getallquotes")
-      return await response.json();
+      let data = await response.json();
+      console.log(data);
   }
 
   async function loginFetch(loginUser: any){

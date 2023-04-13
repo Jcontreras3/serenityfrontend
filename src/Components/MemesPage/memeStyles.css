@@ -15,6 +15,7 @@
 
 .memePicCol.col{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -31,13 +32,14 @@
     border-style: solid;
     border-color: white;
     border-width: 3px;
+    margin-bottom: 10px;
 }
 
 .joke{
     width: 500px;
     height: 425px;
     margin: 0;
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .memeBtn{
@@ -64,17 +66,17 @@
         margin-top: 17px;
         text-align: center;
         width: auto;
-        height: 300px;
+        height: auto;
     }
 
     .memeBtn{
-        margin-bottom: 41px;
+        /* margin-bottom: 41px; */
     }
 }
 
 @media screen and (max-width: 768px){
     .memeContainer.container{
-        height: calc(100vh - 108px);
+        height: calc(100vh - 79px);
     }
 }
 
@@ -94,6 +96,6 @@
     }
 
     .memeBtn{
-        margin-bottom: 75px;
+        /* margin-bottom: 100px; */
     }
 }
