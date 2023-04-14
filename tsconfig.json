@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "types": [
+      // other types...
+      "@types/googlemaps"
+    ],
     "target": "es5",
     "lib": [
       "dom",

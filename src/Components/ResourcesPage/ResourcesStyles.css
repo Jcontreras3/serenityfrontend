@@ -27,3 +27,7 @@
     font-size: 24px;
     text-decoration: underline;
 }
+
+#map{
+    height: 50%;
+}
