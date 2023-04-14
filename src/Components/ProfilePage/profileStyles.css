@@ -1,0 +1,39 @@
+.profileCont {
+  background-image: url("../../Assets/BgExport.png");
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.profileBx {
+  background-color: white;
+  width: 1000px;
+  height: 800px;
+  margin: 3.5rem;
+  border-radius: 5px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.proFilePic {
+  justify-content: center;
+  display: flex;
+  /* margin-top: 5px; */
+  margin-right:22rem ;
+  
+}
+
+.profileIcon{
+     width: 210px;
+  height: 205.48px;
+}
+
+.backBtn{
+    
+}
+
+.test{
+    width: 5rem;
+    
+}

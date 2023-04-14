@@ -52,7 +52,7 @@ export default function NavbarComponent({ }: Props) {
           </div>
           <div>
             <Navbar.Brand>
-              <img src={Pfp} className="Pfp" />
+              <img onClick={() => navigate("/Profile")} src={Pfp} className="Pfp" />
             </Navbar.Brand>
             <Navbar.Brand>
               <img src={Bm} className="Bookmark" width={59} height={50} />
