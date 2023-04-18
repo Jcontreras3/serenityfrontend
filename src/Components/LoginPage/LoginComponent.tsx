@@ -33,7 +33,7 @@ export default function LoginComponent() {
   return (
     <Container fluid className="loginCont">
         <Row className="whiteBx">
-            <Col className="test" md={12}>
+            <Col md={12}>
               <h1 className="loginTitle">Serenity</h1>
               <div className="loginEmailInputgroup">
                 <label className="emailLabel">Email:</label>

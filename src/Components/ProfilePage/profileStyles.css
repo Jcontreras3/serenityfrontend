@@ -19,8 +19,8 @@
 .proFilePic {
   justify-content: center;
   display: flex;
-  /* margin-top: 5px; */
-  margin-right:22rem ;
+  
+  
   
 }
 
@@ -29,11 +29,11 @@
   height: 205.48px;
 }
 
-.backBtn{
-    
-}
 
-.test{
-    width: 5rem;
-    
+
+.personNameTxt{
+  text-decoration: underline;
+  text-decoration-color:#b5aaff ;
+  text-align: center;
+  font-size: 50px;
 }
