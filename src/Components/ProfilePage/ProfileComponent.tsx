@@ -14,17 +14,29 @@ export default function ProfileComponent() {
       {/* <NavbarComponent/> */}
       <Container fluid className="profileCont">
         <Row className="profileBx">
-          <Col>
+          <Col className="profileImgCol">
             <div className="profileGroup">
               <IconButton onClick={() => navigate("/Home")} className="backBtn">
-                <ArrowBackIcon  className="icon" sx={{ fontSize: 60 }} />
+                <ArrowBackIcon className="icon" sx={{ fontSize: 60 }} />
               </IconButton>
             </div>
             <div className="proFilePic">
               <img className="profileIcon" src={Pfp} />
-            </div> 
-            
+            </div>
+
             <p className="personNameTxt">Person Name</p>
+          </Col>
+          <Col className="inputFieldCol" md={12}>
+            <label>Email</label>
+            <input className="inputFieldOne" placeholder="Email" />
+    
+          </Col>
+          <Col className="inputFieldCol" md={12}>
+            <input className="inputFieldTwo" placeholder="Password" />
+          </Col>
+          <Col className="inputFieldCol" md={12}>
+
+            <input className="inputFieldThree" placeholder="Date of birth" />
           </Col>
         </Row>
       </Container>
