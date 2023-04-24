@@ -27,9 +27,8 @@ export default function ProfileComponent() {
             <p className="personNameTxt">Person Name</p>
           </Col>
           <Col className="inputFieldCol" md={12}>
-            <label>Email</label>
-            <input className="inputFieldOne" placeholder="Email" />
-    
+            <label className="emailLabelText">Email  <input className="inputFieldOne" placeholder="Email" /></label>
+          
           </Col>
           <Col className="inputFieldCol" md={12}>
             <input className="inputFieldTwo" placeholder="Password" />
