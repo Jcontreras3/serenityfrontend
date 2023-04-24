@@ -27,14 +27,15 @@ export default function ProfileComponent() {
             <p className="personNameTxt">Person Name</p>
           </Col>
           <Col className="inputFieldCol" md={12}>
-            <label className="emailLabelText">Email  <input className="inputFieldOne" placeholder="Email" /></label>
-          
+            <label className="emailLabelText">Email </label>
+            <input className="inputFieldOne" placeholder="Email" />
           </Col>
           <Col className="inputFieldCol" md={12}>
+            <label className="passwordLabelText">Password</label>
             <input className="inputFieldTwo" placeholder="Password" />
           </Col>
           <Col className="inputFieldCol" md={12}>
-
+            <label className="dobLabelText">Date of birth</label>
             <input className="inputFieldThree" placeholder="Date of birth" />
           </Col>
         </Row>

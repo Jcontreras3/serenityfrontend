@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap");
 
 .profileCont {
   background-image: url("../../Assets/BgExport.png");
@@ -22,61 +22,73 @@
 .proFilePic {
   justify-content: center;
   display: flex;
-  
-  
-  
 }
 
-.profileIcon{
-     width: 210px;
+.profileIcon {
+  width: 210px;
   height: 205.48px;
 }
 
-
-
-.personNameTxt{
+.personNameTxt {
   text-decoration: underline;
-  text-decoration-color:#b5aaff ;
+  text-decoration-color: #b5aaff;
   text-align: center;
   font-size: 50px;
 }
 
-.inputFieldCol{
-  justify-content: center;
-  display: flex;
-  
+.inputFieldCol {
+  /* display: flex;
+
+  flex-direction: column; */
 }
 
-.profileImgCol{
+.profileImgCol {
   height: 20rem;
 }
 
-.inputFieldOne{
+.inputFieldOne {
   height: 4rem;
-  width: 50rem;
+  width: 55rem;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  
+}
+.inputFieldTwo {
+  height: 4rem;
+  width: 55rem;
   background-color: #d9d9d9;
   border-radius: 10px;
   border: none;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.inputFieldTwo{
+.inputFieldThree {
   height: 4rem;
-  width: 50rem;
+  width: 55rem;
   background-color: #d9d9d9;
   border-radius: 10px;
   border: none;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
-.inputFieldThree{
-  height: 4rem;
-  width: 50rem;
-  background-color: #d9d9d9;
-  border-radius: 10px;
-  border: none;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-.emailLabelText{
+.emailLabelText {
   font-size: 20px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+.passwordLabelText {
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+.dobLabelText {
+  font-size: 20px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
 }
