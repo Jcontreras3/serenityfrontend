@@ -6,6 +6,7 @@ import Pfp from "../../Assets/Pfp.png";
 import { IconButton } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useNavigate } from "react-router-dom";
+import EditIcon from "@mui/icons-material/Edit";
 
 export default function ProfileComponent() {
   let navigate = useNavigate();
@@ -24,19 +25,33 @@ export default function ProfileComponent() {
               <img className="profileIcon" src={Pfp} />
             </div>
 
-            <p className="personNameTxt">Person Name</p>
+            <div className="personNameGroup">
+              <p className="personNameTxt">Person Name<IconButton>
+                <EditIcon className="editIcon" sx={{ fontSize: 60 }} />
+              </IconButton></p>
+              
+            </div>
           </Col>
           <Col className="inputFieldCol" md={12}>
-            <label className="emailLabelText">Email </label>
-            <input className="inputFieldOne" placeholder="Email" />
+            <label className="emailLabelText">Email</label>
+            <input className="inputFieldOne" placeholder="Email Change" />
+            <IconButton>
+              <EditIcon className="editIcon" sx={{ fontSize: 60 }} />
+            </IconButton>
           </Col>
           <Col className="inputFieldCol" md={12}>
             <label className="passwordLabelText">Password</label>
             <input className="inputFieldTwo" placeholder="Password" />
+            <IconButton>
+              <EditIcon className="editIcon" sx={{ fontSize: 60 }} />
+            </IconButton>
           </Col>
           <Col className="inputFieldCol" md={12}>
             <label className="dobLabelText">Date of birth</label>
             <input className="inputFieldThree" placeholder="Date of birth" />
+            <IconButton>
+              <EditIcon className="editIcon" sx={{ fontSize: 60 }} />
+            </IconButton>
           </Col>
         </Row>
       </Container>
