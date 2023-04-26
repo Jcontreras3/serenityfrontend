@@ -1,7 +1,6 @@
 .resCont{
     background-color: #B5AAFF;
     background-size: cover;
-    height: 100vh;
     justify-content: center;
     display: flex;
 }
@@ -9,7 +8,7 @@
 .mapBx{
     background-color: white;
     width: 1350px;
-    height: 600px;
+    height: 700px;
     margin-top: 4rem;
     border-radius: 5px;
     
