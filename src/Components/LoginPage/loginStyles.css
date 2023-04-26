@@ -99,3 +99,46 @@
   margin-top: 10px;
   font-size: 20px;
 }
+
+@media(max-width: 768px){
+  .whiteBx{
+    width: 500px;
+  }
+  .loginInputStyle{
+    width: 350px;
+  }
+  .loginEmailInputgroup{
+    margin-left: 65px;
+  }
+  .passwordEmailInputgroup{
+    margin-left: 65px;
+  }
+  .passwordInputStyle{
+    width: 350px;
+  }
+  .loginBtnGroup{
+    margin-left: 105px;
+  }
+}
+
+@media(max-width: 425px){
+  .whiteBx{
+    width: 300px;
+  }
+  .loginInputStyle{
+    width: 250px;
+  }
+  .loginEmailInputgroup{
+    margin-left: 15px;
+  }
+  .passwordEmailInputgroup{
+    margin-left: 15px;
+  }
+  .passwordInputStyle{
+    width: 250px;
+  }
+  .loginBtnGroup{
+    margin-left: 15px;
+  }
+}
+
