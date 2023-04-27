@@ -1,7 +1,7 @@
 import React from "react";
 import {  useNavigate } from 'react-router-dom'
 import { Navbar, Container, Nav, NavDropdown, Col } from "react-bootstrap";
-import Butterfly from "../../Assets/Butterfly.png";
+import Butterfly from "../../Assets/butterfly2.png";
 import Pfp from "../../Assets/Pfp.png";
 import Bm from "../../Assets/Bookmark.png";
 import "../Navbar/Navbar.css";
@@ -52,10 +52,10 @@ export default function NavbarComponent({ }: Props) {
           </div>
           <div>
             <Navbar.Brand>
-              <img onClick={() => navigate("/Profile")} src={Pfp} className="Pfp" />
+              <img src={Bm} className="Bookmark" width={59} height={50} /> 
             </Navbar.Brand>
             <Navbar.Brand>
-              <img src={Bm} className="Bookmark" width={59} height={50} />
+             <img onClick={() => navigate("/Profile")} src={Pfp} className="Pfp" />
             </Navbar.Brand>
           </div>
         </Container >

@@ -76,18 +76,18 @@ export default function CreateAccountComponent() {
             <input className="emailInputStyle" onChange={({target:{value}}) => setEmail(value)} placeholder="Email" />
           </div>
           <Row className="passBirthInputgroup">
-            <Col className="passGroup" md={4}>
+            <Col className="passGroup" sm={12} md={4}>
               <label className="passLabel">Password:</label>
               <input className="passInputStyle" type="password" onChange={({target: {value}}) => setPassWord(value)} placeholder="Password" />
             </Col>
 
-            <Col className="birthGroup" md={4}>
+            <Col className="birthGroup" sm={12} md={4}>
               <label className="birthLabel">Date of Birth:</label>
               <input className="birthInputStyle" onChange={({target:{value}}) => setDateOfBirth(parseInt(value))} placeholder="Date of Birth" />
             </Col>
           </Row>
           <Row className="passBirthInputgroup">
-            <Col className="passGroup" md={4}>
+            <Col className="passGroup" sm={12} md={4}>
               <label className="passLabel">Verify Password:</label>
               <input
                 className="passInputStyle"
@@ -96,7 +96,7 @@ export default function CreateAccountComponent() {
               />
             </Col>
 
-            <Col className="birthGroup" md={4}>
+            <Col className="birthGroup" sm={12} md={4}>
               <label className="birthLabel">ZipCode:</label>
               <input className="birthInputStyle" onChange={({target:{value}}) => setZipCode(parseInt(value))} placeholder="ZipCode" />
             </Col>

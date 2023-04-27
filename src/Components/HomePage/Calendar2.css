@@ -159,6 +159,11 @@
 
   abbr{
     margin: 5px;
+    
+  }
+
+  abbr[title] {
+    text-decoration: none;
   }
 
   @media screen and (max-width: 1024px) {
