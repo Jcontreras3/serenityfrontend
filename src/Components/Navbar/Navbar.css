@@ -42,15 +42,19 @@ div.nav-item.dropdown{
     justify-content: flex-end;
     margin-left: auto !important;
     margin-right: 0px !important;
+
 }
 
+
+
 .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl{
-    margin-top: 20px;
+    margin-top: none;
     display: flex;
     flex-wrap: nowrap;
     align-items: baseline;
     justify-content: space-between;
     flex-direction: row;
+    margin: none !important;
 }
 
 @media screen and (min-width: 992px) {
@@ -106,4 +110,5 @@ div.nav-item.dropdown{
     .navbar-toggler-icon{
         width: 1.2em;
     }
+
 }
