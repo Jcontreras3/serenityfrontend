@@ -181,3 +181,84 @@
     margin-left: 165px;
     
   }
+
+  @media(max-width: 768px){
+    .whiteBx2{
+      width: 500px;
+      height: 1000px;
+    }
+    .nameInputStyle{
+      width: 350px;
+    }
+    .loginEmailInputgroup{
+      margin-left: 65px;
+    }
+    .passwordEmailInputgroup{
+      margin-left: 65px;
+    }
+    .phoneNumInputStyle{
+      width: 350px;
+    }
+    .emailInputStyle{
+      width: 350px;
+    }
+    .birthGroup{
+      margin-left: 40px;
+      margin-top: 1rem;
+    }
+    .createBtnGroup{
+      margin-top: 3rem;
+    }
+    .passInputStyle{
+      width: 390px;
+    }
+   
+  }
+  @media(max-width: 425px){
+    .whiteBx2{
+      width: 400px;
+      height: 1000px;
+    }
+    .nameInputStyle{
+      width: 290px;
+    }
+    .loginEmailInputgroup{
+      margin-left: 65px;
+    }
+    .passwordEmailInputgroup{
+      margin-left: 65px;
+    }
+    .phoneNumInputStyle{
+      width: 290px;
+    }
+    .emailInputStyle{
+      width: 290px;
+    }
+    .birthGroup{
+      margin-left: 40px;
+      margin-top: 1rem;
+    }
+    .createBtnGroup{
+      margin-top: 3rem;
+    }
+    .passInputStyle{
+      width: 290px;
+    }
+    .birthInputStyle{
+      width: 300px;
+    }
+    .emailInputStyle{
+      width: 290px;
+    }
+    /* .passGroup{
+      margin-left: 40px;
+      margin-top: 1rem;
+    } */
+    .createAccountCont{
+      overflow: hidden;
+    }
+    .createAccountTitle{
+      font-size: 50px;
+    }
+   
+  }
