@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import "./ResourcesStyles.css";
 import NavbarComponent from "../Navbar/NavbarComponent";
 import { prod, dev } from "../../Data/Environment";
-import React from 'react'; // Import React
+import React from 'react';
 
 declare var google: any;
 

@@ -2,12 +2,13 @@
     width: 1075px;
     max-width: 100%;
     background: white;
-    /* border: 1px solid black; */
+    outline: 2px solid black;
+    outline-offset: -1px;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.125em;
     margin-top: 36px;
     margin-bottom: 104px;
-    border-radius: 8px;
+    border-radius: none;
   }
   
   .react-calendar--doubleView {
@@ -104,9 +105,10 @@
     text-align: center;
     line-height: 16px;
     display: flex;
-    border-style: solid !important;
-    border-width: 4px !important;
-    border-color: black !important;
+    outline-style: solid !important;
+    outline-width: 2px !important;
+    outline-color: black !important;
+    outline-offset: -1px;
   }
   
   .react-calendar__tile:disabled {
