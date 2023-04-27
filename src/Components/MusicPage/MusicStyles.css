@@ -1,0 +1,25 @@
+.musicContainer.container{
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color:#B5AAFF;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.musicRow.row{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.spotify{
+    width: 600px;
+}

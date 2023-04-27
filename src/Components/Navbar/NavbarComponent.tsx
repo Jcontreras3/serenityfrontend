@@ -33,7 +33,7 @@ export default function NavbarComponent({ }: Props) {
               <Nav.Link onClick={() => navigate("/Affirmations")}>Affirmations</Nav.Link>
 
               <NavDropdown title="Resources" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Music Playlist</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => navigate("/Music")}>Music Playlist</NavDropdown.Item>
                 <NavDropdown.Item onClick={() => navigate("/Resources")}>
                   Hotlines
                 </NavDropdown.Item>

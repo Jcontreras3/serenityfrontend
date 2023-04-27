@@ -7,6 +7,7 @@ import ResourcesComponent from "./Components/ResourcesPage/ResourcesComponent";
 import AffirmationsComponent from "./Components/AffirmationsPage/AffirmationsComponent";
 import MemesComponent from "./Components/MemesPage/MemesComponent";
 import ProfileComponent from "./Components/ProfilePage/ProfileComponent";
+import MusicComponent from "./Components/MusicPage/MusicComponent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/Affirmations" element={<AffirmationsComponent />} />
           <Route path="/Memes" element={<MemesComponent />} />
           <Route path="/Profile" element={<ProfileComponent />} />
+          <Route path="/Music" element={<MusicComponent />} />
         </Routes>
       </>
     </BrowserRouter>
