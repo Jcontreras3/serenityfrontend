@@ -15,10 +15,10 @@ export default function CreateAccountComponent() {
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [phoneNum, setPhoneNum] = useState(0);
+  const [phoneNumber, setPhoneNumber] = useState(0);
   const [passWord, setPassWord] = useState("");
   const [zipCode, setZipCode] = useState(0);
-  const[dateOfBirth, setDateOfBirth] = useState(0);
+  const[DOB, setDOB] = useState(0);
   const[verifyPass, setVerifyPass] = useState("");
   
 
@@ -38,10 +38,10 @@ export default function CreateAccountComponent() {
       Id:0,
       fullName,
       email,
-      phoneNum,
+      phoneNumber,
       passWord,
       verifyPass,
-      dateOfBirth,
+      DOB,
       zipCode
 
     };
@@ -69,7 +69,7 @@ export default function CreateAccountComponent() {
           </div>
           <div className="phoneNumInputgroup">
             <label className="phoneNumLabel">Phone Number:</label>
-            <input className="phoneNumInputStyle" onChange={({target: {value}}) => setPhoneNum(parseInt(value))} placeholder="xxx-xxx-xxxx" />
+            <input className="phoneNumInputStyle" onChange={({target: {value}}) => setPhoneNumber(parseInt(value))} placeholder="xxx-xxx-xxxx" />
           </div>
           <div className="emailInputgroup">
             <label className="emailLabel">Email:</label>
@@ -83,7 +83,7 @@ export default function CreateAccountComponent() {
 
             <Col className="birthGroup" sm={12} md={4}>
               <label className="birthLabel">Date of Birth:</label>
-              <input className="birthInputStyle" onChange={({target:{value}}) => setDateOfBirth(parseInt(value))} placeholder="Date of Birth" />
+              <input className="birthInputStyle" onChange={({target:{value}}) => setDOB(parseInt(value))} placeholder="Date of Birth" />
             </Col>
           </Row>
           <Row className="passBirthInputgroup">

@@ -53,6 +53,10 @@ export default function ProfileComponent() {
               <EditIcon className="editIcon" sx={{ fontSize: 60 }} />
             </IconButton>
           </Col>
+          <Col className="logSubBtn">
+          <button onClick={() => navigate("/")} className="logOutBtn">Logout</button>
+          <button className="saveChangesBtn">Save Changes</button>
+          </Col>
         </Row>
       </Container>
     </>

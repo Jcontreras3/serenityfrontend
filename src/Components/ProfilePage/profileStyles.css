@@ -96,3 +96,32 @@
   
 }
 
+.logSubBtn{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.logOutBtn{
+  height: 60px;
+  width: 220px;
+  background: #caffaa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  font-size: 25px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+.saveChangesBtn{
+  height: 60px;
+  width: 220px;
+  background: #caffaa;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  font-size: 25px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
