@@ -2,13 +2,13 @@ let userLoginData = {};
 
 
 async function FetchQuotes() {
-    const response = await fetch("https://backendquotesapi.azurewebsites.net/allaffirmations/getquote/motivational")
+    const response = await fetch("https://serenitybackendsite.azurewebsites.net/Quotes/GetQuote/relationship")
       let data = await response.json();
       console.log(data);
   }
 
   async function FetchALLQuotes() {
-    const response = await fetch("https://backendquotesapi.azurewebsites.net/allaffirmations/getallquotes")
+    const response = await fetch("https://serenitybackendsite.azurewebsites.net/Quotes/GetAllQuotes")
       let data = await response.json();
       console.log(data);
   }
