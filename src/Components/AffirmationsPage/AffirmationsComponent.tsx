@@ -18,28 +18,35 @@ function quotes() {
     // setAllQuotes(quotesFetch);
     // setAdviceNum(adviceFetch.slip.id)
   }
-
-  quotesData();
-}
-function displayAllQuotes() {
+  function displayAllQuotes() {
   <Card>
     <Card.Body>This is some text within a card body.</Card.Body>
   </Card>
+  }
+ 
 }
+
 
 
 function AffirmationsComponent() {
   return (
     <div>
       <NavbarComponent />
+      <div className='bg'>
       <Container className="affContainer">
-        <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-          <Dropdown.Item href="#/action-1">All Affirmations</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </DropdownButton>
+        <div className='aff-dropdown'>
+        <select className='custom-select dropdown2' id="dropdown-basic-button" title="Dropdown button">
+          <option value='All Affirmations'><div >All Affirmations</div></option>
+          <option value="Motivational">Motivational</option>
+          <option value="Relatioship">Relationship</option>
+          <option value="Self Worth">Self Worth</option>
+          <option value="Depression">Depression</option>
+          <option value="Anxiety">Anxiety</option>
+          <option value="Spiritual">Spiritual</option>
+        </select>
+        </div>
       </Container>
-      <p>Affirmations</p>
+      </div>
     </div>
   );
 }
