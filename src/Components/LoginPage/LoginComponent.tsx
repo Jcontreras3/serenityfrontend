@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Container, Row, Col,Button } from "react-bootstrap";
 import "./loginStyles.css";
 import { useNavigate } from "react-router-dom";
 import { GetLoggedInUserData, loginFetch } from "../../Service/DataService";
 // import BgImage from "../Assets/BgExport.png"
-
-
+import DataContext from "../../Context/DataContext";
+import UseHooks from "../../Hooks/UseHooks";
 export default function LoginComponent() {
   let navigate = useNavigate();
   const [email, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const handleSubmit = async () => {
     let userLoginData = {
       email,

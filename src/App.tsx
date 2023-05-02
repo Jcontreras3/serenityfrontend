@@ -12,7 +12,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
-
   return (
     // <ResourcesComponent/>
     <BrowserRouter>
@@ -34,3 +33,4 @@ function App() {
 }
 
 export default App;
+
