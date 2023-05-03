@@ -18,15 +18,15 @@ function quotes() {
     // setAllQuotes(quotesFetch);
     // setAdviceNum(adviceFetch.slip.id)
   }
-  function displayAllQuotes() {
+  
+ 
+}
+
+function displayAllQuotes() {
   <Card>
     <Card.Body>This is some text within a card body.</Card.Body>
   </Card>
   }
- 
-}
-
-
 
 function AffirmationsComponent() {
   return (
