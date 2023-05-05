@@ -20,7 +20,7 @@ export default function LoginComponent() {
     if(token.token != null){
       localStorage.setItem("Token", token.token);
       await GetLoggedInUserData(email);
-      navigate("/Home");
+      navigate("/DailyCheckIn");
     }
 
     
