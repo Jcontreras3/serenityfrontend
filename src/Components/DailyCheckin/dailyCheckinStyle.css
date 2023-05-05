@@ -43,11 +43,30 @@
 .emotionBtn1 {
     background: none;
     border: none;
-    font-size: 44px;
+    font-size: 54px;
+    border-radius: 30px;
+}
+
+.emotionBtn1:hover{
+  background-color: rgb(235, 235, 235)
 }
 
 .emotionBtnGroup {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  width: 45rem;
+  margin-left: 11rem;
+
 }
+
+.heartEyes{
+  width: 4rem;
+  height: 4rem;
+}.amazingGroup{
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
 
