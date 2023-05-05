@@ -1,54 +1,92 @@
 import '../AffirmationsPage/Affirmations.css'
-import { FetchQuotes, FetchALLQuotes } from "../../Service/DataService";
 import NavbarComponent from "../Navbar/NavbarComponent";
 import { useState } from "react";
-import { Dropdown, DropdownButton, Container } from "react-bootstrap";
-import { Card } from 'react-bootstrap';
+import { Container, Row } from "react-bootstrap";
+import { ItemList } from './AllQuotesCards';
+import { MotivationalList } from './MotivationalCards';
+import { RelationshipList } from './RelationshipComponent';
+import { SelfWorthList } from './SelfWorthList';
+import { DepressionList } from './DepressionCards';
+import { AnxietyList } from './AnxietyCards';
+import { SpiritualList } from './SpiritualCards';
 
-function quotes() {
-  // const [categorys, setCategories] = useState('');
-  // const [allQuotes, setAllQuotes] = useState('');
 
-  async function quotesData() {
-    let quotesFetch = await FetchALLQuotes();
-    let categoriesFetch = await FetchQuotes();
-    // console.log(quotesFetch);
-    console.log(categoriesFetch);
+function DropdownComponent() {
+  const [selectedOption, setSelectedOption] = useState('All Affirmations');
 
-    // setAllQuotes(quotesFetch);
-    // setAdviceNum(adviceFetch.slip.id)
+  const handleDropdownChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(event.target.value);
   }
-  
- 
+  return (
+    <div >
+      <label htmlFor="dropdown"></label>
+      <select className='custom-select dropdown2' id="dropdown-basic-button" title="Dropdown button" onChange={handleDropdownChange}>
+        <option value='All Affirmations'>All Affirmations</option>
+        <option value="Motivational">Motivational</option>
+        <option value="Relatioship">Relationship</option>
+        <option value="Self Worth">Self Worth</option>
+        <option value="Depression">Depression</option>
+        <option value="Anxiety">Anxiety</option>
+        <option value="Spiritual">Spiritual</option>
+      </select>
+      {selectedOption === 'All Affirmations' && <Component1 />}
+      {selectedOption === 'Motivational' && <Component2 />}
+      {selectedOption === 'Relatioship' && <Component3 />}
+      {selectedOption === 'Self Worth' && <Component4 />}
+      {selectedOption === 'Depression' && <Component5 />}
+      {selectedOption === 'Anxiety' && <Component6 />}
+      {selectedOption === 'Spiritual' && <Component7 />}
+    </div>
+  );
 }
 
-function displayAllQuotes() {
-  <Card>
-    <Card.Body>This is some text within a card body.</Card.Body>
-  </Card>
-  }
+function Component1() {
+  return <div > <ItemList /> </div>;
+}
+
+function Component2() {
+  return <div><MotivationalList /></div>;
+}
+
+function Component3() {
+  return <div><RelationshipList /></div>;
+}
+
+function Component4() {
+  return <div><SelfWorthList /></div>;
+}
+
+function Component5() {
+  return <div><DepressionList /></div>;
+}
+
+function Component6() {
+  return <div><AnxietyList /></div>;
+}
+
+function Component7() {
+  return <div><SpiritualList /></div>;
+}
+
+
+
 
 function AffirmationsComponent() {
+
+
   return (
     <div>
       <NavbarComponent />
       <div className='bg'>
-      <Container className="affContainer">
-        <div className='aff-dropdown'>
-        <select className='custom-select dropdown2' id="dropdown-basic-button" title="Dropdown button">
-          <option value='All Affirmations'><div >All Affirmations</div></option>
-          <option value="Motivational">Motivational</option>
-          <option value="Relatioship">Relationship</option>
-          <option value="Self Worth">Self Worth</option>
-          <option value="Depression">Depression</option>
-          <option value="Anxiety">Anxiety</option>
-          <option value="Spiritual">Spiritual</option>
-        </select>
-        </div>
-      </Container>
+        <Container>
+        <Row className='aff-row'>
+           <DropdownComponent />
+        </Row>
+        </Container>
+       
       </div>
     </div>
   );
 }
 
-export default AffirmationsComponent;
+export { AffirmationsComponent, DropdownComponent };

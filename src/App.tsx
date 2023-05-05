@@ -4,7 +4,7 @@ import LoginComponent from "./Components/LoginPage/LoginComponent";
 import CreateAccountComponent from "./Components/CreateAccountPage/CreateAccountComponent";
 import HomeComponent from "./Components/HomePage/HomeComponent";
 import ResourcesComponent from "./Components/ResourcesPage/ResourcesComponent";
-import AffirmationsComponent from "./Components/AffirmationsPage/AffirmationsComponent";
+import {AffirmationsComponent } from "./Components/AffirmationsPage/AffirmationsComponent";
 import MemesComponent from "./Components/MemesPage/MemesComponent";
 import ProfileComponent from "./Components/ProfilePage/ProfileComponent";
 import MusicComponent from "./Components/MusicPage/MusicComponent";
