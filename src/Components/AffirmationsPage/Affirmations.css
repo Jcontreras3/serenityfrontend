@@ -1,34 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-.affContainer.container{
-   background-color: #B5AAFF;
-    max-width: 100%;
-    height: calc(100vh - 0px);
-    display: flex;
-    align-items: start;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 20px;
+
+
+.all-quotes-cards {
+    max-width: 400px;
+    min-height: 237px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-.aff-dropdown{
-    /* margin-top: 20px; */
+
+.aff-dropdown {
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
 }
 
 
-/* .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
-    color: white(--bs-btn-active-color);
-    background-color: #ffffff;
-    border-color: var(--bs-btn-active-border-color);
-} */
-
-.select-icon{
+.select-icon {
     position: absolute;
 }
 
-.dropdown2{
+.dropdown2 {
     width: 424px;
     display: flex;
     justify-content: space-between;
@@ -42,10 +34,39 @@
 }
 
 
-.dropdown-menu{
-    --bs-dropdown-bg: rgb(202 255 170 / 44%) ; 
-    --bs-dropdown-border-width: 0px;
-    font-family: 'Quicksand', sans-serif;
-    
+.card-spacing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
+.card-body {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.bg {
+    background-color: #B5AAFF;
+}
+
+@media screen and (max-width: 320px) {
+    .dropdown2 {
+        width: 294.4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24px;
+        border: none;
+        padding: 5px;
+        padding-left: 5px;
+        border-radius: 10px;
+        outline: none;
+    }
 }
