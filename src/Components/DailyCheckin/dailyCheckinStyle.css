@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap");
+
+.dailyCont {
+  background-image: url("../../Assets/BgExport.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dailyRow {
+  display: flex;
+  justify-content: center;
+}
+.dailyBx {
+  background-color: white;
+  width: 1100px;
+  height: 800px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  border-radius: 5px;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.dailyTitle {
+  font-size: 64px;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: #b5aaff;
+  text-decoration-thickness: 3px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.howRTxt {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 54px;
+}
+
+.emotionBtn1 {
+    background: none;
+    border: none;
+    font-size: 54px;
+    border-radius: 30px;
+}
+
+.emotionBtn1:hover{
+  background-color: rgb(235, 235, 235)
+}
+
+.emotionBtnGroup {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 45rem;
+  margin-left: 11rem;
+
+}
+
+.heartEyes{
+  width: 4rem;
+  height: 4rem;
+}.amazingGroup{
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+

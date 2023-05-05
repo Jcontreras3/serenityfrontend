@@ -9,6 +9,7 @@ import MemesComponent from "./Components/MemesPage/MemesComponent";
 import ProfileComponent from "./Components/ProfilePage/ProfileComponent";
 import MusicComponent from "./Components/MusicPage/MusicComponent";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DailyCheckin from "./Components/DailyCheckin/DailyCheckin";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/Memes" element={<MemesComponent />} />
           <Route path="/Profile" element={<ProfileComponent />} />
           <Route path="/Music" element={<MusicComponent />} />
+          <Route path="/DailyCheckIn" element={<DailyCheckin />} />
         </Routes>
       </>
     </BrowserRouter>

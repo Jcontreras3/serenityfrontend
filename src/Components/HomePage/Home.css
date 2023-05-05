@@ -1,40 +1,71 @@
-.homeContainer.container{
-    background-color: #B5AAFF;
-    max-width: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+.homeContainer.container {
+  background-color: #b5aaff;
+  max-width: 100%;
 }
 
-.quoteDiv{
-    width: 1075px;
+.quoteDiv {
+  width: 1075px;
 }
 
-.quote{
-    margin-bottom: 40px;
+.quote {
+  margin-bottom: 40px;
 }
 
-.journalEntryDiv{
-    display: flex;
+.journalEntryDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.journalEntryBtn {
+  background: #caffaa;
+  border-radius: 10px;
+  width: 317px;
+  height: 94px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 45px;
+  border: none;
+  color: #000000;
+  margin-bottom: 116px;
+}
+
+.modalColor {
+  background-color: #caffaa;
+  border-top: none;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.modalInput {
+  height: 15rem;
+}
+
+.modalTxt {
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+}
+
+.modalBtn {
+  justify-content: center;
+  display: flex; 
+  background-color: #b5aaff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+}
+.modalFooter{
+    background-color: #caffaa;
     justify-content: center;
-}
-
-.journalEntryBtn{
-    background: #CAFFAA;
-    border-radius: 10px;
-    width: 317px;
-    height: 94px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 45px;
-    border: none;
-    color: #000000;
-    margin-bottom: 116px;
+    display: flex;
+    border-top: none;
 }
 
 @media screen and (max-width: 425px) {
-    .journalEntryBtn{
-        width: 209px;
-        height: 62px;
-        font-size: 24px;
-        line-height: 30px;  
-    }
+  .journalEntryBtn {
+    width: 209px;
+    height: 62px;
+    font-size: 24px;
+    line-height: 30px;
+  }
 }
