@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Alert } from "react-bootstrap";
 import "./createAccountStyles.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { IconButton } from "@mui/material";
@@ -6,53 +6,46 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { createAccount } from "../../Service/DataService";
 
-// Create a function that takes in the first password 
+// Create a function that takes in the first password
 // Create if statement comparing the password and the verify password input
 
-
 export default function CreateAccountComponent() {
-
-
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(0);
   const [passWord, setPassWord] = useState("");
   const [zipCode, setZipCode] = useState(0);
-  const[DOB, setDOB] = useState(0);
-  const[verifyPass, setVerifyPass] = useState("");
-  
+  const [DOB, setDOB] = useState(0);
+  const [verifyPass, setVerifyPass] = useState("");
 
   let createAccountNavigate = useNavigate();
   const handleVerification = () => {
-      
-    if(verifyPass === passWord){
+    if (verifyPass === passWord) {
       handleCreateSubmit();
-      createAccountNavigate("/Home")
-    } else{
-      alert("Enter in the correct password")
+      createAccountNavigate("/");
+
+      alert("Account Successfully Created");
+    } else {
+      alert("Password does not match");
     }
-  }
+  };
 
   const handleCreateSubmit = () => {
     let userCreatedData = {
-      Id:0,
+      Id: 0,
       fullName,
       email,
       phoneNumber,
       passWord,
       verifyPass,
       DOB,
-      zipCode
-
+      zipCode,
     };
     console.log(userCreatedData);
     createAccount(userCreatedData);
-  }
-
+  };
 
   let navigate = useNavigate();
-
-
 
   return (
     <Container fluid className="createAccountCont">
@@ -65,25 +58,48 @@ export default function CreateAccountComponent() {
           <h1 className="createAccountTitle">Create Account</h1>
           <div className="nameInputgroup">
             <label className="nameLabel">Full Name:</label>
-            <input className="nameInputStyle" onChange={({target: {value}}) => setFullName(value)} placeholder="Name" />
+            <input
+              className="nameInputStyle"
+              onChange={({ target: { value } }) => setFullName(value)}
+              placeholder="Name"
+            />
           </div>
           <div className="phoneNumInputgroup">
             <label className="phoneNumLabel">Phone Number:</label>
-            <input className="phoneNumInputStyle" onChange={({target: {value}}) => setPhoneNumber(parseInt(value))} placeholder="xxx-xxx-xxxx" />
+            <input
+              className="phoneNumInputStyle"
+              onChange={({ target: { value } }) =>
+                setPhoneNumber(parseInt(value))
+              }
+              placeholder="xxx-xxx-xxxx"
+            />
           </div>
           <div className="emailInputgroup">
             <label className="emailLabel">Email:</label>
-            <input className="emailInputStyle" onChange={({target:{value}}) => setEmail(value)} placeholder="Email" />
+            <input
+              className="emailInputStyle"
+              onChange={({ target: { value } }) => setEmail(value)}
+              placeholder="Email"
+            />
           </div>
           <Row className="passBirthInputgroup">
             <Col className="passGroup" sm={12} md={4}>
               <label className="passLabel">Password:</label>
-              <input className="passInputStyle" type="password" onChange={({target: {value}}) => setPassWord(value)} placeholder="Password" />
+              <input
+                className="passInputStyle"
+                type="password"
+                onChange={({ target: { value } }) => setPassWord(value)}
+                placeholder="Password"
+              />
             </Col>
 
             <Col className="birthGroup" sm={12} md={4}>
               <label className="birthLabel">Date of Birth:</label>
-              <input className="birthInputStyle" onChange={({target:{value}}) => setDOB(parseInt(value))} placeholder="Date of Birth" />
+              <input
+                className="birthInputStyle"
+                onChange={({ target: { value } }) => setDOB(parseInt(value))}
+                placeholder="Date of Birth"
+              />
             </Col>
           </Row>
           <Row className="passBirthInputgroup">
@@ -92,17 +108,26 @@ export default function CreateAccountComponent() {
               <input
                 className="passInputStyle"
                 type="password"
-                onChange={({target:{value}}) => setVerifyPass(value)} placeholder="Verify Password"
+                onChange={({ target: { value } }) => setVerifyPass(value)}
+                placeholder="Verify Password"
               />
             </Col>
 
             <Col className="birthGroup" sm={12} md={4}>
               <label className="birthLabel">ZipCode:</label>
-              <input className="birthInputStyle" onChange={({target:{value}}) => setZipCode(parseInt(value))} placeholder="ZipCode" />
+              <input
+                className="birthInputStyle"
+                onChange={({ target: { value } }) =>
+                  setZipCode(parseInt(value))
+                }
+                placeholder="ZipCode"
+              />
             </Col>
           </Row>
           <div className="createBtnGroup">
-            <button onClick={handleVerification}  className="createBtn">Create Account</button>
+            <button onClick={handleVerification} className="createBtn">
+              Create Account
+            </button>
           </div>
         </Col>
       </Row>

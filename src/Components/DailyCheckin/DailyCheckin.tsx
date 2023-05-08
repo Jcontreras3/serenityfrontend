@@ -19,15 +19,15 @@ export default function DailyCheckin() {
             <h2 className="howRTxt">How are you feeling today?</h2>
             <div className="amazingGroup">
               <img className="heartEyes" src={EmojiFive}/>
-              <button className="emotionBtn1">Amazing</button>
+              <button onClick={() => navigate("/Home")} className="emotionBtn1">Amazing</button>
             </div>
             <div className="amazingGroup">
               <img className="heartEyes" src={EmojiFour}/>
-              <button className="emotionBtn1">Okay</button>
+              <button onClick={() => navigate("/Home")} className="emotionBtn1">Okay</button>
             </div>
             <div className="amazingGroup">
               <img className="heartEyes" src={EmojiThree}/>
-              <button className="emotionBtn1">Bad</button>
+              <button onClick={() => navigate("/Home")} className="emotionBtn1">Bad</button>
             </div>
             <div className="amazingGroup">
               <img className="heartEyes" src={EmojiTwo}/>
@@ -35,7 +35,7 @@ export default function DailyCheckin() {
             </div>
             <div className="amazingGroup">
               <img className="heartEyes" src={EmojiOne}/>
-              <button className="emotionBtn1">Lack of motivation</button>
+              <button onClick={() => navigate("/Home")} className="emotionBtn1">Lack of motivation</button>
             </div>
             
           </div>

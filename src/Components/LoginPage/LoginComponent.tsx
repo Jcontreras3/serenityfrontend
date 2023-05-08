@@ -22,15 +22,8 @@ export default function LoginComponent() {
     let token = await loginFetch(userLoginData);
     if(token.token != null){
       localStorage.setItem("Token", token.token);
-      const userData: any = await GetLoggedInUserData(email);
-      console.log(userData);
-      if (userData !== null) {
-        setUpdatedPublisherName(userData.publisherName);
-        setUpdatedUserId(userData.userId);
-        console.log(userData.publisherName);
-        console.log(userData.userId);
-      }
-      navigate("/Home");
+      await GetLoggedInUserData(email);
+      navigate("/DailyCheckIn");
     }
   }
 
