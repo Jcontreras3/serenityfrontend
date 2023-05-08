@@ -1,15 +1,18 @@
 import React, { useState, useContext } from "react";
-import { Container, Row, Col,Button } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import "./loginStyles.css";
 import { useNavigate } from "react-router-dom";
 import { GetLoggedInUserData, loginFetch } from "../../Service/DataService";
-// import BgImage from "../Assets/BgExport.png"
 import DataContext from "../../Context/DataContext";
-import UseHooks from "../../Hooks/UseHooks";
+import useHooks from "../../Hooks/UseHooks";
+
 export default function LoginComponent() {
   let navigate = useNavigate();
   const [email, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const { setUpdatedPublisherName, setUpdatedUserId } = useContext(DataContext);
+
   const handleSubmit = async () => {
     let userLoginData = {
       email,
@@ -19,15 +22,17 @@ export default function LoginComponent() {
     let token = await loginFetch(userLoginData);
     if(token.token != null){
       localStorage.setItem("Token", token.token);
-      await GetLoggedInUserData(email);
+      const userData: any = await GetLoggedInUserData(email);
+      console.log(userData);
+      if (userData !== null) {
+        setUpdatedPublisherName(userData.publisherName);
+        setUpdatedUserId(userData.userId);
+        console.log(userData.publisherName);
+        console.log(userData.userId);
+      }
       navigate("/Home");
     }
-
-    
   }
-  
-  // let token = await 
-
 
   return (
     <Container fluid className="loginCont">

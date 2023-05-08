@@ -39,7 +39,7 @@ async function FetchQuotes() {
     let data = await res.json();
     userLoginData = data;
     console.log(userLoginData);
-    
+    return data;
   }
 
   async function createAccount(CreatedUser:any) {
