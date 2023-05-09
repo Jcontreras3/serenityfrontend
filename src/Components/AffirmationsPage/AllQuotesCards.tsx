@@ -11,23 +11,25 @@ import axios from 'axios';
 
     function ItemList(){
         const [items, setItems] = useState<Item[]>([]);
-
+    
         useEffect(() => {
             axios.get<Item[]>('https://serenitybackendsite.azurewebsites.net/Quotes/GetAllQuotes')
-            .then(response => setItems(response.data))
+            .then(response => {
+                const shuffledItems = response.data.sort(() => Math.random() - 0.5);
+                setItems(shuffledItems);
+            })
             .catch(error => console.error(error));
         }, []);
-
+    
         return (
             <div className='card-spacing'>
                 {items.map(item => (
-                  <div key={item.id}>
-                    
-                    <Card className='all-quotes-cards'>
-                    <Card.Body className='card-body'>{item.quote}</Card.Body>
-                    </Card>
-                  </div>  
-                    ))}
+                    <div key={item.id}>
+                        <Card className='all-quotes-cards'>
+                            <Card.Body className='card-body'>{item.quote}</Card.Body>
+                        </Card>
+                    </div>
+                ))}
             </div>
         );
     }  
