@@ -40,9 +40,9 @@ export default function NavbarComponent({ }: Props) {
                 <NavDropdown.Item onClick={() => navigate("/Memes")}>Funny Memes</NavDropdown.Item>
               </NavDropdown>
 
-              <Nav.Link href="#music" className="Music">Music Playlists</Nav.Link>
-              <Nav.Link href="#hotlines" className="Hotlines">Hotlines</Nav.Link>
-              <Nav.Link href="#memes" className="Memes">Funny Memes</Nav.Link>
+              <Nav.Link onClick={() => navigate("/Music")} className="Music">Music Playlists</Nav.Link>
+              <Nav.Link onClick={() => navigate("/Resources")} className="Hotlines">Hotlines</Nav.Link>
+              <Nav.Link onClick={() => navigate("/Memes")} className="Memes">Funny Memes</Nav.Link>
               <Nav.Link href="#favorites" className="Favorites">Favorites</Nav.Link>
               
               <Nav className="me-auto">

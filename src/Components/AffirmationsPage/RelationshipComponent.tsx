@@ -14,7 +14,10 @@ function RelationshipList(){
 
     useEffect(() => {
         axios.get<Item[]>('https://serenitybackendsite.azurewebsites.net/Quotes/GetQuote/relationship')
-        .then(response => setItems(response.data))
+        .then(response => {
+          const shuffledItems = response.data.sort(() => Math.random() - 0.5);
+          setItems(shuffledItems);
+      })
         .catch(error => console.error(error));
     }, []);
 

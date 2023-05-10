@@ -31,3 +31,16 @@
 #map{
     height: 50%;
 }
+
+@media(max-width:768px){
+    .mapBx{
+        height: 70rem;
+    }
+    #map{
+        width: 100%;
+    }
+    .innerText{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
