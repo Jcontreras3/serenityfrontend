@@ -11,7 +11,9 @@ export default function LoginComponent() {
   const [email, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setUpdatedPublisherName, setUpdatedUserId } = useContext(DataContext);
+  const { updatedUserId } = useContext(DataContext);
+  const { setUpdatedPublisherName } = useContext(DataContext);
+  const { setUpdatedUserId } = useContext(DataContext);
 
   const handleSubmit = async () => {
     let userLoginData = {
@@ -22,7 +24,8 @@ export default function LoginComponent() {
     let token = await loginFetch(userLoginData);
     if(token.token != null){
       localStorage.setItem("Token", token.token);
-      await GetLoggedInUserData(email);
+      let getDataBack = await GetLoggedInUserData(email);
+      setUpdatedUserId(getDataBack.userId);
       navigate("/DailyCheckIn");
     }
   }
