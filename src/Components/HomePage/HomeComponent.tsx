@@ -1,18 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import NavbarComponent from "../Navbar/NavbarComponent";
 import { Container, Row, Col, Button, Modal, Form } from "react-bootstrap";
 import { useState } from "react";
 import "../HomePage/Home.css";
 import "../HomePage/Calendar2.css";
 import Calendar from "react-calendar";
+import DataContext from "../../Context/DataContext";
+import useHooks from "../../Hooks/UseHooks";
 
 type Props = {};
 
 export default function HomeComponent({}: Props) {
+  
+  const { updatedUserId } = useContext(DataContext);
+  console.log(updatedUserId);
+
   const [show, setShow] = useState(false);
+  const [date, setDate] = useState<Date>(new Date());
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  // const handleDateChange = (value: Date | Date[] | null) => {
+  //   if (value instanceof Date) {
+  //     setDate(value);
+  //   }
+  // };
 
   return (
     <div>
@@ -20,7 +33,13 @@ export default function HomeComponent({}: Props) {
       <Container className="homeContainer">
         <Row>
           <Col className="calendar">
-            <Calendar />
+            <Calendar onChange={(value, event) => 
+            {
+              setDate(value as Date)
+              console.log(value);
+            }}
+            value={date} 
+            />
           </Col>
         </Row>
         <Row>
