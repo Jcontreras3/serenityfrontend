@@ -32,12 +32,63 @@
     height: 50%;
 }
 
-@media(max-width:768px){
+@media(max-width:1024px){
     .mapBx{
-        height: 70rem;
+        height: 60rem;
     }
     #map{
         width: 100%;
+    }
+    .innerText{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media(max-width:768px){
+    .mapBx{
+        height: 80rem;
+    }
+    #map{
+        width: 100%;
+    }
+    .innerText{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media(max-width:425px){
+    .mapBx{
+        height: 90rem;
+    }
+    #map{
+        width: 100%;
+    }
+    .innerText{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media(max-width:375px){
+    .mapBx{
+        height: 100rem;
+    }
+    #map{
+        width: 100%;
+        height: 30rem;
+    }
+    .innerText{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media(max-width:320px){
+    .mapBx{
+        height: 110rem;
+    }
+    #map{
+        width: 100%;
+        height: 30rem;
     }
     .innerText{
         margin-left: 0;
