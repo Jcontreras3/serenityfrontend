@@ -1,18 +1,6 @@
 let userLoginData = {};
 
 
-async function FetchQuotes() {
-    const response = await fetch("https://serenitybackendsite.azurewebsites.net/Quotes/GetQuote/relationship")
-      let data = await response.json();
-      console.log(data);
-  }
-
-  async function FetchALLQuotes() {
-    const response = await fetch("https://serenitybackendsite.azurewebsites.net/Quotes/GetAllQuotes")
-      let data = await response.json();
-      console.log(data);
-  }
-
   async function loginFetch(loginUser: any){
     const res = await fetch(
       "https://serenitybackendsite.azurewebsites.net/User/Login",
@@ -64,4 +52,4 @@ async function FetchQuotes() {
 
   
   
-export {FetchQuotes, FetchALLQuotes, loginFetch, GetLoggedInUserData, createAccount} 
+export { loginFetch, GetLoggedInUserData, createAccount} 
