@@ -68,9 +68,16 @@ export default function CreateAccountComponent() {
             <label className="phoneNumLabel">Phone Number:</label>
             <input
               className="phoneNumInputStyle"
-              onChange={({ target: { value } }) =>
-                setPhoneNumber(parseInt(value))
-              }
+              onChange={({ target: { value } }) => {
+                const phoneNumber = value.replace(/[^\d]/g, "");
+
+                if (value === '' || /^\d+$/.test(phoneNumber)) {
+                  setPhoneNumber(parseInt(phoneNumber, 10));
+                } else {
+                  setPhoneNumber(0); // Reset the phone number if it contains letters
+                  alert("Please enter a valid phone number without letters.");
+                }
+              }}
               placeholder="(123)456-7890"
             />
           </div>
