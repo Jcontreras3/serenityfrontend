@@ -108,7 +108,11 @@ function ItemList() {
                                 </Row>
                             )}
                         </a>
-                        <Card.Body className='card-body'>{item.quote}</Card.Body>
+                        <Card.Body className='card-body'>
+                                
+
+                            {item.quote}
+                            </Card.Body>
 
                     </Card>
                 </div>
