@@ -37,9 +37,7 @@
 }
 
 .inputFieldCol {
-  /* display: flex;
-
-  flex-direction: column; */
+  width: 1000px;
 }
 
 .profileImgCol {
@@ -92,9 +90,7 @@
   display: flex;
   flex-direction: column;
 }
-.editIcon{
-  
-}
+
 
 .logSubBtn{
   display: flex;
@@ -123,5 +119,89 @@
   font-size: 25px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;
+}
+
+@media (max-width:768px){
+  .profileBx{
+    width: 800px;
+    height: 1000px;
+  }
+  .inputFieldOne{
+    width: 40rem;
+  }
+  .inputFieldTwo{
+    width: 40rem;
+  }
+  .inputFieldThree{
+    width: 40rem;
+  }
+  .inputFieldCol{
+    width: 750px;
+  }
+}
+@media (max-width:502px){
+  .profileBx{
+    width: 500px;
+    height: 1000px;
+  }
+  .inputFieldOne{
+    width: 25rem;
+  }
+  .inputFieldTwo{
+    width: 25rem;
+  }
+  .inputFieldThree{
+    width: 25rem;
+  }
+  .inputFieldCol{
+    width: 750px;
+  }
+}
+@media (max-width:425px){
+  .profileBx{
+    width: 400px;
+    height: 1000px;
+  }
+  .inputFieldOne{
+    width: 18rem;
+  }
+  .inputFieldTwo{
+    width: 18rem;
+  }
+  .inputFieldThree{
+    width: 18rem;
+  }
+  .inputFieldCol{
+    width: 850px;
+  }
+  .logSubBtn{
+    flex-direction: column;
+    margin-left: 80px;
+  }
+}
+@media (max-width:375px){
+  .profileBx{
+    width: 360px;
+    height: 1000px;
+  }
+  .inputFieldOne{
+    width: 16rem;
+  }
+  .inputFieldTwo{
+    width: 16rem;
+  }
+  .inputFieldThree{
+    width: 16rem;
+  }
+  .inputFieldCol{
+    width: 450px;
+  }
+  .logSubBtn{
+    flex-direction: column;
+    margin-left: 60px;
+  }
+  .personNameTxt{
+    font-size: 44px;
+  }
 }
 

@@ -71,7 +71,7 @@ export default function CreateAccountComponent() {
               onChange={({ target: { value } }) =>
                 setPhoneNumber(parseInt(value))
               }
-              placeholder="xxx-xxx-xxxx"
+              placeholder="(123)456-7890"
             />
           </div>
           <div className="emailInputgroup">
