@@ -2,6 +2,7 @@ import '../AffirmationsPage/Affirmations.css'
 import { useState, useEffect } from "react";
 import { Card } from 'react-bootstrap';
 import axios from 'axios';
+import DataContext from "../../Context/DataContext";
 
   
     interface Item {
