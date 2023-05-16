@@ -16,7 +16,7 @@ export default function DailyCheckin() {
             <h1 className="dailyTitle">Daily Check In</h1>
           </div>
           <div className="emotionBtnGroup">
-            <h2 className="howRTxt">How are you feeling today?</h2>
+            <p className="howRTxt">How are you feeling today?</p>
             <div className="amazingGroup">
               <img className="heartEyes" src={EmojiFive}/>
               <button onClick={() => navigate("/Home")} className="emotionBtn1">Amazing</button>

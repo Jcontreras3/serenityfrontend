@@ -70,3 +70,14 @@
         outline: none;
     }
 }
+
+.heart{
+    width: 45px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.heart-row{
+    display: flex;
+    justify-content: flex-end;
+}

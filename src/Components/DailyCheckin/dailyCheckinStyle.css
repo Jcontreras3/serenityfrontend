@@ -38,6 +38,7 @@
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-size: 54px;
+  margin-top: 3rem;
 }
 
 .emotionBtn1 {
@@ -70,3 +71,86 @@
 }
 
 
+@media(max-width:1024px){
+  .emotionBtnGroup{
+    margin-left: 10rem;
+  }
+  .emotionBtnGroup{
+    width: 44rem;
+  }
+}
+@media(max-width:768px){
+  .emotionBtnGroup{
+    margin-left: 2rem;
+  }
+  .emotionBtnGroup{
+    width: 43rem;
+  }
+}
+@media(max-width:595px){
+  .howRTxt{
+    font-size: 35px;
+  }
+  .emotionBtn1{
+    font-size: 34px;
+  }
+  .emotionBtnGroup{
+    width: 32rem;
+  }
+  .dailyTitle{
+    font-size: 44px;
+  }
+}
+@media(max-width:425px){
+  .howRTxt{
+    font-size: 27px;
+  }
+  .emotionBtn1{
+    font-size: 30px;
+  }
+  .emotionBtnGroup{
+    width: 22rem;
+    margin: 0;
+  }
+  .dailyTitle{
+    font-size: 44px;
+  }
+  .heartEyes{
+    width: 2rem;
+    height: 2rem;
+  }
+  .dailyBx{
+    height: 500px;
+  }
+}
+@media(max-width:375px){
+  .howRTxt{
+    font-size: 26px;
+  }
+  .emotionBtn1{
+    font-size: 29px;
+  }
+  .emotionBtnGroup{
+    width: 20rem;
+  }
+  .dailyTitle{
+    font-size: 44px;
+  }
+  .dailyBx{
+    height: 500px;
+  }
+}
+@media(max-width:320px){
+  .howRTxt{
+    font-size: 22px;
+  }
+  .emotionBtn1{
+    font-size: 18px;
+  }
+  .emotionBtnGroup{
+    width: 17rem;
+  }
+  .dailyTitle{
+    font-size: 44px;
+  }
+}
