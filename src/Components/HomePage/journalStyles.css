@@ -1,0 +1,30 @@
+.paperBox{
+    background-color: white;
+    min-height: 150px;
+    width: 947px;
+    border-radius: 10px;
+    
+}
+
+.redLine{
+    border-left: 6px solid red;
+    min-height: 200px;
+    width: 30px;
+    margin-left: 20px;
+}
+.journalTxtGroup{
+    width: 40px;
+}
+.JournalGroup{
+    display: flex;
+    flex-direction: row;
+}
+
+.titleTxt{
+    text-decoration: underline;
+}
+.journalTitleGroup{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+}
