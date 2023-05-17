@@ -37,25 +37,28 @@ import filledheart from '../../Assets/filled-heart.png';
             .catch(error => console.error(error));
         }, []);
 
-        const handleFavoriteClick = (userId: number, quoteId: number) => {
+        const handleFavoriteClick = (userId: number, quoteId: number, quote: string) => {
             fetch(
-                `https://serenitybackendsite.azurewebsites.net/Quotes/FavoriteQuote?userId=${userId}&quoteId=${quoteId}`,
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                }
-            )
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error(response.statusText);
-                    }
-                    // Add quote to favorites list
-                    setFavorites((prevFavorites) => [...prevFavorites, quoteId]);
+              `https://serenitybackendsite.azurewebsites.net/Quotes/FavoriteQuote?userId=${userId}&quoteId=${quoteId}`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  quote: quote
                 })
-                .catch((error) => console.error(error));
-        };
+              }
+            )
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error(response.statusText);
+                }
+                // Add quote to favorites list
+                setFavorites((prevFavorites) => [...prevFavorites, quoteId]);
+              })
+              .catch((error) => console.error(error));
+          };
     
         const handleRemoveClick = (userId: number, quoteId: number) => {
             fetch(
@@ -94,7 +97,7 @@ import filledheart from '../../Assets/filled-heart.png';
                             onClick={() =>
                                 favorites.includes(item.id)
                                     ? handleRemoveClick(updatedUserId, item.id)
-                                    : handleFavoriteClick(updatedUserId, item.id)
+                                    : handleFavoriteClick(updatedUserId, item.id, item.quote)
                             }
                         >
                             {favorites.includes(item.id) ? (

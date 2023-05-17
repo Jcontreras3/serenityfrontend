@@ -1,7 +1,7 @@
 .memeContainer.container{
     background-color: #B5AAFF;
     max-width: 100%;
-    height: calc(100vh - 153px);
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;

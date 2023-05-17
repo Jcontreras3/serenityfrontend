@@ -8,6 +8,7 @@ import Calendar from "react-calendar";
 import DataContext from "../../Context/DataContext";
 import useHooks from "../../Hooks/UseHooks";
 import { GetFeelingDate } from "../../Service/DataService";
+import JournalPageComponent from "./JournalPageComponent";
 
 type Props = {};
 
@@ -126,6 +127,7 @@ export default function HomeComponent({}: Props) {
               <h2 className="quote">
                 odio eu feugiat pretium nibh ipsum consequat nisl vel pretium
                 lectus quam id leo in vitae turpis massa sed elementum
+                <JournalPageComponent/>
               </h2>
               <div className="journalEntryDiv">
                 <Button className="journalEntryBtn" onClick={handleShow}>
@@ -141,7 +143,7 @@ export default function HomeComponent({}: Props) {
                       >
                         <Form.Label className="modalTxt">
                           Write how ever you are feeling right now. These
-                          journal entry's aren’t read by anyone and you are safe
+                          journal entry's aren't read by anyone and you are safe
                           here. Just write what ever is on your mind, or write
                           based off of your mood today. Why are you feeling this
                           way today?
