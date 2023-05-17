@@ -23,7 +23,7 @@ export default function HomeComponent({}: Props) {
 
   const [show, setShow] = useState(false);
   const [date, setDate] = useState<Date>(new Date());
-  
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -31,32 +31,31 @@ export default function HomeComponent({}: Props) {
     const fetchData = async () => {
       try {
         const data = await GetFeelingDate(1);
-        sessionStorage.setItem('FeelingData', JSON.stringify(data));
+        sessionStorage.setItem("FeelingData", JSON.stringify(data));
         console.log(data);
       } catch (error) {
         console.error(error);
       }
     };
-  
+
     fetchData();
-
   }, []);
-  
+
   function getTileClassName(date: Date): string {
-    const feelings = ['Amazing', 'Okay', 'Bad', 'Help', 'Lack'];
-  
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
+    const feelings = ["Amazing", "Okay", "Bad", "Help", "Lack"];
+
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
     const formattedDate = `${month}/${day}/${date.getFullYear()}`;
-  
-     let tileClassName = 'hi';
 
-     const FeelingStorage = sessionStorage.getItem('FeelingData');
-     if (FeelingStorage !== null) {
-       const FeelingVariable = JSON.parse(FeelingStorage);
+    let tileClassName = "hi";
 
-       FeelingVariable.forEach((checkingDate: any) => {
-            // console.log(checkingDate.dateChecked);
+    const FeelingStorage = sessionStorage.getItem("FeelingData");
+    if (FeelingStorage !== null) {
+      const FeelingVariable = JSON.parse(FeelingStorage);
+
+      FeelingVariable.forEach((checkingDate: any) => {
+        // console.log(checkingDate.dateChecked);
         // console.log(formattedDate);
         // console.log(checkingDate.dateChecked === formattedDate);
         if (checkingDate.dateChecked === formattedDate) {
@@ -64,11 +63,10 @@ export default function HomeComponent({}: Props) {
           // console.log(feelingChecked);
           tileClassName = feelingChecked;
           console.log(tileClassName);
-
         }
       });
-     }
-  
+    }
+
     // GetFeelingDate(1).then((data) => {
     //   data.forEach((checkingDate: any) => {
     //     // console.log(checkingDate.dateChecked);
@@ -85,15 +83,15 @@ export default function HomeComponent({}: Props) {
     // }).catch((error) => {
     //   console.error(error);
     // });
-  
+
     console.log(tileClassName);
     return tileClassName;
   }
-  
+
   const tileContent = ({ date, view }: CustomTileContentProps) => {
-    if (view === 'month') {
+    if (view === "month") {
       const className = getTileClassName(date);
-  
+
       return (
         <div className="circle-container">
           <div className={className}></div>
@@ -107,6 +105,26 @@ export default function HomeComponent({}: Props) {
     <div>
       <NavbarComponent />
       <Container className="homeContainer">
+        <Row className="quotesBx">
+          <div className="quotePlaceHolder">
+            <p>
+              "The past can hurt. But the way I see it, you can either run from
+              it, or learn from it." -Walt Disney
+            </p>
+          </div>
+          <div className="quotePlaceHolder">
+            <p>
+              "The past can hurt. But the way I see it, you can either run from
+              it, or learn from it." -Walt Disney
+            </p>
+          </div>
+          <div className="quotePlaceHolder">
+            <p>
+              "The past can hurt. But the way I see it, you can either run from
+              it, or learn from it." -Walt Disney
+            </p>
+          </div>
+        </Row>
         <Row>
           <Col className="calendar">
             <Calendar
@@ -127,7 +145,7 @@ export default function HomeComponent({}: Props) {
               <h2 className="quote">
                 odio eu feugiat pretium nibh ipsum consequat nisl vel pretium
                 lectus quam id leo in vitae turpis massa sed elementum
-                <JournalPageComponent/>
+                <JournalPageComponent />
               </h2>
               <div className="journalEntryDiv">
                 <Button className="journalEntryBtn" onClick={handleShow}>
