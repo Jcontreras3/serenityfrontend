@@ -1,19 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+
 .paperBox{
     background-color: white;
     min-height: 150px;
     width: 947px;
     border-radius: 10px;
     
-}
-
-.redLine{
-    border-left: 6px solid red;
-    min-height: 200px;
-    width: 30px;
-    margin-left: 20px;
+    
 }
 .journalTxtGroup{
-    width: 40px;
+    width: 55rem;
+    margin-left: 30px;
 }
 .JournalGroup{
     display: flex;
@@ -22,9 +20,18 @@
 
 .titleTxt{
     text-decoration: underline;
+    text-underline-offset: 7.3px;
+    font-family: "Quicksand", sans-serif;
 }
 .journalTitleGroup{
     display: flex;
     flex-direction: row;
     height: 40px;
+    margin-left: 30px;
+}
+.journalTxt{
+    text-decoration: underline;
+    text-underline-offset: 7.3px;
+    overflow-wrap: break-word;
+    font-family: "Quicksand", sans-serif;
 }
