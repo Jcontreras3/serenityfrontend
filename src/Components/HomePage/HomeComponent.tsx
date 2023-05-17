@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import NavbarComponent from "../Navbar/NavbarComponent";
 import { Container, Row, Col, Button, Modal, Form } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../HomePage/Home.css";
 import "../HomePage/Calendar2.css";
 import Calendar from "react-calendar";
 import DataContext from "../../Context/DataContext";
 import useHooks from "../../Hooks/UseHooks";
+import { GetFeelingDate } from "../../Service/DataService";
 
 type Props = {};
 
@@ -21,15 +22,80 @@ export default function HomeComponent({}: Props) {
 
   const [show, setShow] = useState(false);
   const [date, setDate] = useState<Date>(new Date());
-
+  
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await GetFeelingDate(1);
+        sessionStorage.setItem('FeelingData', JSON.stringify(data));
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    fetchData();
+
+  }, []);
+  
+  function getTileClassName(date: Date): string {
+    const feelings = ['Amazing', 'Okay', 'Bad', 'Help', 'Lack'];
+  
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const formattedDate = `${month}/${day}/${date.getFullYear()}`;
+  
+     let tileClassName = 'hi';
+
+     const FeelingStorage = sessionStorage.getItem('FeelingData');
+     if (FeelingStorage !== null) {
+       const FeelingVariable = JSON.parse(FeelingStorage);
+
+       FeelingVariable.forEach((checkingDate: any) => {
+            // console.log(checkingDate.dateChecked);
+        // console.log(formattedDate);
+        // console.log(checkingDate.dateChecked === formattedDate);
+        if (checkingDate.dateChecked === formattedDate) {
+          const feelingChecked = checkingDate.feelingChecked as string;
+          // console.log(feelingChecked);
+          tileClassName = feelingChecked;
+          console.log(tileClassName);
+
+        }
+      });
+     }
+  
+    // GetFeelingDate(1).then((data) => {
+    //   data.forEach((checkingDate: any) => {
+    //     // console.log(checkingDate.dateChecked);
+    //     // console.log(formattedDate);
+    //     // console.log(checkingDate.dateChecked === formattedDate);
+    //     if (checkingDate.dateChecked === formattedDate) {
+    //       const feelingChecked = checkingDate.feelingChecked as string;
+    //       // console.log(feelingChecked);
+    //       tileClassName = feelingChecked;
+    //       console.log(tileClassName);
+
+    //     }
+    //   });
+    // }).catch((error) => {
+    //   console.error(error);
+    // });
+  
+    console.log(tileClassName);
+    return tileClassName;
+  }
+  
   const tileContent = ({ date, view }: CustomTileContentProps) => {
     if (view === 'month') {
+      const className = getTileClassName(date);
+  
       return (
         <div className="circle-container">
-          <div className="circleDate"></div>
+          <div className={className}></div>
         </div>
       );
     }

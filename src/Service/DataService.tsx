@@ -50,6 +50,14 @@ let userLoginData = {};
     console.log(data);
   }
 
+  async function GetFeelingDate(userId:any){
+    let res = await fetch(`https://serenitybackendsite.azurewebsites.net/Feeling/GetAllFeelings/${userId}`);
+    let data = await res.json();
+    let feelingData = data;
+    // console.log(feelingData);
+    return data;
+  }
+
   
   
-export { loginFetch, GetLoggedInUserData, createAccount} 
+export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate} 

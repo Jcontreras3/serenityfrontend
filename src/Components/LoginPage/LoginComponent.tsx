@@ -26,6 +26,7 @@ export default function LoginComponent() {
       localStorage.setItem("Token", token.token);
       let getDataBack = await GetLoggedInUserData(email);
       setUpdatedUserId(getDataBack.userId);
+      const UserIdSession = sessionStorage.setItem('UserId', getDataBack.userId);
       navigate("/DailyCheckIn");
     }
   }
