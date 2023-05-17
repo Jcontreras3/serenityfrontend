@@ -7,11 +7,16 @@ import "../HomePage/Calendar2.css";
 import Calendar from "react-calendar";
 import DataContext from "../../Context/DataContext";
 import useHooks from "../../Hooks/UseHooks";
+import JournalPageComponent from "./JournalPageComponent";
 
 type Props = {};
 
+interface CustomTileContentProps {
+  date: Date;
+  view: string; // Updated type for view property
+}
+
 export default function HomeComponent({}: Props) {
-  
   const { updatedUserId } = useContext(DataContext);
   console.log(updatedUserId);
 
@@ -21,11 +26,16 @@ export default function HomeComponent({}: Props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const handleDateChange = (value: Date | Date[] | null) => {
-  //   if (value instanceof Date) {
-  //     setDate(value);
-  //   }
-  // };
+  const tileContent = ({ date, view }: CustomTileContentProps) => {
+    if (view === 'month') {
+      return (
+        <div className="circle-container">
+          <div className="circleDate"></div>
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <div>
@@ -33,12 +43,13 @@ export default function HomeComponent({}: Props) {
       <Container className="homeContainer">
         <Row>
           <Col className="calendar">
-            <Calendar onChange={(value, event) => 
-            {
-              setDate(value as Date)
-              console.log(value);
-            }}
-            value={date} 
+            <Calendar
+              onChange={(value, event) => {
+                setDate(value as Date);
+                console.log(value);
+              }}
+              tileContent={tileContent}
+              value={date}
             />
           </Col>
         </Row>
@@ -50,9 +61,9 @@ export default function HomeComponent({}: Props) {
               <h2 className="quote">
                 odio eu feugiat pretium nibh ipsum consequat nisl vel pretium
                 lectus quam id leo in vitae turpis massa sed elementum
+                <JournalPageComponent/>
               </h2>
               <div className="journalEntryDiv">
-                {/* <Button className="journalEntryBtn">Journal Entry</Button> */}
                 <Button className="journalEntryBtn" onClick={handleShow}>
                   Journal Entry
                 </Button>
@@ -66,17 +77,23 @@ export default function HomeComponent({}: Props) {
                       >
                         <Form.Label className="modalTxt">
                           Write how ever you are feeling right now. These
-                          journal entry's aren’t read by anyone and you are safe
+                          journal entry's aren't read by anyone and you are safe
                           here. Just write what ever is on your mind, or write
                           based off of your mood today. Why are you feeling this
                           way today?
                         </Form.Label>
-                        <Form.Control as="textarea" className="modalInput" rows={3} />
+                        <Form.Control
+                          as="textarea"
+                          className="modalInput"
+                          rows={3}
+                        />
                       </Form.Group>
                     </Form>
                   </Modal.Body>
                   <Modal.Footer className="modalFooter">
-                    <Button onClick={handleClose} className="modalBtn">Submit</Button>
+                    <Button onClick={handleClose} className="modalBtn">
+                      Submit
+                    </Button>
                   </Modal.Footer>
                 </Modal>
               </div>

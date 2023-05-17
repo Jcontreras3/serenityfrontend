@@ -157,6 +157,22 @@
     justify-content: center;
   }
 
+  .circle-container {
+    width: calc(100% - 8.9px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .circleDate {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid red;
+  border-radius: 50%;
+  }
+
   abbr{
     margin: 5px;
     
