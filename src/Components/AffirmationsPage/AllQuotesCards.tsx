@@ -4,20 +4,28 @@ import { Card, Row } from 'react-bootstrap';
 import axios from 'axios';
 import heart from '../../Assets/heart.png';
 import filledheart from '../../Assets/filled-heart.png';
-import DataContext from "../../Context/DataContext";
-
-
 
 interface Item {
     id: number;
     quote: string;
 }
 
+
+
 function ItemList() {
+
     const [items, setItems] = useState<Item[]>([]);
     const [favorites, setFavorites] = useState<number[]>([]);
+    const [userInfo, setUserInfo] = useState<number>(0);
 
-    const { updatedUserId } = useContext(DataContext);
+   
+
+    useEffect(() => {
+        const UserIdStorage = JSON.parse(sessionStorage.getItem('UserId')!);
+        if ( UserIdStorage) {
+            setUserInfo(UserIdStorage)
+        }
+    }, []);
 
     useEffect(() => {
 
@@ -38,9 +46,9 @@ function ItemList() {
     }, []);
 
 
-    const handleFavoriteClick = (userId: number, quoteId: number) => {
+    const handleFavoriteClick = (userInfo: number, quoteId: number) => {
         fetch(
-            `https://serenitybackendsite.azurewebsites.net/Quotes/FavoriteQuote?userId=${userId}&quoteId=${quoteId}`,
+            `https://serenitybackendsite.azurewebsites.net/Quotes/FavoriteQuote?userId=${userInfo}&quoteId=${quoteId}`,
             {
                 method: "POST",
                 headers: {
@@ -58,9 +66,9 @@ function ItemList() {
             .catch((error) => console.error(error));
     };
 
-    const handleRemoveClick = (userId: number, quoteId: number) => {
+    const handleRemoveClick = (userInfo: number, quoteId: number) => {
         fetch(
-            `https://serenitybackendsite.azurewebsites.net/Quotes/RemoveFavoriteQuote?userId=${userId}&quoteId=${quoteId}`,
+            `https://serenitybackendsite.azurewebsites.net/Quotes/RemoveFavoriteQuote?userId=${userInfo}&quoteId=${quoteId}`,
             {
                 method: "POST",
                 headers: {
@@ -93,26 +101,27 @@ function ItemList() {
                     <Card className='all-quotes-cards'>
                         <a
                             onClick={() =>
+
                                 favorites.includes(item.id)
-                                    ? handleRemoveClick(updatedUserId, item.id)
-                                    : handleFavoriteClick(updatedUserId, item.id)
+                                    ? handleRemoveClick(userInfo, item.id)
+                                    : handleFavoriteClick(userInfo, item.id)
                             }
                         >
                             {favorites.includes(item.id) ? (
                                 <Row className='heart-row'>
-                                <img className='heart'  src={filledheart} alt="Favorite" />
+                                    <img className='heart' src={filledheart} alt="Favorite" />
                                 </Row>
                             ) : (
                                 <Row className='heart-row'>
-                                <img className='heart' src={heart} alt="Not favorite" />
+                                    <img className='heart' src={heart} alt="Not favorite" />
                                 </Row>
                             )}
                         </a>
                         <Card.Body className='card-body'>
-                                
+
 
                             {item.quote}
-                            </Card.Body>
+                        </Card.Body>
 
                     </Card>
                 </div>
