@@ -2,7 +2,6 @@ import '../AffirmationsPage/Affirmations.css'
 import { useState, useEffect, useContext } from "react";
 import { Card, Row } from 'react-bootstrap';
 import axios from 'axios';
-import DataContext from "../../Context/DataContext";
 import heart from '../../Assets/heart.png';
 import filledheart from '../../Assets/filled-heart.png';
 
@@ -15,8 +14,16 @@ interface Item {
 function RelationshipList() {
   const [items, setItems] = useState<Item[]>([]);
   const [favorites, setFavorites] = useState<number[]>([]);
+  const [userInfo, setUserInfo] = useState<number>(0);
 
-  const { updatedUserId } = useContext(DataContext);
+
+
+  useEffect(() => {
+    const UserIdStorage = JSON.parse(sessionStorage.getItem('UserId')!);
+    if (UserIdStorage) {
+      setUserInfo(UserIdStorage)
+    }
+  }, []);
 
   useEffect(() => {
 
@@ -26,9 +33,9 @@ function RelationshipList() {
     setFavorites(storedFavorites);
   }, []);
 
-  const handleFavoriteClick = (userId: number, quoteId: number, quote: string) => {
+  const handleFavoriteClick = (userInfo: number, quoteId: number, quote: string) => {
     fetch(
-      `https://serenitybackendsite.azurewebsites.net/Quotes/FavoriteQuote?userId=${userId}&quoteId=${quoteId}`,
+      `https://serenitybackendsite.azurewebsites.net/Quotes/FavoriteQuote?userId=${userInfo}&quoteId=${quoteId}`,
       {
         method: "POST",
         headers: {
@@ -49,9 +56,9 @@ function RelationshipList() {
       .catch((error) => console.error(error));
   };
 
-  const handleRemoveClick = (userId: number, quoteId: number) => {
+  const handleRemoveClick = (userInfo: number, quoteId: number) => {
     fetch(
-      `https://serenitybackendsite.azurewebsites.net/Quotes/RemoveFavoriteQuote?userId=${userId}&quoteId=${quoteId}`,
+      `https://serenitybackendsite.azurewebsites.net/Quotes/RemoveFavoriteQuote?userId=${userInfo}&quoteId=${quoteId}`,
       {
         method: "POST",
         headers: {
@@ -94,8 +101,8 @@ function RelationshipList() {
             <a
               onClick={() =>
                 favorites.includes(item.id)
-                  ? handleRemoveClick(updatedUserId, item.id)
-                  : handleFavoriteClick(updatedUserId, item.id, item.quote)
+                  ? handleRemoveClick(userInfo, item.id)
+                  : handleFavoriteClick(userInfo, item.id, item.quote)
               }
             >
               {favorites.includes(item.id) ? (
