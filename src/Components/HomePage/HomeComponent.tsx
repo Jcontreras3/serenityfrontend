@@ -9,6 +9,9 @@ import DataContext from "../../Context/DataContext";
 import useHooks from "../../Hooks/UseHooks";
 import { GetFeelingDate } from "../../Service/DataService";
 import JournalPageComponent from "./JournalPageComponent";
+import axios from "axios";
+import { ThreeCardDisplay } from "./ThreeQuoteComponent";
+
 
 type Props = {};
 
@@ -25,8 +28,8 @@ export default function HomeComponent({}: Props) {
   const [date, setDate] = useState<Date>(new Date());
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  const handleShow = () => setShow(true); 
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -106,22 +109,9 @@ export default function HomeComponent({}: Props) {
       <NavbarComponent />
       <Container className="homeContainer">
         <Row className="quotesBx">
-          <div className="quotePlaceHolder">
-            <p>
-              "The past can hurt. But the way I see it, you can either run from
-              it, or learn from it." -Walt Disney
-            </p>
-          </div>
-          <div className="quotePlaceHolder">
-            <p>
-            "If people are doubting how far you can go, go so far that you can't hear them anymore." —Michele Ruiz
-            </p>
-          </div>
-          <div className="quotePlaceHolder">
-            <p>
-            "You’ve gotta dance like there's nobody watching, love like you'll never be hurt, sing like there's nobody listening, and live like it's heaven on earth." —William W. Purkey
-            </p>
-          </div>
+            <div>
+             <ThreeCardDisplay/>
+            </div>
         </Row>
         <Row>
           <Col className="calendar">
