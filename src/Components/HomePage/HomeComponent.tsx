@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import NavbarComponent from "../Navbar/NavbarComponent";
-import { Container, Row, Col, Button, Modal, Form } from "react-bootstrap";
+import { Container, Row, Col, Button, Modal, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import "../HomePage/Home.css";
 import "../HomePage/Calendar2.css";
@@ -71,12 +71,30 @@ export default function HomeComponent({}: Props) {
   }
 
   const tileContent = ({ date, view }: CustomTileContentProps) => {
-    if (view === "month") {
+    if (view === 'month') {
       const className = getTileClassName(date);
-
+      let tooltipText;
+  
+      if(className !== "Lack")
+      {
+        tooltipText = className; // Use className as tooltip text
+      }
+      else if(className === "Lack")
+      {
+        tooltipText = "Lack of Motivation";
+      }
+  
+      const tooltip = (
+        <Tooltip id="button-tooltip">
+          {tooltipText}
+        </Tooltip>
+      );
+  
       return (
         <div className="circle-container">
-          <div className={className}></div>
+          <OverlayTrigger placement="top" overlay={tooltip}>
+            <div className={className}></div>
+          </OverlayTrigger>
         </div>
       );
     }
