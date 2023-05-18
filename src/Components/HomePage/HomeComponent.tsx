@@ -114,14 +114,12 @@ export default function HomeComponent({}: Props) {
           </div>
           <div className="quotePlaceHolder">
             <p>
-              "The past can hurt. But the way I see it, you can either run from
-              it, or learn from it." -Walt Disney
+            "If people are doubting how far you can go, go so far that you can't hear them anymore." —Michele Ruiz
             </p>
           </div>
           <div className="quotePlaceHolder">
             <p>
-              "The past can hurt. But the way I see it, you can either run from
-              it, or learn from it." -Walt Disney
+            "You’ve gotta dance like there's nobody watching, love like you'll never be hurt, sing like there's nobody listening, and live like it's heaven on earth." —William W. Purkey
             </p>
           </div>
         </Row>
