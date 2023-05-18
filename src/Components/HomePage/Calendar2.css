@@ -176,16 +176,28 @@
   .Amazing{
     width: 50px;
     height: 50px;
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid green;
+    background-color: #CAFFAA;
     border-radius: 50%;
   }
 
   .Okay{
     width: 50px;
     height: 50px;
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid orange;
+    background-color: #FFF7B0;
+    border-radius: 50%;
+  }
+
+  .Bad{
+    width: 50px;
+    height: 50px;
+    background-color: #FFB6B6;
+    border-radius: 50%;
+  }
+
+  .Lack{
+    width: 50px;
+    height: 50px;
+    background-color: #95D9FF;
     border-radius: 50%;
   }
 

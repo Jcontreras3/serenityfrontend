@@ -56,12 +56,10 @@ export default function HomeComponent({}: Props) {
        const FeelingVariable = JSON.parse(FeelingStorage);
 
        FeelingVariable.forEach((checkingDate: any) => {
-            // console.log(checkingDate.dateChecked);
-        // console.log(formattedDate);
-        // console.log(checkingDate.dateChecked === formattedDate);
+
         if (checkingDate.dateChecked === formattedDate) {
           const feelingChecked = checkingDate.feelingChecked as string;
-          // console.log(feelingChecked);
+
           tileClassName = feelingChecked;
           console.log(tileClassName);
 
@@ -69,22 +67,6 @@ export default function HomeComponent({}: Props) {
       });
      }
   
-    // GetFeelingDate(1).then((data) => {
-    //   data.forEach((checkingDate: any) => {
-    //     // console.log(checkingDate.dateChecked);
-    //     // console.log(formattedDate);
-    //     // console.log(checkingDate.dateChecked === formattedDate);
-    //     if (checkingDate.dateChecked === formattedDate) {
-    //       const feelingChecked = checkingDate.feelingChecked as string;
-    //       // console.log(feelingChecked);
-    //       tileClassName = feelingChecked;
-    //       console.log(tileClassName);
-
-    //     }
-    //   });
-    // }).catch((error) => {
-    //   console.error(error);
-    // });
   
     console.log(tileClassName);
     return tileClassName;
