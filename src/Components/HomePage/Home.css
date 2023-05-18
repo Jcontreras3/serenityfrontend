@@ -62,6 +62,23 @@
     border-top: none;
 }
 
+.quotesBx{
+  background: linear-gradient(0deg, rgba(181,170,255,1) 0%, rgba(170,202,255,1) 21%, rgba(170,245,255,1) 48%, rgba(170,255,223,1) 73%, rgba(202,255,170,1) 100%);
+  min-height: 492px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.quotePlaceHolder{
+  background-color: white;
+  width: 327px;
+  height: 207px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (max-width: 425px) {
   .journalEntryBtn {
     width: 209px;

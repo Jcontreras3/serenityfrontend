@@ -23,7 +23,7 @@ export default function HomeComponent({}: Props) {
 
   const [show, setShow] = useState(false);
   const [date, setDate] = useState<Date>(new Date());
-  
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -31,29 +31,28 @@ export default function HomeComponent({}: Props) {
     const fetchData = async () => {
       try {
         const data = await GetFeelingDate(1);
-        sessionStorage.setItem('FeelingData', JSON.stringify(data));
+        sessionStorage.setItem("FeelingData", JSON.stringify(data));
         console.log(data);
       } catch (error) {
         console.error(error);
       }
     };
-  
+
     fetchData();
-
   }, []);
-  
-  function getTileClassName(date: Date): string {
-    const feelings = ['Amazing', 'Okay', 'Bad', 'Help', 'Lack'];
-  
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    const formattedDate = `${month}/${day}/${date.getFullYear()}`;
-  
-     let tileClassName = 'hi';
 
-     const FeelingStorage = sessionStorage.getItem('FeelingData');
-     if (FeelingStorage !== null) {
-       const FeelingVariable = JSON.parse(FeelingStorage);
+  function getTileClassName(date: Date): string {
+    const feelings = ["Amazing", "Okay", "Bad", "Help", "Lack"];
+
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const formattedDate = `${month}/${day}/${date.getFullYear()}`;
+
+    let tileClassName = "hi";
+
+    const FeelingStorage = sessionStorage.getItem("FeelingData");
+    if (FeelingStorage !== null) {
+      const FeelingVariable = JSON.parse(FeelingStorage);
 
        FeelingVariable.forEach((checkingDate: any) => {
 
@@ -62,7 +61,6 @@ export default function HomeComponent({}: Props) {
 
           tileClassName = feelingChecked;
           console.log(tileClassName);
-
         }
       });
      }
@@ -71,11 +69,11 @@ export default function HomeComponent({}: Props) {
     console.log(tileClassName);
     return tileClassName;
   }
-  
+
   const tileContent = ({ date, view }: CustomTileContentProps) => {
-    if (view === 'month') {
+    if (view === "month") {
       const className = getTileClassName(date);
-  
+
       return (
         <div className="circle-container">
           <div className={className}></div>
@@ -89,6 +87,24 @@ export default function HomeComponent({}: Props) {
     <div>
       <NavbarComponent />
       <Container className="homeContainer">
+        <Row className="quotesBx">
+          <div className="quotePlaceHolder">
+            <p>
+              "The past can hurt. But the way I see it, you can either run from
+              it, or learn from it." -Walt Disney
+            </p>
+          </div>
+          <div className="quotePlaceHolder">
+            <p>
+            "If people are doubting how far you can go, go so far that you can't hear them anymore." —Michele Ruiz
+            </p>
+          </div>
+          <div className="quotePlaceHolder">
+            <p>
+            "You’ve gotta dance like there's nobody watching, love like you'll never be hurt, sing like there's nobody listening, and live like it's heaven on earth." —William W. Purkey
+            </p>
+          </div>
+        </Row>
         <Row>
           <Col className="calendar">
             <Calendar
@@ -109,7 +125,7 @@ export default function HomeComponent({}: Props) {
               <h2 className="quote">
                 odio eu feugiat pretium nibh ipsum consequat nisl vel pretium
                 lectus quam id leo in vitae turpis massa sed elementum
-                <JournalPageComponent/>
+                <JournalPageComponent />
               </h2>
               <div className="journalEntryDiv">
                 <Button className="journalEntryBtn" onClick={handleShow}>
