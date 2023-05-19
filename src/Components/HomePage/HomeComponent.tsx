@@ -16,7 +16,7 @@ import "../HomePage/Calendar2.css";
 import Calendar from "react-calendar";
 import DataContext from "../../Context/DataContext";
 import useHooks from "../../Hooks/UseHooks";
-import { GetFeelingDate } from "../../Service/DataService";
+import { GetFeelingDate, JournalEntryFetch } from "../../Service/DataService";
 import JournalPageComponent from "./JournalPageComponent";
 import axios from "axios";
 import { ThreeCardDisplay } from "./ThreeQuoteComponent";
@@ -42,12 +42,7 @@ export default function HomeComponent({}: Props) {
   const [journalDisplay, setJournalDisplay] = useState("");
 
   const AddJournal = async () => {
-    interface JournalItem {
-      Id: number;
-      UserIdPulled : number;
-      JournalChecked: string;
-      DateChecked: string;
-    } 
+
     let sessionStorageVar;
     if(sessionStorage.getItem("UserId") !== null){
       sessionStorageVar = parseInt(sessionStorage.getItem("UserId")!)
@@ -66,28 +61,9 @@ export default function HomeComponent({}: Props) {
       DateChecked
     }
     console.log(userJournalentry)
-    console.log(await JournalEntryFetch(userJournalentry));
+    console.log(JournalEntryFetch(userJournalentry));
     
   };
-
-  async function JournalEntryFetch(journalInput2:any){
-    const res = await fetch(
-      "https://serenitybackendsite.azurewebsites.net/Journal/JournalEntry",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body:JSON.stringify(journalInput2)
-      }
-    );
-    if(!res.ok){
-      const message = `An Error occured ${res.status}`;
-      throw new Error(message);
-    }
-    let data = await  res.json();
-    console.log(data);
-  }
   
   
 
