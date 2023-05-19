@@ -58,6 +58,24 @@ let userLoginData = {};
     return data;
   }
 
+  async function JournalEntryFetch(journalInput:any){
+    const res = await fetch(`https://serenitymentalhealth.azurewebsites.net/Journal/JournalEntry/${journalInput}`,{
+      method:'POST',
+      headers:{
+        'Content-Type': 'application/json',
+
+      },
+      body:JSON.stringify(journalInput)
+    })
+    if(!res.ok){
+      const message = `An Error occured ${res.status}`;
+      throw new Error(message);
+    }
+    let data = await  res.json();
+    console.log(data);
+
+  }
+
   
   
-export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate} 
+export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate, JournalEntryFetch} 
