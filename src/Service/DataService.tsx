@@ -58,8 +58,11 @@ let userLoginData = {};
     return data;
   }
 
+<<<<<<< HEAD
  
 
+=======
+>>>>>>> eb1847f9e557c63b2312768e28393034fcb6ca55
   
   
 export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate} 

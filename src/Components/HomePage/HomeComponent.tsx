@@ -1,6 +1,15 @@
 import React, { useContext } from "react";
 import NavbarComponent from "../Navbar/NavbarComponent";
-import { Container, Row, Col, Button, Modal, Form, OverlayTrigger, Tooltip } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Modal,
+  Form,
+  OverlayTrigger,
+  Tooltip,
+} from "react-bootstrap";
 import { useState, useEffect } from "react";
 import "../HomePage/Home.css";
 import "../HomePage/Calendar2.css";
@@ -11,7 +20,7 @@ import { GetFeelingDate } from "../../Service/DataService";
 import JournalPageComponent from "./JournalPageComponent";
 import axios from "axios";
 import { ThreeCardDisplay } from "./ThreeQuoteComponent";
-
+// import { JournalEntryFetch } from "../../Service/DataService";
 
 type Props = {};
 
@@ -28,8 +37,25 @@ export default function HomeComponent({}: Props) {
   const [date, setDate] = useState<Date>(new Date());
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true); 
+  const handleShow = () => setShow(true);
+
+  const [journalInput, setJournalInput] = useState("");
+  const [journalDisplay, setJournalDisplay] = useState("");
+
+  const AddJournal = async () => {
+    interface JournalItem {
+      Id: number;
+      UserIdPulled : number;
+      JournalChecked: string;
+      DateChecked: string;
+    }
+    const sessionStorageVar = sessionStorage.getItem("UserId");
+    let test = {"Id": 0, "UserIdPulled": sessionStorageVar, "JournalChecked": journalInput, "DateChecked" : "Hi"}
+    console.log(test);
+  };
   
+  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -57,8 +83,7 @@ export default function HomeComponent({}: Props) {
     if (FeelingStorage !== null) {
       const FeelingVariable = JSON.parse(FeelingStorage);
 
-       FeelingVariable.forEach((checkingDate: any) => {
-
+      FeelingVariable.forEach((checkingDate: any) => {
         if (checkingDate.dateChecked === formattedDate) {
           const feelingChecked = checkingDate.feelingChecked as string;
 
@@ -66,33 +91,25 @@ export default function HomeComponent({}: Props) {
           console.log(tileClassName);
         }
       });
-     }
-  
-  
+    }
+
     console.log(tileClassName);
     return tileClassName;
   }
 
   const tileContent = ({ date, view }: CustomTileContentProps) => {
-    if (view === 'month') {
+    if (view === "month") {
       const className = getTileClassName(date);
       let tooltipText;
-  
-      if(className !== "Lack")
-      {
+
+      if (className !== "Lack") {
         tooltipText = className; // Use className as tooltip text
-      }
-      else if(className === "Lack")
-      {
+      } else if (className === "Lack") {
         tooltipText = "Lack of Motivation";
       }
-  
-      const tooltip = (
-        <Tooltip id="button-tooltip">
-          {tooltipText}
-        </Tooltip>
-      );
-  
+
+      const tooltip = <Tooltip id="button-tooltip">{tooltipText}</Tooltip>;
+
       return (
         <div className="circle-container">
           <OverlayTrigger placement="top" overlay={tooltip}>
@@ -109,9 +126,9 @@ export default function HomeComponent({}: Props) {
       <NavbarComponent />
       <Container className="homeContainer">
         <Row className="quotesBx">
-            <div>
-             <ThreeCardDisplay/>
-            </div>
+          <div>
+            <ThreeCardDisplay />
+          </div>
         </Row>
         <Row>
           <Col className="calendar">
@@ -157,13 +174,14 @@ export default function HomeComponent({}: Props) {
                         <Form.Control
                           as="textarea"
                           className="modalInput"
+                          onChange={(e) => setJournalInput(e.target.value)}
                           rows={3}
                         />
                       </Form.Group>
                     </Form>
                   </Modal.Body>
                   <Modal.Footer className="modalFooter">
-                    <Button onClick={handleClose} className="modalBtn">
+                    <Button onClick={AddJournal} className="modalBtn">
                       Submit
                     </Button>
                   </Modal.Footer>
