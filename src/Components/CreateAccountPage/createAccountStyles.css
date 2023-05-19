@@ -182,6 +182,74 @@
     
   }
 
+  @media(max-width: 900px){
+    .whiteBx2{
+      width: 900px;
+      height: 1000px;
+    }
+    .nameInputStyle{
+      width: 650px;
+    }
+    .loginEmailInputgroup{
+      margin-left: 65px;
+    }
+    .passwordEmailInputgroup{
+      margin-left: 65px;
+    }
+    .phoneNumInputStyle{
+      width: 650px;
+    }
+    .emailInputStyle{
+      width: 650px;
+    }
+    .birthGroup{
+      margin-left: 40px;
+      margin-top: 1rem;
+    }
+    .createBtnGroup{
+      margin-top: 3rem;
+    }
+    .passInputStyle{
+      width: 390px;
+    }
+    
+   
+  }
+  @media(max-width: 800px){
+    .whiteBx2{
+      width: 500px;
+      height: 1000px;
+    }
+    .nameInputStyle{
+      width: 350px;
+    }
+    .loginEmailInputgroup{
+      margin-left: 65px;
+    }
+    .passwordEmailInputgroup{
+      margin-left: 65px;
+    }
+    .phoneNumInputStyle{
+      width: 350px;
+    }
+    .emailInputStyle{
+      width: 350px;
+    }
+    .birthGroup{
+      margin-left: 40px;
+      margin-top: 1rem;
+    }
+    .createBtnGroup{
+      margin-top: 3rem;
+    }
+    .passInputStyle{
+      width: 390px;
+    }
+    .passBirthInputGroup{
+     display: block;
+    }
+   
+  }
   @media(max-width: 768px){
     .whiteBx2{
       width: 500px;

@@ -20,14 +20,13 @@ import { GetFeelingDate } from "../../Service/DataService";
 import JournalPageComponent from "./JournalPageComponent";
 import axios from "axios";
 import { ThreeCardDisplay } from "./ThreeQuoteComponent";
-// import { JournalEntryFetch } from "../../Service/DataService";
-
 type Props = {};
 
 interface CustomTileContentProps {
   date: Date;
   view: string; // Updated type for view property
 }
+
 
 export default function HomeComponent({}: Props) {
   const { updatedUserId } = useContext(DataContext);
@@ -48,11 +47,47 @@ export default function HomeComponent({}: Props) {
       UserIdPulled : number;
       JournalChecked: string;
       DateChecked: string;
+    } 
+    let sessionStorageVar;
+    if(sessionStorage.getItem("UserId") !== null){
+      sessionStorageVar = parseInt(sessionStorage.getItem("UserId")!)
     }
-    const sessionStorageVar = sessionStorage.getItem("UserId");
-    let test = {"Id": 0, "UserIdPulled": sessionStorageVar, "JournalChecked": journalInput, "DateChecked" : "Hi"}
-    console.log(test);
+    
+    let Id = 0;
+    let UserIdPulled = sessionStorageVar;
+    let JournalChecked = journalInput;
+    let DateChecked = "Hello";
+   
+
+    let userJournalentry = {
+      Id,
+      UserIdPulled,
+      JournalChecked,
+      DateChecked
+    }
+    console.log(userJournalentry)
+    console.log(await JournalEntryFetch(userJournalentry));
+    
   };
+
+  async function JournalEntryFetch(journalInput2:any){
+    const res = await fetch(
+      "https://serenitybackendsite.azurewebsites.net/Journal/JournalEntry",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body:JSON.stringify(journalInput2)
+      }
+    );
+    if(!res.ok){
+      const message = `An Error occured ${res.status}`;
+      throw new Error(message);
+    }
+    let data = await  res.json();
+    console.log(data);
+  }
   
   
 
