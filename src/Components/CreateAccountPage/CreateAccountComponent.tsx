@@ -41,7 +41,6 @@ export default function CreateAccountComponent() {
       DOB,
       zipCode,
     };
-    console.log(userCreatedData);
     createAccount(userCreatedData);
   };
 

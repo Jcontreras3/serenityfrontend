@@ -20,7 +20,6 @@ export default function LoginComponent() {
       email,
       password,
     }; 
-    console.log(userLoginData);
     let token = await loginFetch(userLoginData);
     if(token.token != null){
       localStorage.setItem("Token", token.token);
