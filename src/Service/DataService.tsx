@@ -90,6 +90,26 @@ let userLoginData = {};
     return data;
   }
 
+  async function JournalEntryFetch(journalInput2:any){
+    const res = await fetch(
+      "https://serenitybackendsite.azurewebsites.net/Journal/JournalEntry",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body:JSON.stringify(journalInput2)
+      }
+    );
+    if(!res.ok){
+      const message = `An Error occured ${res.status}`;
+      throw new Error(message);
+    }
+    let data = await  res.json();
+    console.log(data);
+    return data;
+  }
+
   
   
-export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate, GetHasUserLoggedIn, CheckInUser} 
+export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate, GetHasUserLoggedIn, CheckInUser, JournalEntryFetch} 
