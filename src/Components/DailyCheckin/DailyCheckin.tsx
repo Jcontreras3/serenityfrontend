@@ -6,8 +6,100 @@ import EmojiThree from "../../Assets/EmojiThree.png"
 import EmojiTwo from "../../Assets/EmojiTwo.png"
 import EmojiOne from "../../Assets/EmojiOne.png"
 import { useNavigate } from "react-router-dom";
+import { CheckInUser } from "../../Service/DataService";
 export default function DailyCheckin() {
   const navigate = useNavigate();
+
+  const handleAmazing = async () => {
+    let id = 0;
+    let userIdPulled = parseInt(sessionStorage.getItem('UserId')!);
+    let feelingChecked = "Amazing";
+    let dateChecked = "blank";
+
+
+    let checkInData = {
+      id,
+      userIdPulled,
+      feelingChecked,
+      dateChecked
+    }; 
+
+    CheckInUser(checkInData);
+    navigate("/Home");
+  }; 
+
+  const handleOkay = async () => {
+    let id = 0;
+    let userIdPulled = parseInt(sessionStorage.getItem('UserId')!);
+    let feelingChecked = "Okay";
+    let dateChecked = "blank";
+
+
+    let checkInData = {
+      id,
+      userIdPulled,
+      feelingChecked,
+      dateChecked
+    }; 
+
+    CheckInUser(checkInData);
+    navigate("/Home");
+  }; 
+
+  const handleBad = async () => {
+    let id = 0;
+    let userIdPulled = parseInt(sessionStorage.getItem('UserId')!);
+    let feelingChecked = "Bad";
+    let dateChecked = "blank";
+
+
+    let checkInData = {
+      id,
+      userIdPulled,
+      feelingChecked,
+      dateChecked
+    }; 
+
+    CheckInUser(checkInData);
+    navigate("/Home");
+  }; 
+
+  const handleHelp = async () => {
+    let id = 0;
+    let userIdPulled = parseInt(sessionStorage.getItem('UserId')!);
+    let feelingChecked = "Help";
+    let dateChecked = "blank";
+
+
+    let checkInData = {
+      id,
+      userIdPulled,
+      feelingChecked,
+      dateChecked
+    }; 
+
+    CheckInUser(checkInData);
+    navigate("/Resources");
+  }; 
+
+  const handleLack = async () => {
+    let id = 0;
+    let userIdPulled = parseInt(sessionStorage.getItem('UserId')!);
+    let feelingChecked = "Lack";
+    let dateChecked = "blank";
+
+
+    let checkInData = {
+      id,
+      userIdPulled,
+      feelingChecked,
+      dateChecked
+    }; 
+
+    CheckInUser(checkInData);
+    navigate("/Home")
+  }; 
+
   return (
     <Container fluid className="dailyCont">
       <Row className="dailyRow">
@@ -19,23 +111,23 @@ export default function DailyCheckin() {
             <p className="howRTxt">How are you feeling today?</p>
             <div className="amazingGroup">
               <img className="heartEyes" src={EmojiFive}/>
-              <button onClick={() => navigate("/Home")} className="emotionBtn1">Amazing</button>
+              <button onClick={handleAmazing} className="emotionBtn1">Amazing</button>
             </div>
             <div className="amazingGroup">
               <img className="heartEyes" src={EmojiFour}/>
-              <button onClick={() => navigate("/Home")} className="emotionBtn1">Okay</button>
+              <button onClick={handleOkay} className="emotionBtn1">Okay</button>
             </div>
             <div className="amazingGroup">
               <img className="heartEyes" src={EmojiThree}/>
-              <button onClick={() => navigate("/Home")} className="emotionBtn1">Bad</button>
+              <button onClick={handleBad} className="emotionBtn1">Bad</button>
             </div>
             <div className="amazingGroup">
               <img className="heartEyes" src={EmojiTwo}/>
-              <button onClick={() => navigate("/Resources")} className="emotionBtn1">I need help</button>
+              <button onClick={handleHelp} className="emotionBtn1">I need help</button>
             </div>
             <div className="amazingGroup">
               <img className="heartEyes" src={EmojiOne}/>
-              <button onClick={() => navigate("/Home")} className="emotionBtn1">Lack of motivation</button>
+              <button onClick={handleLack} className="emotionBtn1">Lack of motivation</button>
             </div>
             
           </div>

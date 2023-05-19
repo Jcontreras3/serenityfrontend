@@ -94,7 +94,8 @@ export default function HomeComponent({}: Props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await GetFeelingDate(1);
+        const myId = parseInt(sessionStorage.getItem('UserId')!);
+        const data = await GetFeelingDate(myId);
         sessionStorage.setItem("FeelingData", JSON.stringify(data));
         console.log(data);
       } catch (error) {
