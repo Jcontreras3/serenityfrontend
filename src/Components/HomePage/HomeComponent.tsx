@@ -20,7 +20,7 @@ import { GetFeelingDate } from "../../Service/DataService";
 import JournalPageComponent from "./JournalPageComponent";
 import axios from "axios";
 import { ThreeCardDisplay } from "./ThreeQuoteComponent";
-import { JournalEntryFetch } from "../../Service/DataService";
+// import { JournalEntryFetch } from "../../Service/DataService";
 
 type Props = {};
 

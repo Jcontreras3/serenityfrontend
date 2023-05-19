@@ -60,4 +60,4 @@ let userLoginData = {};
 
   
   
-export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate, JournalEntryFetch} 
+export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate} 
