@@ -58,6 +58,36 @@ let userLoginData = {};
     return data;
   }
 
+  async function GetHasUserLoggedIn(userId:any){
+    let res = await fetch(`https://serenitybackendsite.azurewebsites.net/Journal/HasUserCheckedIn/${userId}`);
+    let data = await res.json();
+    userLoginData = data;
+    console.log(userLoginData);
+    return data;
+  }
+
+  async function CheckInUser(UserCheckIn:any){
+
+    const res = await fetch(
+      "https://serenitybackendsite.azurewebsites.net/Feeling/CheckIn",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body:JSON.stringify(UserCheckIn)
+      }
+    );
+  
+    if(!res.ok){
+      const message = `An Error occured ${res.status}`;
+      throw new Error(message);
+    }
+    let data = await  res.json();
+    console.log(data);
+    return data;
+  }
+
   
   
-export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate} 
+export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate, GetHasUserLoggedIn, CheckInUser} 

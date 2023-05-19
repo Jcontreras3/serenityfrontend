@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "./loginStyles.css";
 import { useNavigate } from "react-router-dom";
-import { GetLoggedInUserData, loginFetch } from "../../Service/DataService";
+import { GetLoggedInUserData, loginFetch, GetHasUserLoggedIn } from "../../Service/DataService";
 import DataContext from "../../Context/DataContext";
 import useHooks from "../../Hooks/UseHooks";
 
@@ -27,7 +27,15 @@ export default function LoginComponent() {
       let getDataBack = await GetLoggedInUserData(email);
       setUpdatedUserId(getDataBack.userId);
       sessionStorage.setItem('UserId', getDataBack.userId);
-      navigate("/DailyCheckIn");
+      const userId = sessionStorage.getItem('UserId');
+      if(await GetHasUserLoggedIn(userId) != 0)
+      {
+        navigate("/Home")
+      }
+      else{
+        navigate("/DailyCheckIn");
+      }
+
     }
   }
 
