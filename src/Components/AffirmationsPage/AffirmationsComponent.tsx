@@ -9,6 +9,7 @@ import { SelfWorthList } from './SelfWorthList';
 import { DepressionList } from './DepressionCards';
 import { AnxietyList } from './AnxietyCards';
 import { SpiritualList } from './SpiritualCards';
+import { FavoriteList } from './FavoritesComponent';
 
 
 function DropdownComponent() {
@@ -28,6 +29,7 @@ function DropdownComponent() {
         <option value="Depression">Depression</option>
         <option value="Anxiety">Anxiety</option>
         <option value="Spiritual">Spiritual</option>
+        <option value="Favorites">Favorites</option>
       </select>
       {selectedOption === 'All Affirmations' && <Component1 />}
       {selectedOption === 'Motivational' && <Component2 />}
@@ -36,6 +38,7 @@ function DropdownComponent() {
       {selectedOption === 'Depression' && <Component5 />}
       {selectedOption === 'Anxiety' && <Component6 />}
       {selectedOption === 'Spiritual' && <Component7 />}
+      {selectedOption === 'Favorites' && <Component8/>}
     </div>
   );
 }
@@ -66,6 +69,10 @@ function Component6() {
 
 function Component7() {
   return <div><SpiritualList /></div>;
+}
+
+function Component8(){
+  return <div><FavoriteList /></div>
 }
 
 

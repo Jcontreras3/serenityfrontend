@@ -26,7 +26,7 @@ div.nav-item.dropdown{
 }
 
 .dropdown-menu{
-    --bs-dropdown-bg: rgb(202 255 170 / 44%) ; 
+    --bs-dropdown-bg: rgb(203, 255, 170) ; 
     --bs-dropdown-border-width: 0px;
     font-family: 'Quicksand', sans-serif;
     
