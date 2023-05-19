@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
-
+.select .option{
+    color: white;
+}
 
 .all-quotes-cards {
     max-width: 400px;
@@ -54,6 +56,7 @@
 
 .bg {
     background-color: #B5AAFF;
+    min-height: 100vh;
 }
 
 @media screen and (max-width: 320px) {
