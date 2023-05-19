@@ -4,7 +4,7 @@ import { Card, Row } from 'react-bootstrap';
 import axios from 'axios';
 import heart from '../../Assets/heart.png';
 import filledheart from '../../Assets/filled-heart.png';
-import { GetFavorites } from '../../Service/DataService';
+
 
 interface Item {
     id: number;

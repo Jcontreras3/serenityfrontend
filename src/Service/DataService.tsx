@@ -58,15 +58,8 @@ let userLoginData = {};
     return data;
   }
 
-  async function GetFavorites(userId:any){
-    let res = await fetch(`https://serenitybackendsite.azurewebsites.net/Quotes/PullAllFavorites?userId=${userId}`);
-    let data = await res.json();
-    let favorite = data;
-    console.log(favorite);
-    return data;
-  }
-
+ 
 
   
   
-export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate, GetFavorites} 
+export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate} 
