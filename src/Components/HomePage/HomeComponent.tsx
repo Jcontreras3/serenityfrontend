@@ -30,7 +30,6 @@ interface CustomTileContentProps {
 
 export default function HomeComponent({}: Props) {
   const { updatedUserId } = useContext(DataContext);
-  console.log(updatedUserId);
 
   const [show, setShow] = useState(false);
   const [date, setDate] = useState<Date>(new Date());
@@ -60,8 +59,6 @@ export default function HomeComponent({}: Props) {
       JournalChecked,
       DateChecked
     }
-    console.log(userJournalentry)
-    console.log(JournalEntryFetch(userJournalentry));
     
   };
   
@@ -73,7 +70,6 @@ export default function HomeComponent({}: Props) {
         const myId = parseInt(sessionStorage.getItem('UserId')!);
         const data = await GetFeelingDate(myId);
         sessionStorage.setItem("FeelingData", JSON.stringify(data));
-        console.log(data);
       } catch (error) {
         console.error(error);
       }
@@ -100,12 +96,10 @@ export default function HomeComponent({}: Props) {
           const feelingChecked = checkingDate.feelingChecked as string;
 
           tileClassName = feelingChecked;
-          console.log(tileClassName);
         }
       });
     }
 
-    console.log(tileClassName);
     return tileClassName;
   }
 
