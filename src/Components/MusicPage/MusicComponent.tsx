@@ -19,7 +19,7 @@ export default function MusicComponent({}: Props) {
             <Row className='musicRow'>
             
                 <Spotify className='spotify' link="https://open.spotify.com/playlist/1hMB2xUs2KA6Xw5fS7eDo8?si=65152692918c454e" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" />
-                 <Spotify className='spotify' link="https://open.spotify.com/playlist/0OhNLmmaLTeczyBNpznQyN?si=908a5326495c4c68&nd=1" />
+                 <Spotify className='spotify' link="https://open.spotify.com/playlist/3nRTHDWeEQjCmYImQ9JwcB?si=d2edb8c41c3f45b9" />
             </Row>
         </Container>
     </div>
