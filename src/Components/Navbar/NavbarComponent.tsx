@@ -43,7 +43,7 @@ export default function NavbarComponent({ }: Props) {
               <Nav.Link onClick={() => navigate("/Music")} className="Music">Music Playlists</Nav.Link>
               <Nav.Link onClick={() => navigate("/Resources")} className="Hotlines">Hotlines</Nav.Link>
               <Nav.Link onClick={() => navigate("/Memes")} className="Memes">Funny Memes</Nav.Link>
-              <Nav.Link href="#favorites" className="Favorites">Favorites</Nav.Link>
+              
               
               <Nav className="me-auto">
             </Nav>
@@ -51,9 +51,7 @@ export default function NavbarComponent({ }: Props) {
           </Col>
           </div>
           <div>
-            <Navbar.Brand>
-              <img src={Bm} className="Bookmark" width={59} height={50} /> 
-            </Navbar.Brand>
+            
             <Navbar.Brand>
              <img onClick={() => navigate("/Profile")} src={Pfp} className="Pfp" />
             </Navbar.Brand>
