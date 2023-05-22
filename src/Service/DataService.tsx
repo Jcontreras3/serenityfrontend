@@ -68,6 +68,14 @@ let userLoginData = {};
     return data;
   }
 
+  async function GetHasUserLoggedInFeeling(userId:any){
+    let res = await fetch(`https://serenitybackendsite.azurewebsites.net/Feeling/HasUserCheckedIn/${userId}`);
+    let data = await res.json();
+    userLoginData = data;
+    console.log(userLoginData);
+    return data;
+  }
+
   async function CheckInUser(UserCheckIn:any){
 
     const res = await fetch(
@@ -112,4 +120,4 @@ let userLoginData = {};
 
   
   
-export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate, GetHasUserLoggedIn, CheckInUser, JournalEntryFetch} 
+export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate, GetHasUserLoggedIn, CheckInUser, JournalEntryFetch, GetHasUserLoggedInFeeling} 

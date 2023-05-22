@@ -33,6 +33,7 @@ export default function HomeComponent({}: Props) {
 
   const [show, setShow] = useState(false);
   const [date, setDate] = useState<Date>(new Date());
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -70,6 +71,7 @@ export default function HomeComponent({}: Props) {
         const myId = parseInt(sessionStorage.getItem('UserId')!);
         const data = await GetFeelingDate(myId);
         sessionStorage.setItem("FeelingData", JSON.stringify(data));
+        setIsLoading(false); // Set isLoading to false after data is fetched
       } catch (error) {
         console.error(error);
       }
@@ -104,7 +106,7 @@ export default function HomeComponent({}: Props) {
   }
 
   const tileContent = ({ date, view }: CustomTileContentProps) => {
-    if (view === "month") {
+    if (view === "month" && !isLoading) {
       const className = getTileClassName(date);
       let tooltipText;
 
