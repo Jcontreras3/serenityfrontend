@@ -33,6 +33,10 @@ function SelfWorthList() {
   }, []);
 
   useEffect(() => {
+    localStorage.setItem("favoriteQuotes", JSON.stringify(favorites));
+  }, [favorites]);
+
+  useEffect(() => {
     axios.get<Item[]>('https://serenitybackendsite.azurewebsites.net/Quotes/GetQuote/selfworth')
       .then(response => {
         const shuffledItems = response.data.sort(() => Math.random() - 0.5);

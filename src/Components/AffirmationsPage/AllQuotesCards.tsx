@@ -35,6 +35,9 @@ function ItemList() {
         setFavorites(storedFavorites);
     }, []);
 
+    useEffect(() => {
+        localStorage.setItem("favoriteQuotes", JSON.stringify(favorites));
+    }, [favorites]);
 
     useEffect(() => {
         axios.get<Item[]>('https://serenitybackendsite.azurewebsites.net/Quotes/GetAllQuotes')

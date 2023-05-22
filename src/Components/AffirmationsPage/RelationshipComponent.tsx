@@ -33,6 +33,10 @@ function RelationshipList() {
     setFavorites(storedFavorites);
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("favoriteQuotes", JSON.stringify(favorites));
+  }, [favorites]);
+
   const handleFavoriteClick = (userInfo: number, quoteId: number, quote: string) => {
     fetch(
       `https://serenitybackendsite.azurewebsites.net/Quotes/FavoriteQuote?userId=${userInfo}&quoteId=${quoteId}`,

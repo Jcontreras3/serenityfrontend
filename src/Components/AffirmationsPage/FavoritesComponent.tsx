@@ -59,7 +59,9 @@ function FavoriteList() {
                     throw new Error(response.statusText);
                 }
                 // Add quote to favorites list
-                setFavorites((prevFavorites) => [...prevFavorites, quoteId]);
+                setFavorites(favorites.filter((item, i) => item != quoteId));
+                localStorage.setItem("favoriteQuotes", JSON.stringify(favorites));
+                console.log(favorites)
             })
             .catch((error) => console.error(error));
     };
@@ -79,9 +81,7 @@ function FavoriteList() {
                     throw new Error(response.statusText);
                 }
                 // Remove quote from favorites list
-                setFavorites((prevFavorites) =>
-                    prevFavorites.filter((id) => id !== quoteId)
-                );
+                setFavorites(favorites.filter(id => id !== quoteId));
             })
             .catch((error) => console.error(error));
     };
@@ -92,6 +92,9 @@ function FavoriteList() {
         setFavorites(storedFavorites);
     }, []);
 
+    useEffect(() => {
+        localStorage.setItem("favoriteQuotes", JSON.stringify(favorites));
+    }, [favorites]);
 
     return (
         <div className='card-spacing'>
