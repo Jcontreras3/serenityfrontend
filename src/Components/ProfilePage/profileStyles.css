@@ -20,13 +20,17 @@
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .proFilePic {
-  justify-content: center;
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 350px;
+  
 }
 
 .profileIcon {
   width: 210px;
   height: 205.48px;
+  border-radius: 100px;
 }
 
 .personNameTxt {

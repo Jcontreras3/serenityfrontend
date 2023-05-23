@@ -1,4 +1,4 @@
-import React from "react";
+import  { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./profileStyles.css";
 import NavbarComponent from "../Navbar/NavbarComponent";
@@ -9,7 +9,13 @@ import { useNavigate } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
 
 export default function ProfileComponent() {
+  const [profileImage, setProfileImage] = useState<string>('')
   let navigate = useNavigate();
+  const AddImage = async (e:any) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setProfileImage(URL.createObjectURL(e.target.files[0]));
+    }
+  }
   return (
     <>
       {/* <NavbarComponent/> */}
@@ -22,7 +28,9 @@ export default function ProfileComponent() {
               </IconButton>
             </div>
             <div className="proFilePic">
-              <img className="profileIcon" src={Pfp} />
+              <a className={Pfp}>  <input  accept="image/png, image/jpg" type="file" onChange={AddImage}/></a>
+            
+              <img className="profileIcon" src={profileImage} />
             </div>
 
             <div className="personNameGroup">
