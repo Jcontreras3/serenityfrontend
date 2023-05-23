@@ -71,12 +71,13 @@ export default function CreateAccountComponent() {
                 const phoneNumber = value.replace(/[^\d]/g, "");
 
                 if (value === '' || /^\d+$/.test(phoneNumber)) {
-                  setPhoneNumber(parseInt(phoneNumber, 10));
+                  setPhoneNumber(parseInt(phoneNumber));
                 } else {
                   setPhoneNumber(0); // Reset the phone number if it contains letters
                   alert("Please enter a valid phone number without letters.");
                 }
               }}
+              maxLength={10}
               placeholder="(123)456-7890"
             />
           </div>
