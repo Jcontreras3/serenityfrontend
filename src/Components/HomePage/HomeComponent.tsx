@@ -28,7 +28,7 @@ interface CustomTileContentProps {
 }
 
 
-export default function HomeComponent({}: Props) {
+export default function HomeComponent({ }: Props) {
   const { updatedUserId } = useContext(DataContext);
 
   const [show, setShow] = useState(false);
@@ -44,15 +44,15 @@ export default function HomeComponent({}: Props) {
   const AddJournal = async () => {
 
     let sessionStorageVar;
-    if(sessionStorage.getItem("UserId") !== null){
+    if (sessionStorage.getItem("UserId") !== null) {
       sessionStorageVar = parseInt(sessionStorage.getItem("UserId")!)
     }
-    
+
     let Id = 0;
     let UserIdPulled = sessionStorageVar;
     let JournalChecked = journalInput;
     let DateChecked = "Hello";
-   
+
 
     let userJournalentry = {
       Id,
@@ -60,10 +60,10 @@ export default function HomeComponent({}: Props) {
       JournalChecked,
       DateChecked
     }
-    
+
   };
-  
-  
+
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -153,11 +153,10 @@ export default function HomeComponent({}: Props) {
         <Row>
           <Col className="calendar">
             <div className="quoteDiv">
-              <h2>Quote of the day</h2>
+
               <br />
               <h2 className="quote">
-                odio eu feugiat pretium nibh ipsum consequat nisl vel pretium
-                lectus quam id leo in vitae turpis massa sed elementum
+
                 <JournalPageComponent />
               </h2>
               <div className="journalEntryDiv">
