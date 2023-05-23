@@ -103,7 +103,17 @@ export default function CreateAccountComponent() {
               <label className="birthLabel">Date of Birth:</label>
               <input
                 className="birthInputStyle"
-                onChange={({ target: { value } }) => setDOB(parseInt(value))}
+                onChange={({ target: { value } }) => {
+                  const dobVal = value.replace(/[^\d]/g, "");
+  
+                  if (value === '' || /^\d+$/.test(dobVal)) {
+                    setDOB(parseInt(dobVal, 10));
+                  } else {
+                    setPhoneNumber(0); // Reset the phone number if it contains letters
+                    alert("Please only enter numbers no letters");
+                  }
+                }}
+              
                 placeholder="Date of Birth"
               />
             </Col>
@@ -124,14 +134,23 @@ export default function CreateAccountComponent() {
               <input
                 className="birthInputStyle"
                 onChange={({ target: { value } }) =>
-                  setZipCode(parseInt(value))
-                }
+                {
+                  const zip = value.replace(/[^\d]/g, "");
+  
+                  if (value === '' || /^\d+$/.test(zip)) {
+                    setZipCode(parseInt(zip, 10));
+                  } else {
+                    setZipCode(0); // Reset the phone number if it contains letters
+                    alert("Please enter a valid phone number without letters.");
+                  }
+                }}
+                
                 placeholder="ZipCode"
               />
             </Col>
           </Row>
           <div className="createBtnGroup">
-            <button onClick={handleVerification} className="createBtn">
+            <button disabled={!fullName} onClick={handleVerification} className="createBtn">
               Create Account
             </button>
           </div>
