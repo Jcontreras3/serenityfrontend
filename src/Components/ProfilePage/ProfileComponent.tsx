@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "./profileStyles.css";
 import NavbarComponent from "../Navbar/NavbarComponent";
@@ -9,13 +9,13 @@ import { useNavigate } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
 
 export default function ProfileComponent() {
-  const [profileImage, setProfileImage] = useState<string>('')
+  const [profileImage, setProfileImage] = useState<string>("");
   let navigate = useNavigate();
-  const AddImage = async (e:any) => {
+  const AddImage = async (e: any) => {
     if (e.target.files && e.target.files.length > 0) {
       setProfileImage(URL.createObjectURL(e.target.files[0]));
     }
-  }
+  };
   return (
     <>
       {/* <NavbarComponent/> */}
@@ -28,16 +28,21 @@ export default function ProfileComponent() {
               </IconButton>
             </div>
             <div className="proFilePic">
-              <a className={Pfp}>  <input  accept="image/png, image/jpg" type="file" onChange={AddImage}/></a>
-            
               <img className="profileIcon" src={profileImage} />
+              <input
+                accept="image/png, image/jpg"
+                type="file"
+                onChange={AddImage}
+              />
             </div>
 
             <div className="personNameGroup">
-              <p className="personNameTxt">Person Name<IconButton>
-                <EditIcon className="editIcon" sx={{ fontSize: 60 }} />
-              </IconButton></p>
-              
+              <p className="personNameTxt">
+                Person Name
+                <IconButton>
+                  <EditIcon className="editIcon" sx={{ fontSize: 60 }} />
+                </IconButton>
+              </p>
             </div>
           </Col>
           <Col className="inputFieldCol" md={12}>
@@ -62,8 +67,10 @@ export default function ProfileComponent() {
             </IconButton>
           </Col>
           <Col className="logSubBtn">
-          <button onClick={() => navigate("/")} className="logOutBtn">Logout</button>
-          <button className="saveChangesBtn">Save Changes</button>
+            <button onClick={() => navigate("/")} className="logOutBtn">
+              Logout
+            </button>
+            <button className="saveChangesBtn">Save Changes</button>
           </Col>
         </Row>
       </Container>
