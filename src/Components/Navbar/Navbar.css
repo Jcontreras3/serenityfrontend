@@ -11,6 +11,11 @@ a.nav-link{
     padding: 10px;
 }
 
+.Pfp:hover{
+    background-color: grey;
+    border-radius: 10px;
+}
+
 span.navbar-brand{
     margin: 0;
 }

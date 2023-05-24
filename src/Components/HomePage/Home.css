@@ -12,6 +12,12 @@
 .quote {
   margin-bottom: 40px;
 }
+.quotesTitle{
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+}
 
 .journalEntryDiv {
   display: flex;
