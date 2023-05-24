@@ -74,6 +74,21 @@
     }
 }
 
+@media screen and (max-width: 375px) {
+    .dropdown2 {
+        width: 351px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24px;
+        border: none;
+        padding: 5px;
+        padding-left: 5px;
+        border-radius: 10px;
+        outline: none;
+    }
+}
+
 .heart{
     width: 45px;
     margin-top: 20px;

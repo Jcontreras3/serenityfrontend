@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-/* @import url('../../Assets/hamburger.png'); */
+@import url('../../Assets/hamburger.png');
 
 a.nav-link{
     display: flex;
