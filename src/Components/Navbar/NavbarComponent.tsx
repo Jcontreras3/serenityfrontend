@@ -3,7 +3,6 @@ import {  useNavigate } from 'react-router-dom'
 import { Navbar, Container, Nav, NavDropdown, Col } from "react-bootstrap";
 import Butterfly from "../../Assets/butterfly2.png";
 import Pfp from "../../Assets/Pfp.png";
-import Bm from "../../Assets/Bookmark.png";
 import "../Navbar/Navbar.css";
 
 
