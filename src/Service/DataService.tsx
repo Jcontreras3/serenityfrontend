@@ -118,6 +118,28 @@ let userLoginData = {};
     return data;
   }
 
+  async function CreatedPicture(PicturePassed:any){
+
+    const res = await fetch(
+      "https://serenitybackendsite.azurewebsites.net/Picture/CreatedPicture",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body:JSON.stringify(PicturePassed)
+      }
+    );
+  
+    if(!res.ok){
+      const message = `An Error occured ${res.status}`;
+      throw new Error(message);
+    }
+    let data = await  res.json();
+    console.log(data);
+    return data;
+  }
+
   
   
-export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate, GetHasUserLoggedIn, CheckInUser, JournalEntryFetch, GetHasUserLoggedInFeeling} 
+export { loginFetch, GetLoggedInUserData, createAccount, GetFeelingDate, GetHasUserLoggedIn, CheckInUser, JournalEntryFetch, GetHasUserLoggedInFeeling, CreatedPicture} 

@@ -4,7 +4,8 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { createAccount } from "../../Service/DataService";
+import { CreatedPicture, GetLoggedInUserData, createAccount } from "../../Service/DataService";
+// import derpCat from '../../Assets/derpCat.jpg';
 
 // Create a function that takes in the first password
 // Create if statement comparing the password and the verify password input
@@ -17,11 +18,29 @@ export default function CreateAccountComponent() {
   const [zipCode, setZipCode] = useState(0);
   const [DOB, setDOB] = useState(0);
   const [verifyPass, setVerifyPass] = useState("");
+  // let getDataBack:any;
 
   let createAccountNavigate = useNavigate();
   const handleVerification = () => {
     if (verifyPass === passWord) {
+
+      // let UserIdPulled = sessionStorage.getItem('UserId');
+      // let FileName = "DerpCat";
+      // let FileContentType = ".jpg";
+      // let ImageData = derpCat;
+
+      // let pictureData = {
+      //   UserIdPulled,
+      //   FileName,
+      //   FileContentType,
+      //   ImageData
+      // }
+
       handleCreateSubmit();
+
+      // handleGetData();
+      // sessionStorage.setItem('UserId', getDataBack.userId);
+      // CreatedPicture(pictureData);
       createAccountNavigate("/");
 
       alert("Account Successfully Created");
@@ -29,6 +48,11 @@ export default function CreateAccountComponent() {
       alert("Password does not match");
     }
   };
+
+  // const handleGetData = () => {
+  //   getDataBack = GetLoggedInUserData(email);
+
+  // }
 
   const handleCreateSubmit = () => {
     let userCreatedData = {
