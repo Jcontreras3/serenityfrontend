@@ -13,7 +13,7 @@
 
 .whiteBx2 {
   width: 1000px;
-  height: 800px;
+  min-height: 800px;
   background-color: white;
   margin: 3.5rem;
   border-radius: 5px;
@@ -215,10 +215,10 @@
     
    
   }
-  @media(max-width: 800px){
+  @media(max-width: 770px){
     .whiteBx2{
       width: 500px;
-      height: 1000px;
+      height: 500px;
     }
     .nameInputStyle{
       width: 350px;
@@ -245,18 +245,24 @@
     .passInputStyle{
       width: 390px;
     }
-    .passBirthInputGroup{
-     display: block;
+    .passBirthInputgroup{
+      flex-direction: column !important;
+    }
+    .createAccountTitle{
+      font-size: 40px;
+    }
+    .passGroup{
+      width: 60px;
     }
    
   }
   @media(max-width: 768px){
     .whiteBx2{
-      width: 500px;
+      width: 400px;
       height: 1000px;
     }
     .nameInputStyle{
-      width: 350px;
+      width: 250px;
     }
     .loginEmailInputgroup{
       margin-left: 65px;
@@ -265,10 +271,13 @@
       margin-left: 65px;
     }
     .phoneNumInputStyle{
-      width: 350px;
+      width: 250px;
     }
     .emailInputStyle{
-      width: 350px;
+      width: 250px;
+    }
+    .birthInputStyle{
+      width: 300px;
     }
     .birthGroup{
       margin-left: 40px;
@@ -278,8 +287,12 @@
       margin-top: 3rem;
     }
     .passInputStyle{
-      width: 390px;
+      width: 290px;
     }
+    .passBirthInputgroup{
+      flex-direction: column !important;
+    }
+
    
   }
   @media(max-width: 425px){

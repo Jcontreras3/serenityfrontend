@@ -135,6 +135,7 @@ export default function HomeComponent({ }: Props) {
       <Container className="homeContainer">
         <Row className="quotesBx">
           <div>
+            <p className="quotesTitle">Quotes of the day</p>
             <ThreeCardDisplay />
           </div>
         </Row>

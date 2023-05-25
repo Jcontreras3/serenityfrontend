@@ -3,7 +3,7 @@ import "./createAccountStyles.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CreatedPicture, GetLoggedInUserData, createAccount } from "../../Service/DataService";
 // import derpCat from '../../Assets/derpCat.jpg';
 
@@ -44,7 +44,10 @@ export default function CreateAccountComponent() {
       createAccountNavigate("/");
 
       alert("Account Successfully Created");
-    } else {
+      
+    } 
+    
+    else {
       alert("Password does not match");
     }
   };
@@ -53,6 +56,10 @@ export default function CreateAccountComponent() {
   //   getDataBack = GetLoggedInUserData(email);
 
   // }
+
+  useEffect(() => {
+   const timer =  setTimeout(() => alert("Fill in all input fields to create account"), 1000)
+  }, [])
 
   const handleCreateSubmit = () => {
     let userCreatedData = {
@@ -175,7 +182,7 @@ export default function CreateAccountComponent() {
             </Col>
           </Row>
           <div className="createBtnGroup">
-            <button disabled={!fullName} onClick={handleVerification} className="createBtn">
+            <button disabled={!zipCode} onClick={handleVerification} className="createBtn">
               Create Account
             </button>
           </div>
