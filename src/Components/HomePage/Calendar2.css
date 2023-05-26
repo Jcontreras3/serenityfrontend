@@ -206,6 +206,14 @@
     background-repeat: no-repeat;
   }
 
+  .Help{
+    width: 70%;
+    height: 70%;
+    background-image: url(../../Assets/EmojiTwo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
   abbr{
     margin: 5px;
     
