@@ -1,10 +1,14 @@
-import { Container, Row, Col, Alert } from "react-bootstrap";
+import { Container, Row, Col, Alert, Modal, Button } from "react-bootstrap";
 import "./createAccountStyles.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { CreatedPicture, GetLoggedInUserData, createAccount } from "../../Service/DataService";
+import {
+  CreatedPicture,
+  GetLoggedInUserData,
+  createAccount,
+} from "../../Service/DataService";
 // import derpCat from '../../Assets/derpCat.jpg';
 
 // Create a function that takes in the first password
@@ -18,12 +22,15 @@ export default function CreateAccountComponent() {
   const [zipCode, setZipCode] = useState(0);
   const [DOB, setDOB] = useState(0);
   const [verifyPass, setVerifyPass] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [loadMessage, setLoadMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   // let getDataBack:any;
 
   let createAccountNavigate = useNavigate();
   const handleVerification = () => {
     if (verifyPass === passWord) {
-
       // let UserIdPulled = sessionStorage.getItem('UserId');
       // let FileName = "DerpCat";
       // let FileContentType = ".jpg";
@@ -43,12 +50,11 @@ export default function CreateAccountComponent() {
       // CreatedPicture(pictureData);
       createAccountNavigate("/");
 
-      alert("Account Successfully Created");
-      
-    } 
-    
-    else {
-      alert("Password does not match");
+      setSuccessMessage("Account Successfully Created");
+      setShowModal(true); // Show the modal
+    } else {
+      setErrorMessage("Password Does Not Match");
+      setShowModal(true);
     }
   };
 
@@ -58,8 +64,12 @@ export default function CreateAccountComponent() {
   // }
 
   useEffect(() => {
-   const timer =  setTimeout(() => alert("Fill in all input fields to create account"), 1000)
-  }, [])
+    const timer = setTimeout(() => {
+      setLoadMessage("Fill in all input fields to create an account!");
+      setShowModal(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleCreateSubmit = () => {
     let userCreatedData = {
@@ -73,6 +83,10 @@ export default function CreateAccountComponent() {
       zipCode,
     };
     createAccount(userCreatedData);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false); // Hide the modal
   };
 
   let navigate = useNavigate();
@@ -101,7 +115,7 @@ export default function CreateAccountComponent() {
               onChange={({ target: { value } }) => {
                 const phoneNumber = value.replace(/[^\d]/g, "");
 
-                if (value === '' || /^\d+$/.test(phoneNumber)) {
+                if (value === "" || /^\d+$/.test(phoneNumber)) {
                   setPhoneNumber(parseInt(phoneNumber));
                 } else {
                   setPhoneNumber(0); // Reset the phone number if it contains letters
@@ -137,15 +151,15 @@ export default function CreateAccountComponent() {
                 className="birthInputStyle"
                 onChange={({ target: { value } }) => {
                   const dobVal = value.replace(/[^\d]/g, "");
-  
-                  if (value === '' || /^\d+$/.test(dobVal)) {
-                    setDOB(parseInt(dobVal, 10));
+
+                  if (value === "" || /^\d+$/.test(dobVal)) {
+                    setDOB(parseInt(dobVal));
                   } else {
                     setPhoneNumber(0); // Reset the phone number if it contains letters
                     alert("Please only enter numbers no letters");
                   }
                 }}
-              
+                maxLength={6}
                 placeholder="Date of Birth"
               />
             </Col>
@@ -165,28 +179,50 @@ export default function CreateAccountComponent() {
               <label className="birthLabel">ZipCode:</label>
               <input
                 className="birthInputStyle"
-                onChange={({ target: { value } }) =>
-                {
+                onChange={({ target: { value } }) => {
                   const zip = value.replace(/[^\d]/g, "");
-  
-                  if (value === '' || /^\d+$/.test(zip)) {
+
+                  if (value === "" || /^\d+$/.test(zip)) {
                     setZipCode(parseInt(zip, 10));
                   } else {
                     setZipCode(0); // Reset the phone number if it contains letters
                     alert("Please enter a valid phone number without letters.");
                   }
                 }}
-                
+                maxLength={5}
                 placeholder="ZipCode"
               />
             </Col>
           </Row>
           <div className="createBtnGroup">
-            <button disabled={!zipCode} onClick={handleVerification} className="createBtn">
+            <button
+              disabled={!zipCode}
+              onClick={handleVerification}
+              className="createBtn"
+            >
               Create Account
             </button>
           </div>
         </Col>
+        <Modal show={showModal} onHide={handleCloseModal}>
+          <Modal.Header className="ModalStyles" closeButton>
+            <Modal.Title>Good Evening</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="ModalStylesBod">
+            {successMessage ? (
+              <p className="modalTxt">{successMessage}</p>
+            ) : loadMessage ? (
+              <p className="modalTxt">{loadMessage}</p>
+            ) : errorMessage ? (
+              <p>{errorMessage}</p>
+            ) : null}
+          </Modal.Body>
+          <Modal.Footer className="ModalStyles">
+            <button className="modalBtn" onClick={handleCloseModal}>
+              Close
+            </button>
+          </Modal.Footer>
+        </Modal>
       </Row>
     </Container>
   );
