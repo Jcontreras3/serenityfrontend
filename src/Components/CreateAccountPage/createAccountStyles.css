@@ -188,6 +188,26 @@
   margin-left: 165px;
 
 }
+  .ModalStyles{
+    background-color: #b5aaff;
+    border: none;
+  }
+  .ModalStylesBod{
+    background-color: #caffaa;
+    border: none;
+  }
+  .modalBtn{
+    border-radius: 10px;
+    background-color:#caffaa;
+  }
+  .modalBtn:hover{
+   background-color: #caffaa;
+  }
+  .modalTxt{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+  }
 
 @media(max-width: 900px) {
   .whiteBx2 {
@@ -226,9 +246,10 @@
 
   .passInputStyle {
     width: 390px;
-  }
+  } 
 
-
+ 
+   
 }
 
 @media(max-width: 770px) {
@@ -283,6 +304,7 @@
   }
 
 }
+ 
 
 @media(max-width: 768px) {
   .whiteBx2 {
