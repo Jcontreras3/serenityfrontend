@@ -59,287 +59,345 @@
 }
 
 .nameInputStyle {
+  width: 900px;
+  height: 55px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.nameInputStyle::placeholder {
+  font-size: 20px;
+}
+
+.nameInputgroup {
+  margin-left: 40px;
+  margin-right: 110px;
+  margin-top: 1rem;
+}
+
+.nameLabel {
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+.phoneNumInputgroup {
+  margin-left: 40px;
+  margin-right: 110px;
+  margin-top: 1rem;
+}
+
+.phoneNumInputStyle {
+  width: 900px;
+  height: 55px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.phoneNumInputStyle::placeholder {
+  font-size: 20px;
+}
+
+.phoneNumLabel {
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+
+.emailInputgroup {
+  margin-left: 40px;
+  margin-right: 110px;
+  margin-top: 1rem;
+}
+
+.emailInputStyle {
+  width: 900px;
+  height: 55px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.emailInputStyle::placeholder {
+  font-size: 20px;
+}
+
+.emailLabel {
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+.passBirthInputgroup {
+  margin-top: 1rem;
+}
+
+.passInputStyle {
+
+  width: 400px;
+  height: 55px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.passInputStyle::placeholder {
+  font-size: 20px;
+}
+
+.passLabel {
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+
+}
+
+.passGroup {
+  margin-left: 40px;
+}
+
+.birthInputStyle {
+
+  width: 400px;
+  height: 55px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  border: none;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.birthInputStyle::placeholder {
+  font-size: 20px;
+}
+
+.birthLabel {
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+
+}
+
+.birthGroup {
+  margin-left: 165px;
+
+}
+
+@media(max-width: 900px) {
+  .whiteBx2 {
     width: 900px;
-    height: 55px;
-    background-color: #d9d9d9;
-    border-radius: 10px;
-    border: none;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-  
-  .nameInputStyle::placeholder{
-    font-size: 20px;
+    height: 1000px;
   }
 
-  .nameInputgroup {
-    margin-left: 40px;
-    margin-right: 110px;
-    margin-top: 1rem;
+  .nameInputStyle {
+    width: 650px;
   }
 
-  .nameLabel {
-    font-size: 20px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
+  .loginEmailInputgroup {
+    margin-left: 65px;
   }
 
-  .phoneNumInputgroup {
-    margin-left: 40px;
-    margin-right: 110px;
-    margin-top: 1rem;
+  .passwordEmailInputgroup {
+    margin-left: 65px;
   }
-  
+
   .phoneNumInputStyle {
-    width: 900px;
-    height: 55px;
-    background-color: #d9d9d9;
-    border-radius: 10px;
-    border: none;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-  .phoneNumInputStyle::placeholder{
-    font-size: 20px;
-  }
-  
-  .phoneNumLabel {
-    font-size: 20px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
+    width: 650px;
   }
 
-  
-  .emailInputgroup {
+  .emailInputStyle {
+    width: 650px;
+  }
+
+  .birthGroup {
     margin-left: 40px;
-    margin-right: 110px;
     margin-top: 1rem;
   }
-  
+
+  .createBtnGroup {
+    margin-top: 3rem;
+  }
+
+  .passInputStyle {
+    width: 390px;
+  }
+
+
+}
+
+@media(max-width: 770px) {
+  .whiteBx2 {
+    width: 500px;
+    height: 500px;
+  }
+
+  .nameInputStyle {
+    width: 350px;
+  }
+
+  .loginEmailInputgroup {
+    margin-left: 65px;
+  }
+
+  .passwordEmailInputgroup {
+    margin-left: 65px;
+  }
+
+  .phoneNumInputStyle {
+    width: 350px;
+  }
+
   .emailInputStyle {
-    width: 900px;
-    height: 55px;
-    background-color: #d9d9d9;
-    border-radius: 10px;
-    border: none;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: 350px;
   }
-  .emailInputStyle::placeholder{
-    font-size: 20px;
+
+  .birthGroup {
+    margin-left: 40px;
+    margin-top: 1rem;
   }
-  
-  .emailLabel {
-    font-size: 20px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
+
+  .createBtnGroup {
+    margin-top: 3rem;
+  }
+
+  .passInputStyle {
+    width: 390px;
   }
 
   .passBirthInputgroup {
+    flex-direction: column !important;
+  }
+
+  .createAccountTitle {
+    font-size: 40px;
+  }
+
+  .passGroup {
+    width: 60px;
+  }
+
+}
+
+@media(max-width: 768px) {
+  .whiteBx2 {
+    width: 400px;
+    height: 1000px;
+  }
+
+  .nameInputStyle {
+    width: 250px;
+  }
+
+  .loginEmailInputgroup {
+    margin-left: 65px;
+  }
+
+  .passwordEmailInputgroup {
+    margin-left: 65px;
+  }
+
+  .phoneNumInputStyle {
+    width: 250px;
+  }
+
+  .emailInputStyle {
+    width: 250px;
+  }
+
+  .birthInputStyle {
+    width: 300px;
+  }
+
+  .birthGroup {
+    margin-left: 40px;
     margin-top: 1rem;
   }
-  
+
+  .createBtnGroup {
+    margin-top: 3rem;
+  }
+
   .passInputStyle {
-    
+    width: 290px;
+  }
+
+  .passBirthInputgroup {
+    flex-direction: column !important;
+  }
+
+
+}
+
+@media(max-width: 425px) {
+  .proFilePic {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 64px !important;
+  }
+
+  .whiteBx2 {
     width: 400px;
-    height: 55px;
-    background-color: #d9d9d9;
-    border-radius: 10px;
-    border: none;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    height: 1000px;
   }
-  .passInputStyle::placeholder{
-    font-size: 20px;
+
+  .nameInputStyle {
+    width: 290px;
   }
-  
-  .passLabel {
-    font-size: 20px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    
+
+  .loginEmailInputgroup {
+    margin-left: 65px;
   }
-  .passGroup{
+
+  .passwordEmailInputgroup {
+    margin-left: 65px;
+  }
+
+  .phoneNumInputStyle {
+    width: 290px;
+  }
+
+  .emailInputStyle {
+    width: 290px;
+  }
+
+  .birthGroup {
     margin-left: 40px;
+    margin-top: 1rem;
   }
+
+  .createBtnGroup {
+    margin-top: 3rem;
+  }
+
+  .passInputStyle {
+    width: 290px;
+  }
+
   .birthInputStyle {
-    
-    width: 400px;
-    height: 55px;
-    background-color: #d9d9d9;
-    border-radius: 10px;
-    border: none;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  }
-  .birthInputStyle::placeholder{
-    font-size: 20px;
-  }
-  
-  .birthLabel {
-    font-size: 20px;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    
-  }
-  .birthGroup{
-    margin-left: 165px;
-    
+    width: 300px;
   }
 
-  @media(max-width: 900px){
-    .whiteBx2{
-      width: 900px;
-      height: 1000px;
-    }
-    .nameInputStyle{
-      width: 650px;
-    }
-    .loginEmailInputgroup{
-      margin-left: 65px;
-    }
-    .passwordEmailInputgroup{
-      margin-left: 65px;
-    }
-    .phoneNumInputStyle{
-      width: 650px;
-    }
-    .emailInputStyle{
-      width: 650px;
-    }
-    .birthGroup{
-      margin-left: 40px;
-      margin-top: 1rem;
-    }
-    .createBtnGroup{
-      margin-top: 3rem;
-    }
-    .passInputStyle{
-      width: 390px;
-    }
-    
-   
+  .emailInputStyle {
+    width: 290px;
   }
-  @media(max-width: 770px){
-    .whiteBx2{
-      width: 500px;
-      height: 500px;
-    }
-    .nameInputStyle{
-      width: 350px;
-    }
-    .loginEmailInputgroup{
-      margin-left: 65px;
-    }
-    .passwordEmailInputgroup{
-      margin-left: 65px;
-    }
-    .phoneNumInputStyle{
-      width: 350px;
-    }
-    .emailInputStyle{
-      width: 350px;
-    }
-    .birthGroup{
-      margin-left: 40px;
-      margin-top: 1rem;
-    }
-    .createBtnGroup{
-      margin-top: 3rem;
-    }
-    .passInputStyle{
-      width: 390px;
-    }
-    .passBirthInputgroup{
-      flex-direction: column !important;
-    }
-    .createAccountTitle{
-      font-size: 40px;
-    }
-    .passGroup{
-      width: 60px;
-    }
-   
-  }
-  @media(max-width: 768px){
-    .whiteBx2{
-      width: 400px;
-      height: 1000px;
-    }
-    .nameInputStyle{
-      width: 250px;
-    }
-    .loginEmailInputgroup{
-      margin-left: 65px;
-    }
-    .passwordEmailInputgroup{
-      margin-left: 65px;
-    }
-    .phoneNumInputStyle{
-      width: 250px;
-    }
-    .emailInputStyle{
-      width: 250px;
-    }
-    .birthInputStyle{
-      width: 300px;
-    }
-    .birthGroup{
-      margin-left: 40px;
-      margin-top: 1rem;
-    }
-    .createBtnGroup{
-      margin-top: 3rem;
-    }
-    .passInputStyle{
-      width: 290px;
-    }
-    .passBirthInputgroup{
-      flex-direction: column !important;
-    }
 
-   
-  }
-  @media(max-width: 425px){
-    .whiteBx2{
-      width: 400px;
-      height: 1000px;
-    }
-    .nameInputStyle{
-      width: 290px;
-    }
-    .loginEmailInputgroup{
-      margin-left: 65px;
-    }
-    .passwordEmailInputgroup{
-      margin-left: 65px;
-    }
-    .phoneNumInputStyle{
-      width: 290px;
-    }
-    .emailInputStyle{
-      width: 290px;
-    }
-    .birthGroup{
-      margin-left: 40px;
-      margin-top: 1rem;
-    }
-    .createBtnGroup{
-      margin-top: 3rem;
-    }
-    .passInputStyle{
-      width: 290px;
-    }
-    .birthInputStyle{
-      width: 300px;
-    }
-    .emailInputStyle{
-      width: 290px;
-    }
-    /* .passGroup{
+  /* .passGroup{
       margin-left: 40px;
       margin-top: 1rem;
     } */
-    .createAccountCont{
-      overflow: hidden;
-    }
-    .createAccountTitle{
-      font-size: 50px;
-    }
-   
+  .createAccountCont {
+    overflow: hidden;
   }
+
+  .createAccountTitle {
+    font-size: 50px;
+  }
+
+}

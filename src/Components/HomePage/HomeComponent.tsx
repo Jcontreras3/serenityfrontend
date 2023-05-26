@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import NavbarComponent from "../Navbar/NavbarComponent";
 import {
   Container,
@@ -15,10 +15,8 @@ import "../HomePage/Home.css";
 import "../HomePage/Calendar2.css";
 import Calendar from "react-calendar";
 import DataContext from "../../Context/DataContext";
-import useHooks from "../../Hooks/UseHooks";
 import { GetFeelingDate, JournalEntryFetch } from "../../Service/DataService";
 import JournalPageComponent from "./JournalPageComponent";
-import axios from "axios";
 import { ThreeCardDisplay } from "./ThreeQuoteComponent";
 type Props = {};
 

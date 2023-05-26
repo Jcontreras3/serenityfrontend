@@ -33,19 +33,15 @@ export default function NavbarComponent({ }: Props) {
 
               <NavDropdown title="Resources" id="basic-nav-dropdown">
                 <NavDropdown.Item onClick={() => navigate("/Music")}>Music Playlist</NavDropdown.Item>
-                <NavDropdown.Item onClick={() => navigate("/Resources")}>
-                  Hotlines
-                </NavDropdown.Item>
                 <NavDropdown.Item onClick={() => navigate("/Memes")}>Funny Memes</NavDropdown.Item>
+                <NavDropdown.Item onClick={() => navigate("/Resources")}> Hotlines</NavDropdown.Item>
               </NavDropdown>
 
-              <Nav.Link onClick={() => navigate("/Music")} className="Music">Music Playlists</Nav.Link>
-              <Nav.Link onClick={() => navigate("/Resources")} className="Hotlines">Hotlines</Nav.Link>
+              <Nav.Link onClick={() => navigate("/Music")} className="Music">Music Playlists</Nav.Link> 
               <Nav.Link onClick={() => navigate("/Memes")} className="Memes">Funny Memes</Nav.Link>
+              <Nav.Link onClick={() => navigate("/Resources")} className="Hotlines">Hotlines</Nav.Link>
               
               
-              <Nav className="me-auto">
-            </Nav>
           </Navbar.Collapse>
           </Col>
           </div>
