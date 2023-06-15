@@ -63,12 +63,13 @@ export default function MemesComponent({}: Props) {
             <Row className="memeRow">
                 <Col className="memePicCol">
                     <img className="memePic" src={pic} />
-                    <Button className="memeBtn" onClick={handleRandom}>Re-Roll Meme</Button>
+                    
                 </Col>
                 <Col className="memeJokeCol">
                     <div className="joke">
                         <p className="jokey">{joke}</p>
                         <p className="jokey2">{joke2}</p>
+                        <Button className="memeBtn" onClick={handleRandom}>Re-Roll Meme</Button>
                     </div>
                 </Col>
             </Row>

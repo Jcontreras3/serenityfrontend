@@ -42,6 +42,7 @@
   font-size: 36px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 500;
+  color: black;
 }
 
 .createBtnGroup {
@@ -193,20 +194,39 @@
     border: none;
   }
   .ModalStylesBod{
-    background-color: #caffaa;
+    background-color: #b5aaff;
     border: none;
   }
-  .modalBtn{
+  .createModalBtn{
     border-radius: 10px;
     background-color:#caffaa;
+    border-radius: 10px;
+    background-color: #caffaa;
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
   }
-  .modalBtn:hover{
-   background-color: #caffaa;
+  
+  .createModalBtn:hover{
+   background-color: #b1ff80;
   }
   .modalTxt{
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
     font-size: 25px;
+    color: black;
+  }
+
+  .modalTitle{
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
   }
 
 @media(max-width: 900px) {

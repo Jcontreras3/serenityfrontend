@@ -1,7 +1,7 @@
 import { Container, Row, Col, Alert, Modal, Button } from "react-bootstrap";
 import "./createAccountStyles.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { IconButton } from "@mui/material";
+import { Autocomplete, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {
@@ -130,6 +130,7 @@ export default function CreateAccountComponent() {
             <label className="emailLabel">Email:</label>
             <input
               className="emailInputStyle"
+              autoComplete="off"
               onChange={({ target: { value } }) => setEmail(value)}
               placeholder="Email"
             />
@@ -140,6 +141,7 @@ export default function CreateAccountComponent() {
               <input
                 className="passInputStyle"
                 type="password"
+                autoComplete="off"
                 onChange={({ target: { value } }) => setPassWord(value)}
                 placeholder="Password"
               />
@@ -168,8 +170,10 @@ export default function CreateAccountComponent() {
             <Col className="passGroup" sm={12} md={4}>
               <label className="passLabel">Verify Password:</label>
               <input
+                
                 className="passInputStyle"
                 type="password"
+                autoComplete="off"
                 onChange={({ target: { value } }) => setVerifyPass(value)}
                 placeholder="Verify Password"
               />
@@ -206,7 +210,7 @@ export default function CreateAccountComponent() {
         </Col>
         <Modal show={showModal} onHide={handleCloseModal}>
           <Modal.Header className="ModalStyles" closeButton>
-            <Modal.Title>Good Evening</Modal.Title>
+            <Modal.Title className="modalTitle">Create an Account!</Modal.Title>
           </Modal.Header>
           <Modal.Body className="ModalStylesBod">
             {successMessage ? (
@@ -218,7 +222,7 @@ export default function CreateAccountComponent() {
             ) : null}
           </Modal.Body>
           <Modal.Footer className="ModalStyles">
-            <button className="modalBtn" onClick={handleCloseModal}>
+            <button className="createModalBtn" onClick={handleCloseModal}>
               Close
             </button>
           </Modal.Footer>
