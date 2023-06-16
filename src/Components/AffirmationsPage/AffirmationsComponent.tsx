@@ -18,10 +18,15 @@ function DropdownComponent() {
   const handleDropdownChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(event.target.value);
   }
+
+
+  
   return (
     <div >
-      <label htmlFor="dropdown"></label>
-      <select className='custom-select dropdown2' id="dropdown-basic-button" title="Dropdown button" onChange={handleDropdownChange}>
+      <label  htmlFor="dropdown"></label>
+     
+      
+      <select  className='custom-select dropdown2' id="dropdown-basic-button" title="Dropdown button" onChange={handleDropdownChange}>
         <option value='All Affirmations'>All Affirmations</option>
         <option value="Motivational">Motivational</option>
         <option value="Relatioship">Relationship</option>

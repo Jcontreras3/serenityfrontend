@@ -159,9 +159,9 @@ export default function HomeComponent({ }: Props) {
                 <JournalPageComponent />
               </h2>
               <div className="journalEntryDiv">
-                <Button className="journalEntryBtn" onClick={handleShow}>
+                <button className="journalEntryBtn" onClick={handleShow}>
                   Journal Entry
-                </Button>
+                </button>
 
                 <Modal className="t" show={show} onHide={handleClose}>
                   <Modal.Body className="modalColor">
@@ -187,9 +187,9 @@ export default function HomeComponent({ }: Props) {
                     </Form>
                   </Modal.Body>
                   <Modal.Footer className="modalFooter">
-                    <Button onClick={AddJournal} className="modalBtn">
+                    <button onClick={AddJournal} className="modalBtn">
                       Submit
-                    </Button>
+                    </button>
                   </Modal.Footer>
                 </Modal>
               </div>

@@ -69,7 +69,9 @@ export default function MemesComponent({}: Props) {
                     <div className="joke">
                         <p className="jokey">{joke}</p>
                         <p className="jokey2">{joke2}</p>
+                        <div className="memeBtnRow">
                         <Button className="memeBtn" onClick={handleRandom}>Re-Roll Meme</Button>
+                        </div>
                     </div>
                 </Col>
             </Row>
