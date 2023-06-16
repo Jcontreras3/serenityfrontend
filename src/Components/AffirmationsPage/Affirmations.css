@@ -4,7 +4,7 @@
 
 .all-quotes-cards {
     max-width: 400px;
-    min-height: 237px;
+    min-height: 290px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -59,6 +59,14 @@ select option:hover,
     align-items: center;
 }
 
+.card{
+
+}
+
+.all-quotes-cards:hover{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
 .card-body {
     font-family: 'Quicksand';
     font-style: normal;
@@ -94,6 +102,7 @@ select option:hover,
     width: 45px;
     margin-top: 20px;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .heart-row{
