@@ -1,40 +1,79 @@
-import React from "react";
-import { Container, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Form, Col, Modal } from "react-bootstrap";
 import "./journalStyles.css";
 
-
-
 export default function JournalPageComponent() {
-  return (
-    <div className="paperBox">
-      <div className="journalTitleGroup">
-        <div className="redLine"></div>
-        <p className="titleTxt">Today's Journal Entry</p>
-      </div>
+  const [journalEntry, setJournalEntry] = useState("");
+  const [show, setShow] = useState(false);
+  const [journalDisplay, setJournalDisplay] = useState("");
 
-      <div className="JournalGroup">
-        <div className="journalTxtGroup">
-          <p className="journalTxt">
-            Today was an extraordinary day, one that overflowed with joy and
-            warmth, leaving me brimming with an indescribable happiness. The sun
-            cast its golden rays upon the world, illuminating every corner with
-            a gentle glow. As I strolled along the winding path through the
-            park, a symphony of birds serenaded me, their melodious tunes
-            lifting my spirits higher with every note. Nature seemed to be
-            celebrating alongside me, as vibrant blossoms adorned the trees,
-            their delicate petals dancing in the soft breeze. The infectious
-            laughter of children echoed through the air, filling my heart with
-            pure delight. In the company of dear friends, laughter erupted
-            effortlessly, weaving an invisible tapestry of connection and love.
-            Each moment felt like a precious gem, cherished and etched in my
-            memory forever. Gratitude washed over me, like a soothing wave, as I
-            realized how fortunate I am to experience such profound happiness.
-            With a heart overflowing with joy, I pen down these words, hoping to
-            capture and preserve this feeling, knowing that it will continue to
-            inspire me in the days to come.
-          </p>
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const addEntry = async (e:any) => {
+    setJournalEntry(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    setJournalDisplay(journalEntry);
+    setShow(false); // Close the modal
+    setJournalEntry(""); // Clear the input field
+  };
+
+  return (
+    <>
+      <div className="paperBox">
+        <div className="journalTitleGroup">
+          <div className="redLine"></div>
+          <p className="titleTxt">Today's Journal Entry</p>
         </div>
-      </div>
-    </div>
+
+        <div className="JournalGroup">
+          <div className="journalTxtGroup">
+            <p className="journalTxt">{journalDisplay}</p>
+          </div>
+        </div>
+      </div>{" "}
+      <Col className="calendar">
+        <div className="quoteDiv">
+          <br />
+          <div className="journalEntryDiv">
+            <button className="journalEntryBtn" onClick={handleShow}>
+              Journal Entry
+            </button>
+
+            <Modal className="t" show={show} onHide={handleClose}>
+              <Modal.Body className="modalColor">
+                <Form>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlTextarea1"
+                  >
+                    <Form.Label className="modalTxt">
+                      Write however you are feeling right now. These journal
+                      entries aren't read by anyone and you are safe here. Just
+                      write whatever is on your mind or write based on your mood
+                      today. Why are you feeling this way today?
+                    </Form.Label>
+                    <Form.Control
+                      as="textarea"
+                      className="modalInput"
+                      onChange={addEntry}
+                      value={journalEntry}
+                      rows={3}
+                    />
+                  </Form.Group>
+                </Form>
+              </Modal.Body>
+              <Modal.Footer className="modalFooter">
+                <button onClick={handleSubmit} className="modalBtn">
+                  Submit
+                </button>
+              </Modal.Footer>
+            </Modal>
+          </div>
+        </div>
+      </Col>
+    </>
   );
 }

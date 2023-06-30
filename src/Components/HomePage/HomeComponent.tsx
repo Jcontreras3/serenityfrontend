@@ -29,15 +29,11 @@ interface CustomTileContentProps {
 export default function HomeComponent({ }: Props) {
   const { updatedUserId } = useContext(DataContext);
 
-  const [show, setShow] = useState(false);
   const [date, setDate] = useState<Date>(new Date());
   const [isLoading, setIsLoading] = useState(true);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const [journalInput, setJournalInput] = useState("");
-  const [journalDisplay, setJournalDisplay] = useState("");
 
   const AddJournal = async () => {
 
@@ -150,51 +146,7 @@ export default function HomeComponent({ }: Props) {
           </Col>
         </Row>
         <Row>
-          <Col className="calendar">
-            <div className="quoteDiv">
-
-              <br />
-              <h2 className="quote">
-
-                <JournalPageComponent />
-              </h2>
-              <div className="journalEntryDiv">
-                <button className="journalEntryBtn" onClick={handleShow}>
-                  Journal Entry
-                </button>
-
-                <Modal className="t" show={show} onHide={handleClose}>
-                  <Modal.Body className="modalColor">
-                    <Form>
-                      <Form.Group
-                        className="mb-3"
-                        controlId="exampleForm.ControlTextarea1"
-                      >
-                        <Form.Label className="modalTxt">
-                          Write how ever you are feeling right now. These
-                          journal entry's aren't read by anyone and you are safe
-                          here. Just write what ever is on your mind, or write
-                          based off of your mood today. Why are you feeling this
-                          way today?
-                        </Form.Label>
-                        <Form.Control
-                          as="textarea"
-                          className="modalInput"
-                          onChange={(e) => setJournalInput(e.target.value)}
-                          rows={3}
-                        />
-                      </Form.Group>
-                    </Form>
-                  </Modal.Body>
-                  <Modal.Footer className="modalFooter">
-                    <button onClick={AddJournal} className="modalBtn">
-                      Submit
-                    </button>
-                  </Modal.Footer>
-                </Modal>
-              </div>
-            </div>
-          </Col>
+         <JournalPageComponent/>
         </Row>
       </Container>
     </div>
