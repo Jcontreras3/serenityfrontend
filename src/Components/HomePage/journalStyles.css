@@ -36,6 +36,11 @@
     font-family: "Quicksand", sans-serif;
 }
 
+.journal-row{
+    display: flex;
+    justify-content: center;
+}
+
 @media(max-width:775px){
     .paperBox{
         width: 700px;

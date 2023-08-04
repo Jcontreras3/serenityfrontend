@@ -145,7 +145,7 @@ export default function HomeComponent({ }: Props) {
             />
           </Col>
         </Row>
-        <Row>
+        <Row className="journal-row">
          <JournalPageComponent/>
         </Row>
       </Container>
